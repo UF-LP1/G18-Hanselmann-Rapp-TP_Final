@@ -3,11 +3,9 @@
 
 #include "cPersona.h"
 
-class cMedicos :
-    public cPersona
+class cMedicos: public cPersona
 {
 private:
-
     string Matricula;
     bool Autorizacion;
 
@@ -17,6 +15,7 @@ public:
 
     void set_Matricula(string NuevoEstado);
     void set_Autorizacion(bool NuevoEstado);
+
 };
 
 #endif //_CMEDICOS_H

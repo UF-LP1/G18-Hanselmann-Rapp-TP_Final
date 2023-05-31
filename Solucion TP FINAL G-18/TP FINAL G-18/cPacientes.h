@@ -4,8 +4,15 @@
 #include "cPersona.h"
 #include "TipoAlergia.h"
 #include "cHospitales.h"
-class cPacientes :
-    public cPersona
+
+#include <iostream>
+#include <string>
+#include <vector>
+#include <list>
+#include <iterator>
+#include <ctime>
+
+class cPacientes: public cPersona
 {
 private:
 

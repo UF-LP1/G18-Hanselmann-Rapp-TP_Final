@@ -1,12 +1,8 @@
 #ifndef _CPERSONA_H
 #define _CPERSONA_H
 
-#include <iostream>
-#include <string>
-#include <vector>
-#include <list>
-#include <iterator>
-#include <ctime>
+#include "cPacientes.h"
+#include "cMedicos.h"
 
 using namespace std;
 

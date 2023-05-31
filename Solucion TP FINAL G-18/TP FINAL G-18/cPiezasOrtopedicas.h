@@ -1,27 +1,12 @@
 #ifndef _CPIEZASORTOPEDICAS_H
 #define _CPIEZASORTOPEDICAS_H
 
-#include <iostream>
-#include <string>
-#include <vector>
-#include <list>
-#include <iterator>
-#include <ctime>
-
 #include "TipoMaterial.h"
-#include "cFabricantes.h"
-
+#include "cQuirurgicas.h"
+#include "cNoQuirurgicas.h"
 
 class cPiezasOrtopedicas
 {
-public:
-
-	unsigned int get_Dimensiones();
-	
-	void set_Dimensiones(unsigned int NuevoEstado);
-
-	static unsigned int get_CantidadTotalPiezas();
-
 protected:
 	unsigned int Dimensiones;
 	TipoMaterial Material;
@@ -29,7 +14,17 @@ protected:
 	cFabricantes Fabricante;
 	static unsigned int CantidadTotalPiezas;
 
+public:
+	unsigned int get_Dimensiones();
+	TipoMaterial get_Material();
+	time_t get_Fabricacion();
+	cFabricantes get_Fabricante();
+	static unsigned int get_CantidadTotalPiezas();
+
+	void set_Dimensiones(unsigned int NuevoEstado);
+	void set_Material(TipoMaterial NuevoEstado);
+	void set_Fabricacion(time_t NuevoEstado);
+
 };
 
 #endif //_CPIEZASORTOPEDICAS_H
-
