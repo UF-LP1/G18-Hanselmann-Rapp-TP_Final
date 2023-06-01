@@ -4,6 +4,7 @@
 #include "TipoMaterial.h"
 #include "cQuirurgicas.h"
 #include "cNoQuirurgicas.h"
+#include "cFabricantes.h"
 
 class cPiezasOrtopedicas
 {
@@ -15,7 +16,7 @@ protected:
 	static unsigned int CantidadTotalPiezas;
 
 public:
-	cPiezasOrtopedicas(int Dimensiones_, TipoMaterial Material_, time_t, cFabricantes);
+	cPiezasOrtopedicas(int Dimensiones_, TipoMaterial Material_, time_t Fabricacion_, cFabricantes Fabricante_);
 	~cPiezasOrtopedicas();
 
 	unsigned int get_Dimensiones();

@@ -10,6 +10,8 @@ private:
     bool Autorizacion;
 
 public:
+    cMedicos(string Nombre_, string Apellido_, string Telefono_, string Matricula_, bool Autorizacion_);
+    ~cMedicos();
     string get_Matricula();
     bool get_Autorizacion();
 
