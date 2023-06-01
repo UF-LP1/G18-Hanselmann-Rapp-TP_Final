@@ -13,12 +13,12 @@ cAsociacion::~cAsociacion()
 
 string cAsociacion::get_Nombre()
 {
-    return Nombre;
+    return this->Nombre;
 }
 
 string cAsociacion::get_Direccion()
 {
-    return Direccion;
+    return this->Direccion;
 }
 
 void cAsociacion::set_Nombre(string NuevoEstado)

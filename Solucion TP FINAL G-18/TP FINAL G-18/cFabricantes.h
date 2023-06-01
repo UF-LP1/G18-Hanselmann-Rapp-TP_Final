@@ -13,14 +13,15 @@
 
 using namespace std;
 
-class cFabricantes
+class cFabricantes: public cAsociacion
 {
-private:
-	string Habilitacion;
-	bool SolicitudRequisitos;
-	string Requisitos;
 
 public:
+
+	cFabricantes(string Nombre_, string Direccion_, string Habilitacion_, bool SolicitudRequisitos_, string Requisitos_);
+
+	~cFabricantes();
+
 	string get_Habilitacion();
 	bool get_SolicitudRequisitos();
 	string get_Requisitos();
@@ -28,6 +29,11 @@ public:
 	void set_Habilitacion(string NuevoEstado);
 	void set_SolicitudRequisitos(bool NuevoEstado);
 	void set_Requisitos(string NuevoEstado);
+
+private:
+	string Habilitacion;
+	bool SolicitudRequisitos;
+	string Requisitos;
 
 };
 
