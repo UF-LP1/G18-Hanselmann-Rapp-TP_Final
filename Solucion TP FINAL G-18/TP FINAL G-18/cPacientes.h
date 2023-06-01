@@ -23,7 +23,7 @@ private:
     bool TieneProtesis;
 
 public:
-    cPacientes(string Nombre_, string Apellido_, string Telefono_, time_t Nacimiento_, TipoAlergia Alergias_, cHospitales Atendido_, unsigned int RadioMiembro_, bool CompatibleQuirurgica_, bool TieneProtesis_);
+    cPacientes(string Nombre_, string Apellido_, string Telefono_, time_t Nacimiento_, TipoAlergia Alergias_, cHospitales& Atendido_, unsigned int RadioMiembro_, bool CompatibleQuirurgica_, bool TieneProtesis_);
     ~cPacientes();
 
     time_t get_Nacimiento();

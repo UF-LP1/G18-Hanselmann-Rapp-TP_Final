@@ -4,6 +4,8 @@
 #include <list>
 #include <iterator>
 
+using namespace std;
+
 #include "cANPA.h"
 #include "cAsociacion.h"
 #include "cPiezasOrtopedicas.h"
@@ -32,10 +34,5 @@ int main()
 	//cNoQuirurgicas
 
 	//cANPA
-
-
-
-
-
 
 }
