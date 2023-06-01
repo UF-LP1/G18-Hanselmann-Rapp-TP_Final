@@ -14,6 +14,9 @@ protected:
     string Telefono;
 
 public:
+    cPersona(string Nombre_, string Apellido_, string Telefono_);
+    ~cPersona();
+
     string get_Nombre();
     string get_Apellido();
     string get_Telefono();
