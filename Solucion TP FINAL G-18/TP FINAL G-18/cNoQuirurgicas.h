@@ -18,7 +18,8 @@ class cNoQuirurgicas : public cPiezasOrtopedicas
 {
  public:
 
-     cNoQuirurgicas(int Dimensiones_, TipoMaterial Material_, time_t Fabricacion_, cFabricantes Fabricante_, unsigned int Radio_Protesis_, TipoProtesis Protesis_No_Q_);
+     cNoQuirurgicas(int Dimensiones_, TipoMaterial Material_, time_t Fabricacion_,
+                    cFabricantes Fabricante_, unsigned int Radio_Protesis_, TipoProtesis Protesis_No_Q_);
 
      ~cNoQuirurgicas();
 

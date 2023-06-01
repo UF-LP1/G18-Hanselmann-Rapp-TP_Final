@@ -17,7 +17,9 @@ private:
 	list <cOrtopedias> Ortopedia;
 
 public:
-	cANPA(cHospitales Hospital_, cMedicos Medico_, time_t FechaSolicitud_, time_t FechaEstimativaEntrega_, time_t FechaEntregada_, cPiezasOrtopedicas Protesis_, cPacientes Paciente_, string SolicitudEspecial_, list <cOrtopedias> Ortopedia_);
+	cANPA(cHospitales Hospital_, cMedicos Medico_, time_t FechaSolicitud_, time_t FechaEstimativaEntrega_, time_t FechaEntregada_, 
+			cPiezasOrtopedicas Protesis_, cPacientes Paciente_, string SolicitudEspecial_, list <cOrtopedias> Ortopedia_);
+
 	~cANPA();
 
 	cHospitales get_Hospital();

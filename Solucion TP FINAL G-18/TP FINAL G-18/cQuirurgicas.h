@@ -10,7 +10,9 @@ private:
     TipoProtesis Protesis_Q;
 
 public:
-    cQuirurgicas(int Dimensiones_, TipoMaterial Material_, time_t Fabricacion_, cFabricantes Fabricante_, TipoProtesis Protesis_Q_);
+    cQuirurgicas(int Dimensiones_, TipoMaterial Material_, time_t Fabricacion_,
+                    cFabricantes Fabricante_, TipoProtesis Protesis_Q_);
+
     ~cQuirurgicas();
 
     TipoProtesis get_Protesis_Q();
