@@ -20,47 +20,47 @@ cANPA::~cANPA()
 
 cHospitales cANPA::get_Hospital()
 {
-	return Hospital;
+	return this->Hospital;
 }
 
 cMedicos cANPA::get_Medico()
 {
-	return Medico;
+	return this->Medico;
 }
 
 time_t cANPA::get_FechaSolicitud()
 {
-	return FechaSolicitud;
+	return this->FechaSolicitud;
 }
 
 time_t cANPA::get_FechaEstimativaEntrega()
 {
-	return FechaEstimativaEntrega;
+	return this->FechaEstimativaEntrega;
 }
 
 time_t cANPA::get_FechaEntregada()
 {
-	return FechaEntregada;
+	return this->FechaEntregada;
 }
 
 cPiezasOrtopedicas cANPA::get_Protesis()
 {
-	return Protesis;
+	return this->Protesis;
 }
 
 cPacientes cANPA::get_Paciente()
 {
-	return Paciente;
+	return this->Paciente;
 }
 
 string cANPA::get_SolicitudEspecial()
 {
-	return SolicitudEspecial;
+	return this->SolicitudEspecial;
 }
 
 list<cOrtopedias> cANPA::get_Ortopedia()
 {
-	return Ortopedia;
+	return this->Ortopedia;
 }
 
 void cANPA::set_FechaSolicitud(time_t NuevoEstado)

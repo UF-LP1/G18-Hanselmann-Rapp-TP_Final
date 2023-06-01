@@ -4,7 +4,6 @@ cHospitales::cHospitales(string Nombre_, string Direccion_, list<cMedicos>Medico
 {
 	this->Medicos = Medicos_;
 	this->Pacientes = Pacientes_;
-
 }
 
 cHospitales::~cHospitales()
@@ -15,7 +14,6 @@ cHospitales::~cHospitales()
 list <cMedicos> cHospitales::get_Medicos()
 {
 	return this->Medicos;
-
 }
 
 list <cPacientes> cHospitales::get_Pacientes()

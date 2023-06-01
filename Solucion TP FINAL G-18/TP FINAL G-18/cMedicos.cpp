@@ -13,12 +13,12 @@ cMedicos::~cMedicos()
 
 string cMedicos::get_Matricula()
 {
-	return Matricula;
+	return this->Matricula;
 }
 
 bool cMedicos::get_Autorizacion()
 {
-	return Autorizacion;
+	return this->Autorizacion;
 }
 
 void cMedicos::set_Matricula(string NuevoEstado)

@@ -1,8 +1,8 @@
 #include "cPiezasOrtopedicas.h"
 
-static unsigned int CantidadTotalPiezas = 0;
+unsigned int cPiezasOrtopedicas::CantidadTotalPiezas = 0;
 
-cPiezasOrtopedicas::cPiezasOrtopedicas(int Dimensiones_, TipoMaterial Material_, time_t Fabricacion_, cFabricantes Fabricante_, static unsigned int stock_)
+cPiezasOrtopedicas::cPiezasOrtopedicas(int Dimensiones_, TipoMaterial Material_, time_t Fabricacion_, cFabricantes Fabricante_)
 {
 	this->Dimensiones = Dimensiones_;
 	this->Material = Material_;
@@ -18,22 +18,22 @@ cPiezasOrtopedicas::~cPiezasOrtopedicas()
 
 unsigned int cPiezasOrtopedicas::get_Dimensiones()
 {
-	return Dimensiones;
+	return this->Dimensiones;
 }
 
 TipoMaterial cPiezasOrtopedicas::get_Material()
 {
-	return Material;
+	return this->Material;
 }
 
 time_t cPiezasOrtopedicas::get_Fabricacion()
 {
-	return Fabricacion;
+	return this->Fabricacion;
 }
 
 cFabricantes cPiezasOrtopedicas::get_Fabricante()
 {
-	return Fabricante;
+	return this->Fabricante;
 }
 
 unsigned int cPiezasOrtopedicas::get_CantidadTotalPiezas()

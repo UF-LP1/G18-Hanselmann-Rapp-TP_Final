@@ -16,7 +16,7 @@ protected:
 	static unsigned int CantidadTotalPiezas;
 
 public:
-	cPiezasOrtopedicas(int Dimensiones_, TipoMaterial Material_, time_t Fabricacion_, cFabricantes Fabricante_, static unsigned int stock_);
+	cPiezasOrtopedicas(int Dimensiones_, TipoMaterial Material_, time_t Fabricacion_, cFabricantes Fabricante_);
 	~cPiezasOrtopedicas();
 
 	unsigned int get_Dimensiones();

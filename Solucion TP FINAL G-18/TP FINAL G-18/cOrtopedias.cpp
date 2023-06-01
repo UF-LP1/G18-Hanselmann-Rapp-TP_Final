@@ -1,6 +1,5 @@
 #include "cOrtopedias.h"
 
-
 cOrtopedias::cOrtopedias(string Nombre_, string Direccion_, list<cPiezasOrtopedicas> Protesis_, unsigned int CantidadPiezas_) :cAsociacion(Nombre_, Direccion_)
 {
 	this->Protesis = Protesis;
@@ -34,5 +33,5 @@ void cOrtopedias::set_CantidadPiezas(unsigned int NuevoEstado)
 
 void cOrtopedias:: Imprimir_Protesis()
 {
-
+	return;
 }

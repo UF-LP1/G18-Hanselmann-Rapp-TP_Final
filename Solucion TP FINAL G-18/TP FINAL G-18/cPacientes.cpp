@@ -17,32 +17,32 @@ cPacientes::~cPacientes()
 
 time_t cPacientes::get_Nacimiento()
 {
-	return Nacimiento;
+	return this->Nacimiento;
 }
 
 TipoAlergia cPacientes::get_Alergias()
 {
-	return Alergias;
+	return this->Alergias;
 }
 
 cHospitales cPacientes::get_Atendido()
 {
-	return Atendido;
+	return this->Atendido;
 }
 
 unsigned int cPacientes::get_RadioMiembro()
 {
-	return RadioMiembro;
+	return this->RadioMiembro;
 }
 
 bool cPacientes::get_CompatibleQuirurgica()
 {
-	return CompatibleQuirurgica;
+	return this->CompatibleQuirurgica;
 }
 
 bool cPacientes::get_TieneProtesis()
 {
-	return TieneProtesis;
+	return this->TieneProtesis;
 }
 
 void cPacientes::set_Nacimiento(time_t NuevoEstado)

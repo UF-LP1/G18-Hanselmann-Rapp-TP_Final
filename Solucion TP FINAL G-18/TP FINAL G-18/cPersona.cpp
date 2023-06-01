@@ -14,17 +14,17 @@ cPersona::~cPersona()
 
 string cPersona::get_Nombre()
 {
-    return Nombre;
+    return this->Nombre;
 }
 
 string cPersona::get_Apellido()
 {
-    return Apellido;
+    return this->Apellido;
 }
 
 string cPersona::get_Telefono()
 {
-    return Telefono;
+    return this->Telefono;
 }
 
 void cPersona::set_Nombre(string NuevoEstado)

@@ -5,8 +5,6 @@ cFabricantes::cFabricantes(string Nombre_, string Direccion_, string Habilitacio
 	this->Habilitacion = Habilitacion_;
 	this->SolicitudRequisitos = SolicitudRequisitos_;
 	this->Requisitos = Requisitos_;
-
-
 }
 
 cFabricantes::~cFabricantes()
@@ -14,11 +12,9 @@ cFabricantes::~cFabricantes()
 
 }
 
-
 string cFabricantes::get_Habilitacion()
 {
 	return this->Habilitacion;
-
 }
 
 bool cFabricantes::get_SolicitudRequisitos()
@@ -39,7 +35,6 @@ void cFabricantes::set_Habilitacion(string NuevoEstado)
 void cFabricantes::set_SolicitudRequisitos(bool NuevoEstado)
 {
 	this->SolicitudRequisitos = NuevoEstado;
-
 }
 
 void cFabricantes::set_Requisitos(string NuevoEstado)

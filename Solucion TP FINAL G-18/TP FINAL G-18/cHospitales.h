@@ -8,9 +8,7 @@
 class cHospitales: public cAsociacion
 {
 public:
-
 	cHospitales(string Nombre_, string Direccion_, list<cMedicos>Medicos_, list<cPacientes>Pacientes_);
-
 	~cHospitales();
 
 	list <cMedicos> get_Medicos();

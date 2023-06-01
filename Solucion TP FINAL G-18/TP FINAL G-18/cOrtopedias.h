@@ -6,10 +6,12 @@
 
 class cOrtopedias: public cAsociacion
 {
+private:
+	list <cPiezasOrtopedicas> Protesis;
+	unsigned int CantidadPiezas;
+
 public:
-
 	cOrtopedias(string Nombre_, string Direccion_, list<cPiezasOrtopedicas> Protesis_, unsigned int CantidadPiezas_);
-
 	~cOrtopedias();
 
 	list <cPiezasOrtopedicas> get_Protesis();
@@ -19,9 +21,6 @@ public:
 	void set_CantidadPiezas(unsigned int NuevoEstado);
 	void Imprimir_Protesis();
 
-private:
-	list <cPiezasOrtopedicas> Protesis;
-	unsigned int CantidadPiezas;
 };
 
 #endif //_CORTOPEDIAS_H

@@ -1,11 +1,9 @@
 #include "cNoQuirurgicas.h"
 
-cNoQuirurgicas::cNoQuirurgicas(int Dimensiones_, TipoMaterial Material_, time_t Fabricacion_, cFabricantes Fabricante_, static unsigned int stock_, unsigned int Radio_Protesis_, TipoProtesis Protesis_No_Q_):cPiezasOrtopedicas(Dimensiones_, Material_, Fabricacion_, Fabricante_, stock_)
-
+cNoQuirurgicas::cNoQuirurgicas(int Dimensiones_, TipoMaterial Material_, time_t Fabricacion_, cFabricantes Fabricante_, unsigned int Radio_Protesis_, TipoProtesis Protesis_No_Q_):cPiezasOrtopedicas(Dimensiones_, Material_, Fabricacion_, Fabricante_)
 {
 	this->Radio_Protesis = Radio_Protesis_;
 	this->Protesis_No_Q = Protesis_No_Q_;
-
 }
 
 cNoQuirurgicas::~cNoQuirurgicas()
@@ -22,7 +20,6 @@ TipoProtesis cNoQuirurgicas::get_Protesis_No_Q()
 {
 	return this->Protesis_No_Q;
 }
-
 
 void cNoQuirurgicas::set_Radio_Protesis(unsigned int NuevoEstado)
 {
