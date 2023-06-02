@@ -2,12 +2,12 @@
 
 unsigned int cPiezasOrtopedicas::CantidadTotalPiezas = 0;
 
-cPiezasOrtopedicas::cPiezasOrtopedicas(int Dimensiones_, TipoMaterial Material_, time_t Fabricacion_, cFabricantes Fabricante_)
+cPiezasOrtopedicas::cPiezasOrtopedicas(int Dimensiones_, TipoMaterial Material_, time_t Fabricacion_, cFabricantes NombreFabricante_)
 {
 	this->Dimensiones = Dimensiones_;
 	this->Material = Material_;
 	this->Fabricacion = Fabricacion_;
-	this->Fabricante = Fabricante_;
+	this->NombreFabricante = NombreFabricante_;
 	CantidadTotalPiezas++;
 }
 
@@ -31,9 +31,9 @@ time_t cPiezasOrtopedicas::get_Fabricacion()
 	return this->Fabricacion;
 }
 
-cFabricantes cPiezasOrtopedicas::get_Fabricante()
+string cPiezasOrtopedicas::get_NombreFabricante()
 {
-	return this->Fabricante;
+	return this->NombreFabricante.get_Nombre();
 }
 
 unsigned int cPiezasOrtopedicas::get_CantidadTotalPiezas()
@@ -54,4 +54,14 @@ void cPiezasOrtopedicas::set_Material(TipoMaterial NuevoEstado)
 void cPiezasOrtopedicas::set_Fabricacion(time_t NuevoEstado)
 {
 	this->Fabricacion = NuevoEstado;
+}
+
+string cPiezasOrtopedicas::to_string_PiezasOrtopedias()
+{
+	stringstream salida;
+
+	salida << "Dimensiones: " << this->Dimensiones << endl << "Tipo de Material: " << this->Material << endl << "Fecha de Fabricacion: " <<
+			this->Fabricacion << endl << "Nombre del Fabricante: " << this->NombreFabricante << endl << "Cantidad de Piezas Totales: " << CantidadTotalPiezas;
+	
+	return salida.str();
 }

@@ -11,6 +11,11 @@ cHospitales::~cHospitales()
 
 }
 
+string cHospitales::get_Nombre()
+{
+	return this->Nombre;
+}
+
 list <cMedicos> cHospitales::get_Medicos()
 {
 	return this->Medicos;

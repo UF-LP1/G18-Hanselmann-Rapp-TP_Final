@@ -29,7 +29,7 @@ int main()
 	cFabricantes Fabrica("Fabri Protesis", "Aguilar 345", "Habilitado", false, "Requisitos: todo confirmado");
 	cMedicos Laurita("Laura", "Gonzalez", "1188883333", "Matricula: M.P.202345", true);
 	cHospitales Hospi("Hospital Italiano", "Libertador 123", Medicos, Pacientes);
-	cPiezasOrtopedicas PiezitaOrtoped(354, Ceramica, FechaFabric , Fabrica);
+	cPiezasOrtopedicas PiezitaOrtoped(354, Ceramica, FechaFabric, "Fabri Protesis");
 	cPacientes Rodrigo("Rodrigo", "Zavidowski", "114023342", FechaNac, SinAlergia, Hospi, 324, true, false);
 	cANPA PAMPITA(Hospi, Laurita, FechaSolic, FechaEstimEntre, FechaEntre, PiezitaOrtoped, Rodrigo, "Solicitud Especial", Ortopedias);
 	cOrtopedias Ortoped("Ortopedita", "Manuel Ugarte 354", PiezitasOrtopedicas, 3456);

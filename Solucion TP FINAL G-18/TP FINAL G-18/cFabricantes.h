@@ -10,6 +10,7 @@
 #include <list>
 #include <iterator>
 #include <ctime>
+#include <sstream>
 
 using namespace std;
 

@@ -17,20 +17,20 @@ class cPacientes: public cPersona
 private:
     time_t Nacimiento;
     TipoAlergia Alergias;
-    cHospitales Atendido;
+    cHospitales NombreHospital; //le paso la clase cHospitales para obtener directamente el nombre del Hospital
     unsigned int RadioMiembro;
     bool CompatibleQuirurgica;
     bool TieneProtesis;
 
 public:
     cPacientes(string Nombre_, string Apellido_, string Telefono_, time_t Nacimiento_, TipoAlergia Alergias_,
-                cHospitales& Atendido_, unsigned int RadioMiembro_, bool CompatibleQuirurgica_, bool TieneProtesis_);
+                cHospitales NombreHospital_, unsigned int RadioMiembro_, bool CompatibleQuirurgica_, bool TieneProtesis_);
 
     ~cPacientes();
 
     time_t get_Nacimiento();
     TipoAlergia get_Alergias();
-    cHospitales get_Atendido();
+    string get_NombreHospital();
     unsigned int get_RadioMiembro();
     bool get_CompatibleQuirurgica();
     bool get_TieneProtesis();
