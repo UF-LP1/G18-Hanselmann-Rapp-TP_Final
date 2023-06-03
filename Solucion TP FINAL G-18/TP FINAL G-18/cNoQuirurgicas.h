@@ -3,7 +3,6 @@
 
 #include "cPiezasOrtopedicas.h"
 #include "TipoProtesis.h"
-#include "cFabricantes.h"
 
 class cNoQuirurgicas : public cPiezasOrtopedicas
 {

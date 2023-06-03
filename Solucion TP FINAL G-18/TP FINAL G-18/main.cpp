@@ -1,8 +1,5 @@
 #include "cANPA.h"
-#include "cAsociacion.h"
-#include "cHospitales.h"
 #include "cOrtopedias.h"
-#include "cPiezasOrtopedicas.h"
 #include "cPersona.h"
 #include "cQuirurgicas.h"
 #include "cNoQuirurgicas.h"

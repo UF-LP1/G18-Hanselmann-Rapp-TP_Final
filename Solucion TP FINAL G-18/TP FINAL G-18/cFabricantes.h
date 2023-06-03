@@ -3,7 +3,6 @@
 
 #include "cAsociacion.h"
 #include "cPiezasOrtopedicas.h"
-
 class cFabricantes: public cAsociacion
 {
 private:

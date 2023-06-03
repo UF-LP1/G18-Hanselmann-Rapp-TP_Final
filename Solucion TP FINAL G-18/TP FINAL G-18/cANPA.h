@@ -1,7 +1,8 @@
 #ifndef _CANPA_H
 #define _CANPA_H
 
-#include "cAsociacion.h"
+#include "cHospitales.h"
+#include "cPiezasOrtopedicas.h"
 
 class cANPA
 {
