@@ -1,6 +1,6 @@
 #include "cHospitales.h"
 
-cHospitales::cHospitales(string Nombre_, string Direccion_, list<cMedicos> Medicos_, list<cPacientes> Pacientes_) :cAsociacion(Nombre_, Direccion_)
+cHospitales::cHospitales(string Nombre_, string Direccion_, std::list<cMedicos> Medicos_, std::list<cPacientes> Pacientes_) :cAsociacion(Nombre_, Direccion_)
 {
 	this->Medicos = Medicos_;
 	this->Pacientes = Pacientes_;
@@ -11,12 +11,12 @@ cHospitales::~cHospitales()
 
 }
 
-list <cMedicos> cHospitales::get_Medicos()
+std::list <cMedicos> cHospitales::get_Medicos()
 {
 	return this->Medicos;
 }
 
-list <cPacientes> cHospitales::get_Pacientes()
+std::list <cPacientes> cHospitales::get_Pacientes()
 {
 	return this->Pacientes;
 }
