@@ -1,6 +1,6 @@
 #include "cHospitales.h"
 
-cHospitales::cHospitales(string Nombre_, string Direccion_, list<cMedicos>Medicos_, list<cPacientes>Pacientes_) :cAsociacion(Nombre_, Direccion_)
+cHospitales::cHospitales(string Nombre_, string Direccion_, list<cMedicos> Medicos_, list<cPacientes> Pacientes_) :cAsociacion(Nombre_, Direccion_)
 {
 	this->Medicos = Medicos_;
 	this->Pacientes = Pacientes_;
@@ -31,12 +31,12 @@ void cHospitales::set_Pacientes(list <cPacientes> NuevoEstado)
 	this->Pacientes = NuevoEstado;
 }
 
-bool cHospitales::Agregar_Paciente(cPacientes)
+bool cHospitales::Agregar_Paciente(cPacientes pac)
 {
 	return false;
 }
 
-bool cHospitales::Solicitar_Protesis(cOrtopedias, cFabricantes)
+bool cHospitales::Solicitar_Protesis(cOrtopedias ortop, cFabricantes fab)
 {
 	return false;
 }

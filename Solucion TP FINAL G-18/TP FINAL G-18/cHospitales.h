@@ -9,7 +9,7 @@
 class cHospitales: public cAsociacion
 {
 public:
-	cHospitales(string Nombre_, string Direccion_, list<cMedicos>Medicos_, list<cPacientes>Pacientes_);
+	cHospitales(string Nombre_, string Direccion_, list <cMedicos> Medicos_, list <cPacientes> Pacientes_);
 	~cHospitales();
 
 	list <cMedicos> get_Medicos();
@@ -18,8 +18,8 @@ public:
 	void set_Medicos(list <cMedicos> NuevoEstado);
 	void set_Pacientes(list <cPacientes> NuevoEstado);
 
-	bool Agregar_Paciente(cPacientes);
-	bool Solicitar_Protesis(cOrtopedias, cFabricantes);
+	bool Agregar_Paciente(cPacientes pac);
+	bool Solicitar_Protesis(cOrtopedias ortop, cFabricantes fab);
 	void Imprimir_Pacientes();
 
 private:
