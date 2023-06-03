@@ -6,6 +6,10 @@
 
 class cNoQuirurgicas : public cPiezasOrtopedicas
 {
+private:
+    unsigned int Radio_Protesis;
+    TipoProtesis Protesis_No_Q;
+
  public:
      cNoQuirurgicas(int Dimensiones_, TipoMaterial Material_, time_t Fabricacion_,
                     cFabricantes* Fabricante_, unsigned int Radio_Protesis_, TipoProtesis Protesis_No_Q_);
@@ -17,10 +21,6 @@ class cNoQuirurgicas : public cPiezasOrtopedicas
 
     void set_Radio_Protesis(unsigned int NuevoEstado);
     void set_Protesis_No_Q(TipoProtesis NuevoEstado);
-
-private:
-    unsigned int Radio_Protesis;
-    TipoProtesis Protesis_No_Q;
 
 };
 
