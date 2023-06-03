@@ -4,16 +4,6 @@
 #include "cAsociacion.h"
 #include "cPiezasOrtopedicas.h"
 
-#include <iostream>
-#include <string>
-#include <vector>
-#include <list>
-#include <iterator>
-#include <ctime>
-#include <sstream>
-
-using namespace std;
-
 class cFabricantes: public cAsociacion
 {
 private:

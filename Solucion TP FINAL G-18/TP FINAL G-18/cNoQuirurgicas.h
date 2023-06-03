@@ -1,15 +1,6 @@
 #ifndef _CNOQUIRURGICAS_H
 #define _CNOQUIRURGICAS_H
 
-#include <iostream>
-#include <string>
-#include <vector>
-#include <list>
-#include <iterator>
-#include <ctime>
-
-using namespace std;
-
 #include "cPiezasOrtopedicas.h"
 #include "TipoProtesis.h"
 #include "cFabricantes.h"
@@ -18,7 +9,7 @@ class cNoQuirurgicas : public cPiezasOrtopedicas
 {
  public:
      cNoQuirurgicas(int Dimensiones_, TipoMaterial Material_, time_t Fabricacion_,
-                    cFabricantes Fabricante_, unsigned int Radio_Protesis_, TipoProtesis Protesis_No_Q_);
+                    cFabricantes* Fabricante_, unsigned int Radio_Protesis_, TipoProtesis Protesis_No_Q_);
 
      ~cNoQuirurgicas();
 

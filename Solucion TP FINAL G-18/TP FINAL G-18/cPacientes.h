@@ -5,26 +5,19 @@
 #include "TipoAlergia.h"
 #include "cHospitales.h"
 
-#include <iostream>
-#include <string>
-#include <vector>
-#include <list>
-#include <iterator>
-#include <ctime>
-
 class cPacientes: public cPersona
 {
 private:
     time_t Nacimiento;
     TipoAlergia Alergias;
-    cHospitales NombreHospital; //le paso la clase cHospitales para obtener directamente el nombre del Hospital
+    cHospitales* NombreHospital; //le paso la clase cHospitales para obtener directamente el nombre del Hospital
     unsigned int RadioMiembro;
     bool CompatibleQuirurgica;
     bool TieneProtesis;
 
 public:
     cPacientes(string Nombre_, string Apellido_, string Telefono_, time_t Nacimiento_, TipoAlergia Alergias_,
-                cHospitales& NombreHospital_, unsigned int RadioMiembro_, bool CompatibleQuirurgica_, bool TieneProtesis_);
+                cHospitales* NombreHospital_, unsigned int RadioMiembro_, bool CompatibleQuirurgica_, bool TieneProtesis_);
   
     ~cPacientes();
 

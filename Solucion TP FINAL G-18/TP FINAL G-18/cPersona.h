@@ -1,8 +1,11 @@
 #ifndef _CPERSONA_H
 #define _CPERSONA_H
 
-#include "cPacientes.h"
-#include "cMedicos.h"
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <list>
+#include <iterator>
 
 using namespace std;
 

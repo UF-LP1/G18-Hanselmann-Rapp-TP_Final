@@ -1,9 +1,13 @@
 #ifndef _CASOCIACION_H
 #define _CASOCIACION_H
 
-#include "cFabricantes.h"
-#include "cOrtopedias.h"
-#include "cHospitales.h"
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <list>
+#include <iterator>
+
+using namespace std;
 
 class cAsociacion
 {

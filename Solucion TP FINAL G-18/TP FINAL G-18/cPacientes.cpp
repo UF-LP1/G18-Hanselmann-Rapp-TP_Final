@@ -1,6 +1,6 @@
 #include "cPacientes.h"
 
-cPacientes::cPacientes(string Nombre_, string Apellido_, string Telefono_, time_t Nacimiento_, TipoAlergia Alergias_, cHospitales& NombreHospital_, 
+cPacientes::cPacientes(string Nombre_, string Apellido_, string Telefono_, time_t Nacimiento_, TipoAlergia Alergias_, cHospitales* NombreHospital_, 
 							unsigned int RadioMiembro_, bool CompatibleQuirurgica_, bool TieneProtesis_) :cPersona(Nombre_, Apellido_, Telefono_)
 {
 	this->Nacimiento = Nacimiento_;
@@ -28,7 +28,7 @@ TipoAlergia cPacientes::get_Alergias()
 
 string cPacientes::get_NombreHospital()
 {
-	return this->NombreHospital.get_Nombre();
+	return this->NombreHospital->get_Nombre();
 }
 
 unsigned int cPacientes::get_RadioMiembro()

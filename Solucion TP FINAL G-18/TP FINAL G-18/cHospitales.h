@@ -2,7 +2,8 @@
 #define _CHOSPITALES_H
 
 #include "cAsociacion.h"
-#include "cPersona.h"
+#include "cMedicos.h"
+#include "cPacientes.h"
 #include "cOrtopedias.h"
 
 class cHospitales: public cAsociacion

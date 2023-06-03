@@ -2,9 +2,15 @@
 #define _CPIEZASORTOPEDICAS_H
 
 #include "TipoMaterial.h"
-#include "cQuirurgicas.h"
-#include "cNoQuirurgicas.h"
 #include "cFabricantes.h"
+
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <list>
+#include <iterator>
+
+using namespace std;
 
 class cPiezasOrtopedicas
 {
@@ -12,11 +18,11 @@ protected:
 	unsigned int Dimensiones;
 	TipoMaterial Material;
 	time_t Fabricacion;
-	cFabricantes NombreFabricante;
+	cFabricantes* NombreFabricante;
 	static unsigned int CantidadTotalPiezas;
 
 public:
-	cPiezasOrtopedicas(int Dimensiones_, TipoMaterial Material_, time_t Fabricacion_, cFabricantes NombreFabricante_);
+	cPiezasOrtopedicas(int Dimensiones_, TipoMaterial Material_, time_t Fabricacion_, cFabricantes* NombreFabricante_);
 	~cPiezasOrtopedicas();
 
 	unsigned int get_Dimensiones();

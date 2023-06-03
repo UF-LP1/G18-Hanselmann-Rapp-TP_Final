@@ -6,29 +6,29 @@
 class cANPA
 {
 private:
-	cHospitales Hospital;
-	cMedicos Medico;
+	cHospitales* NombreHospital;
+	cMedicos* NombreMedico;
 	time_t FechaSolicitud;
 	time_t FechaEstimativaEntrega;
 	time_t FechaEntregada;
-	cPiezasOrtopedicas Protesis;
-	cPacientes Paciente;
+	cPiezasOrtopedicas* Protesis;
+	cPacientes* NombrePaciente;
 	string SolicitudEspecial;
 	list <cOrtopedias> Ortopedia;
 
 public:
-	cANPA(cHospitales Hospital_, cMedicos Medico_, time_t FechaSolicitud_, time_t FechaEstimativaEntrega_, time_t FechaEntregada_, 
-			cPiezasOrtopedicas Protesis_, cPacientes Paciente_, string SolicitudEspecial_, list <cOrtopedias> Ortopedia_);
+	cANPA(cHospitales* Hospital_, cMedicos* Medico_, time_t FechaSolicitud_, time_t FechaEstimativaEntrega_, time_t FechaEntregada_, 
+			cPiezasOrtopedicas* Protesis_, cPacientes* Paciente_, string SolicitudEspecial_, list <cOrtopedias> Ortopedia_);
 
 	~cANPA();
 
-	cHospitales get_Hospital();
-	cMedicos get_Medico();
+	string get_NombreHospital();
+	string get_NombreMedico();
 	time_t get_FechaSolicitud();
 	time_t get_FechaEstimativaEntrega();
 	time_t get_FechaEntregada();
-	cPiezasOrtopedicas get_Protesis();
-	cPacientes get_Paciente();
+	cPiezasOrtopedicas* get_Protesis();
+	string get_NombrePaciente();
 	string get_SolicitudEspecial();
 	list <cOrtopedias> get_Ortopedia();
 

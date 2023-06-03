@@ -2,7 +2,7 @@
 
 unsigned int cPiezasOrtopedicas::CantidadTotalPiezas = 0;
 
-cPiezasOrtopedicas::cPiezasOrtopedicas(int Dimensiones_, TipoMaterial Material_, time_t Fabricacion_, cFabricantes NombreFabricante_)
+cPiezasOrtopedicas::cPiezasOrtopedicas(int Dimensiones_, TipoMaterial Material_, time_t Fabricacion_, cFabricantes* NombreFabricante_)
 {
 	this->Dimensiones = Dimensiones_;
 	this->Material = Material_;
@@ -33,7 +33,7 @@ time_t cPiezasOrtopedicas::get_Fabricacion()
 
 string cPiezasOrtopedicas::get_NombreFabricante()
 {
-	return this->NombreFabricante.get_Nombre();
+	return this->NombreFabricante->get_Nombre();
 }
 
 unsigned int cPiezasOrtopedicas::get_CantidadTotalPiezas()
