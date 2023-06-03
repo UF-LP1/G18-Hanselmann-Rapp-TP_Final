@@ -2,7 +2,7 @@
 #define _CORTOPEDIAS_H
 
 #include "cAsociacion.h"
-#include "cFabricantes.h"
+#include "cPiezasOrtopedicas.h"
 
 class cOrtopedias: public cAsociacion
 {

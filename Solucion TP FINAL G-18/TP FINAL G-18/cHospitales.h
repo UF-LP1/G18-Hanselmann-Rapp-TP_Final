@@ -12,7 +12,6 @@ public:
 	cHospitales(string Nombre_, string Direccion_, list<cMedicos>Medicos_, list<cPacientes>Pacientes_);
 	~cHospitales();
 
-	string get_Nombre();
 	list <cMedicos> get_Medicos();
 	list <cPacientes> get_Pacientes();
 

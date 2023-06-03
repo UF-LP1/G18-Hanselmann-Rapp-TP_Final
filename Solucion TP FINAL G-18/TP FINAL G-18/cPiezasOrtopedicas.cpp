@@ -58,10 +58,11 @@ void cPiezasOrtopedicas::set_Fabricacion(time_t NuevoEstado)
 
 string cPiezasOrtopedicas::to_string_PiezasOrtopedias()
 {
-	stringstream salida;
+	/*stringstream salida;
 
 	salida << "Dimensiones: " << this->Dimensiones << endl << "Tipo de Material: " << this->Material << endl << "Fecha de Fabricacion: " <<
-			this->Fabricacion << endl << "Nombre del Fabricante: " << this->NombreFabricante << endl << "Cantidad de Piezas Totales: " << CantidadTotalPiezas;
+			this->Fabricacion << endl << "Nombre del Fabricante: " << this->NombreFabricante->get_Nombre() << endl << "Cantidad de Piezas Totales: " << CantidadTotalPiezas;
 	
-	return salida.str();
+	return salida.str();*/
+	return "";
 }

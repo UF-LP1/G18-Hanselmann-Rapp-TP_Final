@@ -33,7 +33,7 @@ void cOrtopedias::set_CantidadPiezas(unsigned int NuevoEstado)
 
 string cOrtopedias::to_string_Ortopedias()
 {
-	stringstream salida;
+	/*stringstream salida;
 	list <cPiezasOrtopedicas> Piezitas = get_Protesis();
 	list <cPiezasOrtopedicas>::iterator itPieOrtop;
 	itPieOrtop = Piezitas.begin();
@@ -44,7 +44,8 @@ string cOrtopedias::to_string_Ortopedias()
 	{
 		salida << (itPieOrtop->to_string_PiezasOrtopedias()) << endl;
 	}
-	return salida.str();
+	return salida.str();*/
+	return "";
 }
 
 void cOrtopedias:: Imprimir_Protesis()

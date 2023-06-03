@@ -2,7 +2,7 @@
 #define _CFABRICANTES_H
 
 #include "cAsociacion.h"
-#include "cPiezasOrtopedicas.h"
+
 class cFabricantes: public cAsociacion
 {
 private:

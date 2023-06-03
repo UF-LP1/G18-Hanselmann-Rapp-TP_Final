@@ -1,7 +1,6 @@
 #ifndef _CPACIENTES_H
 #define _CPACIENTES_H
 
-#include "cPersona.h"
 #include "TipoAlergia.h"
 #include "cHospitales.h"
 
