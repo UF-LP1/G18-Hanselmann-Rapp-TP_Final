@@ -33,7 +33,24 @@ void cHospitales::set_Pacientes(list <cPacientes> NuevoEstado)
 
 bool cHospitales::Agregar_Paciente(cPacientes pac)
 {
-	return false;
+	list <cPacientes>::iterator itPaciente;
+	list<cPacientes> pacientito = get_Pacientes();
+	itPaciente = pacientito.begin();
+
+	for (int i = 0; i < pacientito.size(); i++, itPaciente++)
+	{
+		if (itPaciente->get_RadioMiembro() > 0)
+		{
+			this->Pacientes.push_back(pac);
+			Pacientes.unique();
+
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
 }
 
 bool cHospitales::Solicitar_Protesis(cOrtopedias ortop, cFabricantes fab)

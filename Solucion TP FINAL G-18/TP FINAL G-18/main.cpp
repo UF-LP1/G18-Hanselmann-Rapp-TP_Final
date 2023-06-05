@@ -13,9 +13,9 @@ int main()
 
 	time_t FechaFabric;
 	time_t FechaNac;
-	time_t FechaSolic;
-	time_t FechaEstimEntre;
-	time_t FechaEntre;
+	tm FechaSolic;
+	tm FechaEstimEntre;
+	tm FechaEntre;
 	
 	//no hace falta simular las clases cAsociacion ni cPersona
 	//Simulacion
