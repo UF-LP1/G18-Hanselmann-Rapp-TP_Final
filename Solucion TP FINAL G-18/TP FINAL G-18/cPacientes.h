@@ -9,14 +9,14 @@ class cPacientes: public cPersona
 private:
     time_t Nacimiento;
     TipoAlergia Alergias;
-    cHospitales* NombreHospital; //le paso la clase cHospitales para obtener directamente el nombre del Hospital
+    string NombreHospital; //lo dejo en string porque sino hay recursividad y varios problemas
     unsigned int RadioMiembro;
     bool CompatibleQuirurgica;
     bool TieneProtesis;
 
 public:
     cPacientes(string Nombre_, string Apellido_, string Telefono_, time_t Nacimiento_, TipoAlergia Alergias_,
-                cHospitales* NombreHospital_, unsigned int RadioMiembro_, bool CompatibleQuirurgica_, bool TieneProtesis_);
+                string NombreHospital_, unsigned int RadioMiembro_, bool CompatibleQuirurgica_, bool TieneProtesis_);
   
     ~cPacientes();
 

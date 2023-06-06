@@ -11,11 +11,11 @@ int main()
 	list <cOrtopedias> Ortopedias;
 	list <cPiezasOrtopedicas> PiezitasOrtopedicas;
 
-	time_t FechaFabric;
-	time_t FechaNac;
-	tm FechaSolic;
-	tm FechaEstimEntre;
-	tm FechaEntre;
+	time_t FechaFabric = 0;
+	time_t FechaNac = 0;
+	tm FechaSolic = {0, 0, 0, 0, 0, 0};
+	tm FechaEstimEntre = { 0, 0, 0, 0, 0, 0 };
+	tm FechaEntre = { 0, 0, 0, 0, 0, 0 };
 	
 	//no hace falta simular las clases cAsociacion ni cPersona
 	//Simulacion
@@ -23,7 +23,7 @@ int main()
 	cMedicos* Laurita = new cMedicos("Laura", "Gonzalez", "1188883333", "Matricula: M.P.202345", true);
 	cHospitales* Hospi = new cHospitales("Hospital Italiano", "Libertador 123", Medicos, Pacientes);
 	cPiezasOrtopedicas* PiezitaOrtoped = new cPiezasOrtopedicas(354, Ceramica, FechaFabric, Fabrica);
-	cPacientes* Rodrigo = new cPacientes("Rodrigo", "Zavidowski", "114023342", FechaNac, SinAlergia, Hospi, 324, true, false);
+	cPacientes* Rodrigo = new cPacientes("Rodrigo", "Zavidowski", "114023342", FechaNac, SinAlergia, "Hospital Italiano", 324, true, false);
 	cANPA PAMPITA(Hospi, Laurita, FechaSolic, FechaEstimEntre, FechaEntre, PiezitaOrtoped, Rodrigo, "Solicitud Especial", Ortopedias);
 	cOrtopedias Ortoped("Ortopedita", "Manuel Ugarte 354", PiezitasOrtopedicas, 3456);
 	cQuirurgicas Quirur(25, Cobalto, FechaFabric, Fabrica, InferiorDerecha);

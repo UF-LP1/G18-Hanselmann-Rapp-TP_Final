@@ -1,6 +1,6 @@
 #include "cHospitales.h"
 
-cHospitales::cHospitales(string Nombre_, string Direccion_, std::list<cMedicos> Medicos_, std::list<cPacientes> Pacientes_) :cAsociacion(Nombre_, Direccion_)
+cHospitales::cHospitales(string Nombre_, string Direccion_, list<cMedicos> Medicos_, list<cPacientes> Pacientes_) :cAsociacion(Nombre_, Direccion_)
 {
 	this->Medicos = Medicos_;
 	this->Pacientes = Pacientes_;
@@ -11,12 +11,12 @@ cHospitales::~cHospitales()
 
 }
 
-std::list <cMedicos> cHospitales::get_Medicos()
+list <cMedicos> cHospitales::get_Medicos()
 {
 	return this->Medicos;
 }
 
-std::list <cPacientes> cHospitales::get_Pacientes()
+list <cPacientes> cHospitales::get_Pacientes()
 {
 	return this->Pacientes;
 }
@@ -34,7 +34,7 @@ void cHospitales::set_Pacientes(list <cPacientes> NuevoEstado)
 bool cHospitales::Agregar_Paciente(cPacientes pac)
 {
 	list <cPacientes>::iterator itPaciente;
-	list<cPacientes> pacientito = get_Pacientes();
+	list <cPacientes> pacientito = get_Pacientes();
 	itPaciente = pacientito.begin();
 
 	for (int i = 0; i < pacientito.size(); i++, itPaciente++)
@@ -42,15 +42,12 @@ bool cHospitales::Agregar_Paciente(cPacientes pac)
 		if (itPaciente->get_RadioMiembro() > 0)
 		{
 			this->Pacientes.push_back(pac);
-			Pacientes.unique();
+			//Pacientes.unique();
 
 			return true;
 		}
-		else
-		{
-			return false;
-		}
 	}
+	return false;
 }
 
 bool cHospitales::Solicitar_Protesis(cOrtopedias ortop, cFabricantes fab)
