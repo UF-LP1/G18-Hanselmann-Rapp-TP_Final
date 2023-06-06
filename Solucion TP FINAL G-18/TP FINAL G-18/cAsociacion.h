@@ -6,6 +6,7 @@
 #include <algorithm>
 #include <list>
 #include <iterator>
+#include <vector>
 
 using namespace std;
 

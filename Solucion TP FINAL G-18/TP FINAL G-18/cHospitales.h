@@ -7,8 +7,6 @@
 #include "cPacientes.h"
 #include "cOrtopedias.h"
 
-#include <list>
-
 class cHospitales: public cAsociacion
 {
 private:

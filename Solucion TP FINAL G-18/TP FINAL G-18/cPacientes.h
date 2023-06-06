@@ -2,7 +2,16 @@
 #define _CPACIENTES_H
 
 #include "TipoAlergia.h"
-#include "cHospitales.h"
+#include "cPersona.h"
+
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <list>
+#include <iterator>
+#include <vector>
+
+using namespace std;
 
 class cPacientes: public cPersona
 {
