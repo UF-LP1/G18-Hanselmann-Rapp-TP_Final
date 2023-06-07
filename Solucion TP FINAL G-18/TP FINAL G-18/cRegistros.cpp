@@ -73,6 +73,14 @@ int cRegistros::consrandom(int maximo, int minimo)
 	return valor;
 }
 
+bool bisiestos(int anio)
+{
+	if ((anio % 4) == 0 && (anio % 100) != 0 || anio % 400 != 0)
+		return true;
+	else
+		return false;
+}
+
 bool cRegistros::Diferencia_Entrega()
 {
 	time_t timer;
@@ -83,6 +91,19 @@ bool cRegistros::Diferencia_Entrega()
 	horarand = consrandom(20, 6); //las horas en la libreria van de 0 a 23
 	mesrand = consrandom(11, 0);  //los meses en la libreria van de 0 a 11
 	aniorand = consrandom(124, 123);  // en un rango de 3 anios
+
+	bool anio_bisiesto = bisiestos(aniorand + 1900);
+
+
+	if (anio_bisiesto == true && mesrand == 1)
+		diarand = consrandom(29, 1); //los dias del mes van de 0 a 31.
+	else
+		diarand = consrandom(28, 1);
+
+	if (mesrand == 0 || mesrand == 2 || mesrand == 4 || mesrand == 6 || mesrand == 7 || mesrand == 9 || mesrand == 11)
+		diarand = consrandom(31, 1);
+	else if (mesrand != 1)
+		diarand = consrandom(30, 1);
 
 	FechaEstimativaEntrega = { 0, minrand, horarand, diarand, mesrand, aniorand };
 	time_t soli = timer;
