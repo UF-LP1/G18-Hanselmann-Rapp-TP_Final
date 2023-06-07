@@ -1,15 +1,8 @@
 #include "cANPA.h"
 
-cANPA::cANPA(cHospitales* Hospital_, cMedicos* Medico_, tm FechaSolicitud_, tm FechaEstimativaEntrega_, tm FechaEntregada_, cPiezasOrtopedicas* Protesis_,
-				cPacientes* Paciente_, string SolicitudEspecial_, list<cOrtopedias> Ortopedia_)
+cANPA::cANPA(list <cRegistros> Registro_, string SolicitudEspecial_, list <cOrtopedias> Ortopedia_)
 {
-	this->NombreHospital = Hospital_;
-	this->NombreMedico = Medico_;
-	this->FechaEntregada = FechaEntregada_;
-	this->FechaEstimativaEntrega = FechaEstimativaEntrega_;
-	this->FechaSolicitud = FechaSolicitud_;
-	this->Protesis = Protesis_;
-	this->NombrePaciente = Paciente_;
+	this->Registro = Registro_;
 	this->SolicitudEspecial = SolicitudEspecial_;
 	this->Ortopedia = Ortopedia_;
 }
@@ -19,39 +12,9 @@ cANPA::~cANPA()
 
 }
 
-cHospitales* cANPA::get_NombreHospital()
+list<cRegistros> cANPA::get_Registro()
 {
-	return this->NombreHospital;
-}
-
-string cANPA::get_NombreMedico()
-{
-	return this->NombreMedico->get_Nombre();
-}
-
-tm cANPA::get_FechaSolicitud()
-{
-	return this->FechaSolicitud;
-}
-
-tm cANPA::get_FechaEstimativaEntrega()
-{
-	return this->FechaEstimativaEntrega;
-}
-
-tm cANPA::get_FechaEntregada()
-{
-	return this->FechaEntregada;
-}
-
-cPiezasOrtopedicas* cANPA::get_Protesis()
-{
-	return this->Protesis;
-}
-
-string cANPA::get_NombrePaciente()
-{
-	return this->NombrePaciente->get_Nombre();
+	return this->Registro;
 }
 
 string cANPA::get_SolicitudEspecial()
@@ -64,19 +27,9 @@ list<cOrtopedias> cANPA::get_Ortopedia()
 	return this->Ortopedia;
 }
 
-void cANPA::set_FechaSolicitud(tm NuevoEstado)
+void cANPA::set_Registro(list<cRegistros> NuevoEstado)
 {
-	this->FechaSolicitud = NuevoEstado;
-}
-
-void cANPA::set_FechaEstimativaEntrega(tm NuevoEstado)
-{
-	this->FechaEstimativaEntrega = NuevoEstado;
-}
-
-void cANPA::set_FechaEntregada(tm NuevoEstado)
-{
-	this->FechaEntregada = NuevoEstado;
+	this->Registro = NuevoEstado;
 }
 
 void cANPA::set_SolicitudEspecial(string NuevoEstado)

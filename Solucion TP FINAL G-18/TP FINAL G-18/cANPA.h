@@ -19,6 +19,7 @@ public:
 	string get_SolicitudEspecial();
 	list <cOrtopedias> get_Ortopedia();
 
+	void set_Registro(list <cRegistros> NuevoEstado);
 	void set_SolicitudEspecial(string NuevoEstado);
 	void set_Ortopedia(list <cOrtopedias> NuevoEstado);
 
