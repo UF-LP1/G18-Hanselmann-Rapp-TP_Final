@@ -33,7 +33,8 @@ public:
 	void set_FechaEstimativaEntrega(tm NuevoEstado);
 	void set_FechaEntregada(tm NuevoEstado);
 
-	bool Diferencia_Entrega(tm solicitud, tm entregada); //usar operador ternario en el main
+	int consrandom(int maximo, int minimo);
+	bool Diferencia_Entrega(); //usar operador ternario en el main
 	
 };
 

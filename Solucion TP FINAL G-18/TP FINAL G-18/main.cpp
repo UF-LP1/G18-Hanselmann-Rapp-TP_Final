@@ -37,7 +37,7 @@ int main()
 	cHospitales* Hospi = new cHospitales("Hospital Italiano", "Libertador 123", Medicos, Pacientes);
 	cPiezasOrtopedicas* PiezitaOrtoped = new cPiezasOrtopedicas(354, Ceramica, FechaFabric, Fabrica);
 	cPacientes* Rodrigo = new cPacientes("Rodrigo", "Zavidowski", "114023342", FechaNac, SinAlergia, "Hospital Italiano", 324, true, false);
-	cRegistros Registro();
+	cRegistros Registro(Hospi, Laurita, FechaSolic, FechaEstimEntre, FechaEntre, PiezitaOrtoped, Rodrigo);
 	cANPA PAMPA(Register, "Solicitud Especial", Ortopedias);
 	cOrtopedias Ortoped("Ortopedita", "Manuel Ugarte 354", PiezitasOrtopedicas, 3456);
 	cQuirurgicas Quirur(25, Cobalto, FechaFabric, Fabrica, InferiorDerecha);
@@ -45,7 +45,7 @@ int main()
 
 	string entreg = "";
 
-	int opcion = 0, hora_sol = 0, dia_sol = 0, mes_sol = 0, anio_sol = 0, hora_ent = 0, dia_ent = 0, mes_ent = 0, anio_ent = 0;
+	int opcion = 0;
 	bool regresar = true;
 	bool salir = true;
 
@@ -71,7 +71,7 @@ int main()
 
 		case(5):
 			
-			entreg = PAMPA.Diferencia_Entrega(FechaSolic, FechaEntre) ? "Se entrego a tiempo la Protesis" : "Se entrego tarde la Protesis"; //Uso el operador ternario para que me diga si se entrega a tiempo.
+			entreg = Registro.Diferencia_Entrega() ? "Se entrego a tiempo la Protesis" : "Se entrego tarde la Protesis"; //Uso el operador ternario para que me diga si se entrega a tiempo.
 			cout << entreg << endl;
 			break;
 
