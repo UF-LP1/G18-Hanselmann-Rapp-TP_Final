@@ -67,28 +67,3 @@ bool cANPA::Buscar_Protesis(cPacientes, cPiezasOrtopedicas)
 {
 	return false;
 }
-
-bool cANPA::Diferencia_Entrega(tm solicitud, tm entregada)
-{
-	FechaEstimativaEntrega = {0, 0, 23, 27, 5, 123};
-	time_t soli = mktime(&solicitud);
-	time_t estim = mktime(&FechaEstimativaEntrega);
-	time_t entre = mktime(&entregada);
-
-	double diferencia = 0.0;
-
-	if (estim != (time_t)(-1) || entre != (time_t)(-1))
-	{
-		diferencia = difftime(entre, estim) / (86400);
-	}
-	if (diferencia > 0)
-	{
-		return false;
-	}
-	else if (diferencia <= 0)
-	{
-		return true;
-	}
-	return false;
-}
-

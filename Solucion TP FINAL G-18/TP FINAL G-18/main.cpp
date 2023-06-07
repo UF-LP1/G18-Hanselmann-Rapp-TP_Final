@@ -22,6 +22,7 @@ int main()
 	list <cPacientes> Pacientes;
 	list <cOrtopedias> Ortopedias;
 	list <cPiezasOrtopedicas> PiezitasOrtopedicas;
+	list <cRegistros> Register;
 
 	time_t FechaFabric = 0;
 	time_t FechaNac = 0;
@@ -36,7 +37,8 @@ int main()
 	cHospitales* Hospi = new cHospitales("Hospital Italiano", "Libertador 123", Medicos, Pacientes);
 	cPiezasOrtopedicas* PiezitaOrtoped = new cPiezasOrtopedicas(354, Ceramica, FechaFabric, Fabrica);
 	cPacientes* Rodrigo = new cPacientes("Rodrigo", "Zavidowski", "114023342", FechaNac, SinAlergia, "Hospital Italiano", 324, true, false);
-	cANPA PAMPA(Hospi, Laurita, FechaSolic, FechaEstimEntre, FechaEntre, PiezitaOrtoped, Rodrigo, "Solicitud Especial", Ortopedias);
+	cRegistros Registro();
+	cANPA PAMPA(Register, "Solicitud Especial", Ortopedias);
 	cOrtopedias Ortoped("Ortopedita", "Manuel Ugarte 354", PiezitasOrtopedicas, 3456);
 	cQuirurgicas Quirur(25, Cobalto, FechaFabric, Fabrica, InferiorDerecha);
 	cNoQuirurgicas NoQuirur(12, Polietileno, FechaFabric, Fabrica, 230, SuperiorIzquierdo);
@@ -68,26 +70,7 @@ int main()
 			break;
 
 		case(5):
-			cout << "\tIngrese la hora en la que hizo la solicitud de la protesis: ";
-			cin >> hora_sol;
-			cout << "\tIngrese el dia en el que hizo la solicitud de la protesis: ";
-			cin >> dia_sol;
-			cout << "\tIngrese el mes en el que hizo la solicitud de la protesis: ";
-			cin >> mes_sol;
-			cout << "\tIngrese el anio en el que hizo la solicitud de la protesis: ";
-			cin >> anio_sol;
-			cout << "\tIngrese la hora en la que fue entregada de la protesis: ";
-			cin >> hora_ent;
-			cout << "\tIngrese el dia en el que fue entregada de la protesis: ";
-			cin >> dia_ent;
-			cout << "\tIngrese el mes en el que fue entregada de la protesis: ";
-			cin >> mes_ent;
-			cout << "\tIngrese el anio en el que fue entregada de la protesis: ";
-			cin >> anio_ent;
-
-			FechaSolic = { 0, 0, hora_sol, dia_sol, mes_sol, anio_sol };
-			FechaEntre = { 0, 0, hora_ent, dia_ent, mes_ent, anio_ent };
-
+			
 			entreg = PAMPA.Diferencia_Entrega(FechaSolic, FechaEntre) ? "Se entrego a tiempo la Protesis" : "Se entrego tarde la Protesis"; //Uso el operador ternario para que me diga si se entrega a tiempo.
 			cout << entreg << endl;
 			break;

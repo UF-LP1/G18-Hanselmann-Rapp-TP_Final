@@ -25,8 +25,7 @@ public:
 
 	list<cPacientes> Buscar_Paciente(cHospitales hospi, cPiezasOrtopedicas);
 	bool Buscar_Protesis(cPacientes, cPiezasOrtopedicas);
-	bool Diferencia_Entrega(tm solicitud, tm entregada); //usar operador ternario en el main
-
+	
 };
 
 #endif //_CANPA_H
