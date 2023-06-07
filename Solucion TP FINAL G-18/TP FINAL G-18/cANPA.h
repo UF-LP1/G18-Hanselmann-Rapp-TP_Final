@@ -1,41 +1,24 @@
 #ifndef _CANPA_H
 #define _CANPA_H
 
-#include "cHospitales.h"
-#include "cPiezasOrtopedicas.h"
+#include "cRegistros.h"
 
 class cANPA
 {
 private:
-	cHospitales* NombreHospital;
-	cMedicos* NombreMedico;
-	tm FechaSolicitud;
-	tm FechaEstimativaEntrega;
-	tm FechaEntregada;
-	cPiezasOrtopedicas* Protesis;
-	cPacientes* NombrePaciente;
+	list <cRegistros> Registro;
 	string SolicitudEspecial;
 	list <cOrtopedias> Ortopedia;
 
 public:
-	cANPA(cHospitales* Hospital_, cMedicos* Medico_, tm FechaSolicitud_, tm FechaEstimativaEntrega_, tm FechaEntregada_, 
-			cPiezasOrtopedicas* Protesis_, cPacientes* Paciente_, string SolicitudEspecial_, list <cOrtopedias> Ortopedia_);
+	cANPA(list <cRegistros> Registro_, string SolicitudEspecial_, list <cOrtopedias> Ortopedia_);
 
 	~cANPA();
 
-	cHospitales* get_NombreHospital();
-	string get_NombreMedico();
-	tm get_FechaSolicitud();
-	tm get_FechaEstimativaEntrega();
-	tm get_FechaEntregada();
-	cPiezasOrtopedicas* get_Protesis();
-	string get_NombrePaciente();
+	list <cRegistros> get_Registro();
 	string get_SolicitudEspecial();
 	list <cOrtopedias> get_Ortopedia();
 
-	void set_FechaSolicitud(tm NuevoEstado);
-	void set_FechaEstimativaEntrega(tm NuevoEstado);
-	void set_FechaEntregada(tm NuevoEstado);
 	void set_SolicitudEspecial(string NuevoEstado);
 	void set_Ortopedia(list <cOrtopedias> NuevoEstado);
 
