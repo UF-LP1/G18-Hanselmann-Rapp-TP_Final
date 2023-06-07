@@ -42,7 +42,7 @@ void cANPA::set_Ortopedia(list<cOrtopedias> NuevoEstado)
 	this->Ortopedia = NuevoEstado;
 }
 
-list<cPacientes> cANPA::Buscar_Paciente(cHospitales hospi, cPiezasOrtopedicas)
+list<cPacientes> cANPA::Buscar_Paciente(cHospitales hospi, cPiezasOrtopedicas piezita)
 {
 	list <cPacientes> ::iterator itpaciente;
 	list <cPacientes> pac1 = hospi.get_Pacientes();

@@ -23,7 +23,7 @@ public:
 	void set_SolicitudEspecial(string NuevoEstado);
 	void set_Ortopedia(list <cOrtopedias> NuevoEstado);
 
-	list<cPacientes> Buscar_Paciente(cHospitales hospi, cPiezasOrtopedicas);
+	list<cPacientes> Buscar_Paciente(cHospitales hospi, cPiezasOrtopedicas piezita);
 	bool Buscar_Protesis(cPacientes, cPiezasOrtopedicas);
 	
 };
