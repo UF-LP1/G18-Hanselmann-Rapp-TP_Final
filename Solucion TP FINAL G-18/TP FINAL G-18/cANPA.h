@@ -28,4 +28,6 @@ public:
 	
 };
 
+ostream& operator<<(ostream& out, cANPA& anpa);
+
 #endif //_CANPA_H

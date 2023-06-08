@@ -67,3 +67,12 @@ bool cANPA::Buscar_Protesis(cPacientes, cPiezasOrtopedicas)
 {
 	return false;
 }
+
+ostream& operator<<(ostream& out, cANPA& anpa)
+{
+	//out << anpa.get_Ortopedia();
+	//out << anpa.get_Registro();
+	out << anpa.get_SolicitudEspecial();
+
+	return out;
+}

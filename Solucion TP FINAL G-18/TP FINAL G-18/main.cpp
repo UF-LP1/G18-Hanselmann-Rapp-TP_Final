@@ -25,7 +25,7 @@ int main()
 	list <cRegistros> Register;
 
 	time_t FechaFabric = 0;
-	time_t FechaNac = 0;
+	tm FechaNac = { 0, 0, 0, 0, 0, 0 };
 	tm FechaSolic = {0, 0, 0, 0, 0, 0};
 	tm FechaEstimEntre = { 0, 0, 0, 0, 0, 0 };
 	tm FechaEntre = { 0, 0, 0, 0, 0, 0 };
@@ -43,6 +43,8 @@ int main()
 	cQuirurgicas Quirur(25, Cobalto, FechaFabric, Fabrica, InferiorDerecha);
 	cNoQuirurgicas NoQuirur(12, Polietileno, FechaFabric, Fabrica, 230, SuperiorIzquierdo);
 
+	cPacientes Martin ("Martin", "Scorza", "11223344", FechaNac, Xenobiotico, "Hospital Favalororo", 20, false, true);
+
 	string entreg = "";
 
 	int opcion = 0;
@@ -58,6 +60,7 @@ int main()
 		switch (opcion)
 		{
 		case(1):
+			Martin.Imprimir_Preguntas_Agregar_Paciente();
 			break;
 
 		case(2):

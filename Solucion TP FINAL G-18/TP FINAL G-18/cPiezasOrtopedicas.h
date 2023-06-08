@@ -34,9 +34,7 @@ public:
 	void set_Dimensiones(unsigned int NuevoEstado);
 	void set_Material(TipoMaterial NuevoEstado);
 	void set_Fabricacion(time_t NuevoEstado);
-	//void set_NombreFabricante(string NuevoEstado);
 	string to_string_PiezasOrtopedias();
-
 
 };
 
