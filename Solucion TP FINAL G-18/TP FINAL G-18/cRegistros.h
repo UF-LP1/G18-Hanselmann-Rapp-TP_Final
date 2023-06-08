@@ -34,6 +34,7 @@ public:
 	void set_FechaEntregada(tm NuevoEstado);
 
 	int consrandom(int maximo, int minimo);
+	bool bisiestos(int anio);
 	bool Diferencia_Entrega(); //usar operador ternario en el main
 	
 };

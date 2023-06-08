@@ -71,7 +71,7 @@ int main()
 
 		case(5):
 			
-			entreg = Registro.Diferencia_Entrega() ? "Se entrego a tiempo la Protesis" : "Se entrego tarde la Protesis"; //Uso el operador ternario para que me diga si se entrega a tiempo.
+			entreg = Registro.Diferencia_Entrega() ? "La protesis se entrego a tiempo." : "La protesis se entregó tarde."; //Uso el operador ternario para que me diga si se entrega a tiempo.
 			cout << entreg << endl;
 			break;
 

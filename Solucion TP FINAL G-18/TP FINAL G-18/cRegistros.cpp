@@ -73,7 +73,7 @@ int cRegistros::consrandom(int maximo, int minimo)
 	return valor;
 }
 
-bool bisiestos(int anio)
+bool cRegistros::bisiestos(int anio)
 {
 	if ((anio % 4) == 0 && (anio % 100) != 0 || anio % 400 != 0)
 		return true;
@@ -86,29 +86,50 @@ bool cRegistros::Diferencia_Entrega()
 	time_t timer;
 	time(&timer);
 	
-	int minrand, horarand, diarand, mesrand, aniorand;
-	minrand = consrandom(59, 0);
-	horarand = consrandom(20, 6); //las horas en la libreria van de 0 a 23
-	mesrand = consrandom(11, 0);  //los meses en la libreria van de 0 a 11
-	aniorand = consrandom(124, 123);  // en un rango de 3 anios
-
-	bool anio_bisiesto = bisiestos(aniorand + 1900);
-
-
-	if (anio_bisiesto == true && mesrand == 1)
-		diarand = consrandom(29, 1); //los dias del mes van de 0 a 31.
-	else
-		diarand = consrandom(28, 1);
-
-	if (mesrand == 0 || mesrand == 2 || mesrand == 4 || mesrand == 6 || mesrand == 7 || mesrand == 9 || mesrand == 11)
-		diarand = consrandom(31, 1);
-	else if (mesrand != 1)
-		diarand = consrandom(30, 1);
-
-	FechaEstimativaEntrega = { 0, minrand, horarand, diarand, mesrand, aniorand };
 	time_t soli = timer;
+
+	int minestimrand = 0, horaestimrand = 0, diaestimrand = 0, mesestimrand = 0, anioestimrand = 0,  minentrand = 0, horaentrand = 0, diaentrand = 0, mesentrand = 0, anioentrand = 0;
+	//HAGO RANDOMS PARA LA PARTE DE LA FECHA ESTIMATIVA DE LA ENTREGA
+	minestimrand = consrandom(59, 0);
+	horaestimrand = consrandom(20, 6); //las horas en la libreria van de 0 a 23
+	mesestimrand = consrandom(11, 0);  //los meses en la libreria van de 0 a 11
+	anioestimrand = consrandom(124, 123);  // en un rango de 3 anios
+
+	bool anio_bisiesto_estim = bisiestos(anioestimrand + 1900);
+	//ME FIJO EN CASO DE QUE SEA UN ANIO BISIESTO Y QUE TIPO DE MES ES CUANTOS DIAS SERIAN
+	if (anio_bisiesto_estim == true && mesestimrand == 1)
+		diaestimrand = consrandom(29, 1); //los dias del mes van de 0 a 31.
+	else
+		diaestimrand = consrandom(28, 1);
+
+	if (mesestimrand == 0 || mesestimrand == 2 || mesestimrand == 4 || mesestimrand == 6 || mesestimrand == 7 || mesestimrand == 9 || mesestimrand == 11)
+		diaestimrand = consrandom(31, 1);
+	else if (mesestimrand != 1)
+		diaestimrand = consrandom(30, 1);
+
+	FechaEstimativaEntrega = { 0, minestimrand, horaestimrand, diaestimrand, mesestimrand, anioestimrand };
 	time_t estim = mktime(&FechaEstimativaEntrega);
-	time_t entre = mktime(&entregada);
+
+	//HAGO RANDOMS PARA LA PARTE DE LA FECHA ENTREGADA
+	minentrand = consrandom(59, 0);
+	horaentrand = consrandom(20, 6); //las horas en la libreria van de 0 a 23
+	mesentrand = consrandom(11, 0);  //los meses en la libreria van de 0 a 11
+	anioentrand = consrandom(124, 123);  // en un rango de 3 anios
+
+	bool anio_bisiesto_ent = bisiestos(anioentrand + 1900);
+	//ME FIJO EN CASO DE QUE SEA UN ANIO BISIESTO Y QUE TIPO DE MES ES CUANTOS DIAS SERIAN
+	if (anio_bisiesto_ent == true && mesentrand == 1)
+		diaentrand = consrandom(29, 1); //los dias del mes van de 0 a 31.
+	else
+		diaentrand = consrandom(28, 1);
+
+	if (mesentrand == 0 || mesentrand == 2 || mesentrand == 4 || mesentrand == 6 || mesentrand == 7 || mesentrand == 9 || mesentrand == 11)
+		diaentrand = consrandom(31, 1);
+	else if (mesentrand != 1)
+		diaentrand = consrandom(30, 1);
+
+	FechaEntregada = { 0, minentrand, horaentrand, diaentrand, mesentrand, anioentrand };
+	time_t entre = mktime(&FechaEntregada);
 
 	double diferencia = 0.0;
 
