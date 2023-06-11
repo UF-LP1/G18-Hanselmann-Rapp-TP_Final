@@ -3,6 +3,8 @@
 
 #include "cHospitales.h"
 #include "cPiezasOrtopedicas.h"
+//#include "cNoQuirurgicas.h"
+//#include "cQuirurgicas.h"
 
 class cRegistros
 {
@@ -36,6 +38,8 @@ public:
 	int consrandom(int maximo, int minimo); //lo uso para calcular los randoms
 	bool bisiestos(int anio); //lo uso para saber si es un anio bisiesto o no.
 	bool Diferencia_Entrega(); //lo uso para saber si la protesis se entrego a tiempo o no.
+
+	list<cPacientes>Buscar_Paciente(cHospitales hospi, cPiezasOrtopedicas piezita);
 	
 };
 

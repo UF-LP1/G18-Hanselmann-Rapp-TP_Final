@@ -42,12 +42,13 @@ void cANPA::set_Ortopedia(list<cOrtopedias> NuevoEstado)
 	this->Ortopedia = NuevoEstado;
 }
 
-list<cPacientes> cANPA::Buscar_Paciente(cHospitales hospi, cPiezasOrtopedicas piezita)
+list<cPacientes> cANPA::Buscar_Paciente(cHospitales hospi, cPiezasOrtopedicas piezita, cNoQuirurgicas noqui, cQuirurgicas quirur)
 {
-	list <cPacientes> ::iterator itpaciente;
+	/*list <cPacientes> ::iterator itpaciente;
 	list <cPacientes> pac1 = hospi.get_Pacientes();
 	list <cPacientes> prote;
 
+	
 	unsigned int cont_pro = 0;
 	itpaciente = pac1.begin();
 
@@ -58,9 +59,13 @@ list<cPacientes> cANPA::Buscar_Paciente(cHospitales hospi, cPiezasOrtopedicas pi
 			prote.push_back(*itpaciente);
 			cont_pro++;
 		}
+
 	}
 
-	return prote;
+	noqui.get_Protesis_No_Q();
+	quirur.get_Protesis_Q();
+
+	return prote;*/
 }
 
 bool cANPA::Buscar_Protesis(cPacientes, cPiezasOrtopedicas)

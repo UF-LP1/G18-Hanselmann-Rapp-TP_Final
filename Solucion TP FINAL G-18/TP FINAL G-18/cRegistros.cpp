@@ -147,3 +147,27 @@ bool cRegistros::Diferencia_Entrega()
 	}
 	return false;
 }
+
+list<cPacientes> cRegistros::Buscar_Paciente(cHospitales hospi, cPiezasOrtopedicas piezita)
+{
+	list <cPacientes> ::iterator itpaciente;
+	list <cPacientes> pac1 = hospi.get_Pacientes();
+	list <cPacientes> prote;
+
+
+	unsigned int cont_pro = 0;
+	itpaciente = pac1.begin();
+
+	for (int i = 0; i < pac1.size(); i++, itpaciente++)
+	{
+		if (itpaciente->get_TieneProtesis() == true)
+		{
+			prote.push_back(*itpaciente);
+			cont_pro++;
+		}
+
+	}
+
+
+	return prote;
+}

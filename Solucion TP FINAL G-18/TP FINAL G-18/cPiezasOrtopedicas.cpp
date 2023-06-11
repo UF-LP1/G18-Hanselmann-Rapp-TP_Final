@@ -1,5 +1,6 @@
 #include "cPiezasOrtopedicas.h"
 
+
 unsigned int cPiezasOrtopedicas::CantidadTotalPiezas = 0;
 
 cPiezasOrtopedicas::cPiezasOrtopedicas(int Dimensiones_, TipoMaterial Material_, time_t Fabricacion_, cFabricantes* NombreFabricante_)
@@ -8,6 +9,7 @@ cPiezasOrtopedicas::cPiezasOrtopedicas(int Dimensiones_, TipoMaterial Material_,
 	this->Material = Material_;
 	this->Fabricacion = Fabricacion_;
 	this->NombreFabricante = NombreFabricante_;
+
 	CantidadTotalPiezas++;
 }
 

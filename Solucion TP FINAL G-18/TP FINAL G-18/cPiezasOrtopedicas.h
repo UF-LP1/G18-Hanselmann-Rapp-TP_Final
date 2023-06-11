@@ -3,6 +3,7 @@
 
 #include "TipoMaterial.h"
 #include "cFabricantes.h"
+#include "cPacientes.h"
 
 #include <iostream>
 #include <string>
@@ -20,6 +21,7 @@ protected:
 	time_t Fabricacion;
 	cFabricantes* NombreFabricante;
 	static unsigned int CantidadTotalPiezas;
+	
 
 public:
 	cPiezasOrtopedicas(int Dimensiones_, TipoMaterial Material_, time_t Fabricacion_, cFabricantes* NombreFabricante_);
