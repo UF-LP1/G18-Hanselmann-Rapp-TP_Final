@@ -1,8 +1,8 @@
 #include "cQuirurgicas.h"
 
-cQuirurgicas::cQuirurgicas(int Dimensiones_, TipoMaterial Material_, time_t Fabricacion_, cFabricantes* Fabricante_, TipoProtesis Protesis_Q_) :cPiezasOrtopedicas(Dimensiones_, Material_, Fabricacion_, Fabricante_)
+cQuirurgicas::cQuirurgicas(int Dimensiones_, TipoMaterial Material_, time_t Fabricacion_, cFabricantes* Fabricante_, TipoProtesis Protesis_) :cPiezasOrtopedicas(Dimensiones_, Material_, Fabricacion_, Fabricante_, Protesis_)
 {
-	this->Protesis_Q = Protesis_Q_;
+	//this->Protesis_Q = Protesis_Q_;
 }
 
 cQuirurgicas::~cQuirurgicas()
@@ -10,12 +10,12 @@ cQuirurgicas::~cQuirurgicas()
 
 }
 
-TipoProtesis cQuirurgicas::get_Protesis_Q()
+TipoProtesis cQuirurgicas::get_Protesis()
 {
-	return this->Protesis_Q;
+	return this->Protesis;
 }
 
-void cQuirurgicas::set_Protesis_Q(TipoProtesis NuevoEstado)
+void cQuirurgicas::set_Protesis(TipoProtesis NuevoEstado)
 {
-	this->Protesis_Q = NuevoEstado;
+	this->Protesis = NuevoEstado;
 }

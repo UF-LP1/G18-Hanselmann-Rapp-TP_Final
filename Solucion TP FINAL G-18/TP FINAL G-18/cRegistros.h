@@ -3,8 +3,8 @@
 
 #include "cHospitales.h"
 #include "cPiezasOrtopedicas.h"
-//#include "cNoQuirurgicas.h"
-//#include "cQuirurgicas.h"
+#include "cNoQuirurgicas.h"
+#include "cQuirurgicas.h"
 
 class cRegistros
 {
@@ -39,7 +39,8 @@ public:
 	bool bisiestos(int anio); //lo uso para saber si es un anio bisiesto o no.
 	bool Diferencia_Entrega(); //lo uso para saber si la protesis se entrego a tiempo o no.
 
-	list<cPacientes>Buscar_Paciente(cHospitales hospi, cPiezasOrtopedicas piezita);
+	list<cPacientes>Buscar_Paciente_porhospi(cHospitales hospi);
+	list<cPacientes>Buscar_Paciente_porpiezas(cPiezasOrtopedicas piezita, cQuirurgicas quiru, cNoQuirurgicas noquiru);
 	
 };
 

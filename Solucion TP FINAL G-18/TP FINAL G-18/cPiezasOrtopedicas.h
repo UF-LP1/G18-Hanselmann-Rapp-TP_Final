@@ -4,6 +4,7 @@
 #include "TipoMaterial.h"
 #include "cFabricantes.h"
 #include "cPacientes.h"
+#include "TipoProtesis.h"
 
 #include <iostream>
 #include <string>
@@ -21,10 +22,10 @@ protected:
 	time_t Fabricacion;
 	cFabricantes* NombreFabricante;
 	static unsigned int CantidadTotalPiezas;
-	
+	TipoProtesis Protesis;
 
 public:
-	cPiezasOrtopedicas(int Dimensiones_, TipoMaterial Material_, time_t Fabricacion_, cFabricantes* NombreFabricante_);
+	cPiezasOrtopedicas(int Dimensiones_, TipoMaterial Material_, time_t Fabricacion_, cFabricantes* NombreFabricante_, TipoProtesis Protesis_);
 	~cPiezasOrtopedicas();
 
 	unsigned int get_Dimensiones();
@@ -32,6 +33,8 @@ public:
 	time_t get_Fabricacion();
 	string get_NombreFabricante();
 	static unsigned int get_CantidadTotalPiezas();
+	virtual TipoProtesis get_protesis();
+	virtual void set_protesis(TipoProtesis NuevoEstado);
 
 	void set_Dimensiones(unsigned int NuevoEstado);
 	void set_Material(TipoMaterial NuevoEstado);

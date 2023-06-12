@@ -3,12 +3,13 @@
 
 unsigned int cPiezasOrtopedicas::CantidadTotalPiezas = 0;
 
-cPiezasOrtopedicas::cPiezasOrtopedicas(int Dimensiones_, TipoMaterial Material_, time_t Fabricacion_, cFabricantes* NombreFabricante_)
+cPiezasOrtopedicas::cPiezasOrtopedicas(int Dimensiones_, TipoMaterial Material_, time_t Fabricacion_, cFabricantes* NombreFabricante_, TipoProtesis Protesis_)
 {
 	this->Dimensiones = Dimensiones_;
 	this->Material = Material_;
 	this->Fabricacion = Fabricacion_;
 	this->NombreFabricante = NombreFabricante_;
+	this->Protesis = Protesis_;
 
 	CantidadTotalPiezas++;
 }
@@ -41,6 +42,12 @@ string cPiezasOrtopedicas::get_NombreFabricante()
 unsigned int cPiezasOrtopedicas::get_CantidadTotalPiezas()
 {
 	return CantidadTotalPiezas;
+
+}
+
+TipoProtesis cPiezasOrtopedicas::get_protesis()
+{
+
 }
 
 void cPiezasOrtopedicas::set_Dimensiones(unsigned int NuevoEstado)
@@ -58,6 +65,11 @@ void cPiezasOrtopedicas::set_Fabricacion(time_t NuevoEstado)
 	this->Fabricacion = NuevoEstado;
 }
 
+void cPiezasOrtopedicas::set_protesis(TipoProtesis NuevoEstado)
+{
+
+}
+
 string cPiezasOrtopedicas::to_string_PiezasOrtopedias()
 {
 	/*stringstream salida;
@@ -68,3 +80,4 @@ string cPiezasOrtopedicas::to_string_PiezasOrtopedias()
 	return salida.str();*/
 	return "";
 }
+

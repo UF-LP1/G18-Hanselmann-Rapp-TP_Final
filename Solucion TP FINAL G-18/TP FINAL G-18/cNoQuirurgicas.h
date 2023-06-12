@@ -8,19 +8,18 @@ class cNoQuirurgicas : public cPiezasOrtopedicas
 {
 private:
     unsigned int Radio_Protesis;
-    TipoProtesis Protesis_No_Q;
 
  public:
      cNoQuirurgicas(int Dimensiones_, TipoMaterial Material_, time_t Fabricacion_,
-                    cFabricantes* Fabricante_, unsigned int Radio_Protesis_, TipoProtesis Protesis_No_Q_);
+                    cFabricantes* Fabricante_, unsigned int Radio_Protesis_, TipoProtesis Protesis_);
 
      ~cNoQuirurgicas();
 
     unsigned int get_Radio_Protesis();
-    TipoProtesis get_Protesis_No_Q();
+    virtual TipoProtesis get_Protesis();
 
     void set_Radio_Protesis(unsigned int NuevoEstado);
-    void set_Protesis_No_Q(TipoProtesis NuevoEstado);
+    virtual void set_Protesis(TipoProtesis NuevoEstado);
 
 };
 
