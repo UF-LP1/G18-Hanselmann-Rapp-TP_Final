@@ -5,6 +5,7 @@
 #include "cPiezasOrtopedicas.h"
 #include "cNoQuirurgicas.h"
 #include "cQuirurgicas.h"
+#include "cPacientes.h"
 
 class cRegistros
 {
@@ -40,7 +41,7 @@ public:
 	bool Diferencia_Entrega(); //lo uso para saber si la protesis se entrego a tiempo o no.
 
 	list<cPacientes>Buscar_Paciente_porhospi(cHospitales hospi);
-	list<cPacientes>Buscar_Paciente_porpiezas(cPiezasOrtopedicas* piezitas);
+	list<cPacientes>Buscar_Paciente_porpiezas(cPiezasOrtopedicas* piezitas, cPacientes*pacientitos);
 	
 };
 
