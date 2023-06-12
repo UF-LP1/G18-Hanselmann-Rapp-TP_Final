@@ -45,7 +45,7 @@ unsigned int cPiezasOrtopedicas::get_CantidadTotalPiezas()
 
 }
 
-TipoProtesis cPiezasOrtopedicas::get_protesis()
+TipoProtesis cPiezasOrtopedicas::get_Protesis()
 {
 
 }
@@ -65,7 +65,7 @@ void cPiezasOrtopedicas::set_Fabricacion(time_t NuevoEstado)
 	this->Fabricacion = NuevoEstado;
 }
 
-void cPiezasOrtopedicas::set_protesis(TipoProtesis NuevoEstado)
+void cPiezasOrtopedicas::set_Protesis(TipoProtesis NuevoEstado)
 {
 
 }

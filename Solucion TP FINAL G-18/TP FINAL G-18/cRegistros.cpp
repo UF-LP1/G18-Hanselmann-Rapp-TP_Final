@@ -148,7 +148,7 @@ bool cRegistros::Diferencia_Entrega()
 	return false;
 }
 
-list<cPacientes> cRegistros::Buscar_Paciente_porhospi(cHospitales hospi, cPiezasOrtopedicas piezita)
+list<cPacientes> cRegistros::Buscar_Paciente_porhospi(cHospitales hospi)
 {
 	list <cPacientes> ::iterator itpaciente;
 	list <cPacientes> pac1 = hospi.get_Pacientes();
@@ -170,4 +170,30 @@ list<cPacientes> cRegistros::Buscar_Paciente_porhospi(cHospitales hospi, cPiezas
 
 
 	return prote;
+}
+
+list<cPacientes> cRegistros::Buscar_Paciente_porpiezas(cPiezasOrtopedicas* piezitas)
+{
+
+	list<cPacientes>pac; 
+
+	cQuirurgicas* quiru = dynamic_cast <cQuirurgicas*>(piezitas);
+
+	if (quiru != NULL)
+	{
+		cPacientes* pacientes = quiru->get_Protesis();
+
+		pac.push_back(*pacientes);
+	}
+
+	cNoQuirurgicas* noquiru = dynamic_cast<cNoQuirurgicas*>(piezitas);
+
+	if (noquiru != NULL)
+	{
+		cPacientes* pacientes = noquiru->get_Protesis();
+
+		pac.push_back(*pacientes);
+	}
+
+	return pac;
 }

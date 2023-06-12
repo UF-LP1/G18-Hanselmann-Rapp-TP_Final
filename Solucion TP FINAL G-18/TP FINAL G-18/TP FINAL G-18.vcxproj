@@ -139,6 +139,7 @@
     <ClInclude Include="cPiezasOrtopedicas.h" />
     <ClInclude Include="cQuirurgicas.h" />
     <ClInclude Include="cRegistros.h" />
+    <ClInclude Include="main.h" />
     <ClInclude Include="TipoAlergia.h" />
     <ClInclude Include="TipoProtesis.h" />
     <ClInclude Include="TipoMaterial.h" />

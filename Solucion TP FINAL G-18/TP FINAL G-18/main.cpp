@@ -3,6 +3,7 @@
 #include "cPersona.h"
 #include "cQuirurgicas.h"
 #include "cNoQuirurgicas.h"
+#include "main.h"
 
 void Menu_Principal()
 {
@@ -47,9 +48,20 @@ int main()
 
 	string entreg = "";
 
+	/*cPiezasOrtopedicas* pieza1 = new cQuirurgicas();
+	cPiezasOrtopedicas* pieza2 = new cNoQuirurgicas();
+
+	pieza1->get_Protesis();
+	pieza2->get_Protesis();
+
+	delete pieza1;
+	delete pieza2;
+	*/
+
 	int opcion = 0;
 	bool regresar = true;
 	bool salir = true;
+
 
 	Menu_Principal();
 	do

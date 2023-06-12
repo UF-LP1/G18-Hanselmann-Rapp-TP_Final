@@ -33,8 +33,8 @@ public:
 	time_t get_Fabricacion();
 	string get_NombreFabricante();
 	static unsigned int get_CantidadTotalPiezas();
-	virtual TipoProtesis get_protesis();
-	virtual void set_protesis(TipoProtesis NuevoEstado);
+	virtual TipoProtesis get_Protesis();
+	virtual void set_Protesis(TipoProtesis NuevoEstado);
 
 	void set_Dimensiones(unsigned int NuevoEstado);
 	void set_Material(TipoMaterial NuevoEstado);

@@ -40,8 +40,9 @@ public:
 	bool Diferencia_Entrega(); //lo uso para saber si la protesis se entrego a tiempo o no.
 
 	list<cPacientes>Buscar_Paciente_porhospi(cHospitales hospi);
-	list<cPacientes>Buscar_Paciente_porpiezas(cPiezasOrtopedicas piezita, cQuirurgicas quiru, cNoQuirurgicas noquiru);
+	list<cPacientes>Buscar_Paciente_porpiezas(cPiezasOrtopedicas* piezitas);
 	
 };
 
 #endif //_CREGISTROS_H
+
