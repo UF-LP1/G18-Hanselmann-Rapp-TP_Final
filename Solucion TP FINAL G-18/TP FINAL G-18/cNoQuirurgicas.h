@@ -16,10 +16,10 @@ private:
      ~cNoQuirurgicas();
 
     unsigned int get_Radio_Protesis();
-    virtual TipoProtesis get_Protesis();
+    TipoProtesis get_Protesis();
 
     void set_Radio_Protesis(unsigned int NuevoEstado);
-    virtual void set_Protesis(TipoProtesis NuevoEstado);
+    void set_Protesis(TipoProtesis NuevoEstado);
 
 };
 

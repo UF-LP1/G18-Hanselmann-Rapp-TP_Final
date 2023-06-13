@@ -14,8 +14,8 @@ public:
 
     ~cQuirurgicas();
 
-    virtual TipoProtesis get_Protesis();
-    virtual void set_Protesis(TipoProtesis NuevoEstado);
+     TipoProtesis get_Protesis();
+     void set_Protesis(TipoProtesis NuevoEstado);
 
 };
 

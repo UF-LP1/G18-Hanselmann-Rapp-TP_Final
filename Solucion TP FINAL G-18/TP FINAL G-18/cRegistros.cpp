@@ -174,16 +174,15 @@ list<cPacientes> cRegistros::Buscar_Paciente_porhospi(cHospitales hospi)
 
 list<cPacientes> cRegistros::Buscar_Paciente_porpiezas(cPiezasOrtopedicas* piezitas, cPacientes*pacientitos)
 {
-
-	list<cPacientes>pac; 
+	list<cPacientes>pacientes; 
 
 	cQuirurgicas* quiru = dynamic_cast <cQuirurgicas*>(piezitas);
 
 	if (quiru != NULL)
 	{
-		quiru->get_Protesis();
-
-		//pac.push_back(*quiru);
+		cPacientes* pac = quiru->get_Protesis();	
+		
+		pacientes.push_back(*pac);
 	}
 
 
@@ -191,9 +190,9 @@ list<cPacientes> cRegistros::Buscar_Paciente_porpiezas(cPiezasOrtopedicas* piezi
 
 	//if (noquiru != NULL)
 	//{
-	//	cPacientes* pacientes = noquiru->get_Protesis();
+	//	cPacientes* pacien = noquiru->get_Protesis();
 
-	//	pac.push_back(*pacientes);
+	//	pacientes.push_back(*pacien);
 	//}
 
 	return pac;
