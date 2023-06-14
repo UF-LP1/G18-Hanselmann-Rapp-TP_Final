@@ -91,12 +91,14 @@ list<cPacientes> cANPA::Buscar_Paciente_porhospi(cHospitales hospi)
 	return prote;
 }
 
-list<cPacientes> cANPA::Buscar_Paciente_porpiezas(cRegistros* regis,string piezabuscada)
+string cANPA::Buscar_Paciente_porpiezas(cRegistros* regis,string piezabuscada)
 {
 	
-	list<cPacientes>pacientes;
+    string paciente;
 	list<cPacientes>::iterator itpac;
 	list<cHospitales>::iterator ithos;
+
+	
 
 	ithos = hospit.begin();
 
@@ -107,14 +109,14 @@ list<cPacientes> cANPA::Buscar_Paciente_porpiezas(cRegistros* regis,string pieza
 
 		for (int k = 0; k < ithos->get_Pacientes().size(); k++, itpac++)//en segundo lugar hicimos un for que recorra la lista de pacientes de cada hospital
 		{
-			if (itpac->get_TieneProtesis() == true)//chequeamos que el los pacientes tengan protesis
+			if (itpac->get_TieneProtesis() == true)//chequeamos que los pacientes tengan protesis
 			{
 				if (regis->get_Protesis() == piezabuscada)//nos fijamos que si el numero de serie del paciente buscado es igual al pasado por parametro 
 				{
-					pacientes.push_back(*itpac);//lo agregamos a una lista de pacientes 
+					paciente = itpac->get_Nombre();//
 				}
 			}
 		}				
 	}
-	return pacientes;
+	return paciente;
 }
