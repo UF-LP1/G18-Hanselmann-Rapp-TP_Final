@@ -33,25 +33,25 @@ void cHospitales::set_Pacientes(list <cPacientes> NuevoEstado)
 
 bool cHospitales::Agregar_Paciente(cPacientes pac)
 {
+	//hacerlo en ANPA y que recorra todos los hospitales
 	list <cPacientes>::iterator itPaciente;
 	list <cPacientes> pacientito = get_Pacientes();
 	itPaciente = pacientito.begin();
 
 	for (int i = 0; i < pacientito.size(); i++, itPaciente++)
 	{
-		if (itPaciente->get_RadioMiembro() > 0)
-		{
+
 			this->Pacientes.push_back(pac);
 			//Pacientes.unique();
 
 			return true;
-		}
 	}
 	return false;
 }
 
 bool cHospitales::Solicitar_Protesis(cOrtopedias ortop, cFabricantes fab)
 {
+	//devuelve la protesis
 	if (ortop.get_CantidadPiezas() == 0)
 	{
 		if (fab.get_SolicitudRequisitos() == true)

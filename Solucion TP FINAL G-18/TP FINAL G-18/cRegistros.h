@@ -36,6 +36,7 @@ public:
 	void set_FechaEstimativaEntrega(tm NuevoEstado);
 	void set_FechaEntregada(tm NuevoEstado);
 
+	bool operator == (cRegistros& Reg);
 	int consrandom(int maximo, int minimo); //lo uso para calcular los randoms
 	bool bisiestos(int anio); //lo uso para saber si es un anio bisiesto o no.
 	bool Diferencia_Entrega(); //lo uso para saber si la protesis se entrego a tiempo o no.

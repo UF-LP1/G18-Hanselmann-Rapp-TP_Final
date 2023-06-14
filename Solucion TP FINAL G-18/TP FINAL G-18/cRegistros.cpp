@@ -66,6 +66,12 @@ void cRegistros::set_FechaEntregada(tm NuevoEstado)
 	this->FechaEntregada = NuevoEstado;
 }
 
+bool cRegistros::operator==(cRegistros& Reg)
+{
+	//usar dynamic_cast
+	return (Protesis->get_Dimensiones() == NombrePaciente->get_RadioMiembro() && Protesis->get_Protesis() == NombrePaciente->get_CompatibleQuirurgica());
+}
+
 int cRegistros::consrandom(int maximo, int minimo)
 {
 	srand(time(NULL));

@@ -54,6 +54,12 @@ void cANPA::set_hospi(list <cHospitales> NuevoEstado)
 }
 
 
+void cANPA::operator+(cRegistros registros)
+{
+	Registro.push_back(registros);
+	return;
+}
+
 bool cANPA::Buscar_Protesis(cPacientes, cPiezasOrtopedicas)
 {
 	return false;
@@ -114,8 +120,8 @@ ostream& operator<<(ostream& out, cANPA& anpa)
 
 	for (int i = 0; i < anpa.get_Registro().size(); i++, itReg++)
 	{
-		out << "Nombre del Hospital: " << itReg->get_NombreHospital() << endl;
-		out << "Nombre del Medico: " << itReg->get_NombreMedico() << endl;
+		out << "Nombre del Hospital: " << itReg->get_NombreHospital()->get_Nombre() << endl;
+		out << "Nombre del Medico: " << itReg->get_NombreMedico()->get_Nombre() << endl;
 		out << "Fecha de la Solicitud de la protesis: " << itReg->get_FechaSolicitud().tm_min << ":"  << itReg->get_FechaSolicitud().tm_hour <<
 					" del dia " << itReg->get_FechaSolicitud().tm_mday << " del mes " << itReg->get_FechaSolicitud().tm_mon << " del anio " << itReg->get_FechaSolicitud().tm_year << endl;
 		out << "Fecha Estimativa de Entrega de la protesis: " << itReg->get_FechaEstimativaEntrega().tm_min << ":" << itReg->get_FechaEstimativaEntrega().tm_hour <<
@@ -123,7 +129,7 @@ ostream& operator<<(ostream& out, cANPA& anpa)
 		out << "Fecha Entregada de la protesis: " << itReg->get_FechaEntregada().tm_min << ":" << itReg->get_FechaEntregada().tm_hour <<
 			" del dia " << itReg->get_FechaEntregada().tm_mday << " del mes " << itReg->get_FechaEntregada().tm_mon << " del anio " << itReg->get_FechaEntregada().tm_year << endl;
 		out << "Tipo de Protesis: " << itReg->get_Protesis() << endl;
-		out << "Nombre del Paciente: " << itReg->get_NombrePaciente() << endl;
+		out << "Nombre del Paciente: " << itReg->get_NombrePaciente()->get_Nombre() << endl;
 	}
 
 	return out;
