@@ -29,7 +29,7 @@ public:
 	tm get_FechaSolicitud();
 	tm get_FechaEstimativaEntrega();
 	tm get_FechaEntregada();
-	string get_Protesis();
+	TipoProtesis get_Protesis();
 	string get_NombrePaciente();
 	
 	void set_FechaSolicitud(tm NuevoEstado);

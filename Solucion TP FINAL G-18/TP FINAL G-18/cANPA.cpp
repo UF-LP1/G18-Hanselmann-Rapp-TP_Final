@@ -68,40 +68,41 @@ ostream& operator<<(ostream& out, cANPA& anpa)
 	return out;
 }
 
-
-list<cPacientes> cANPA::Buscar_Paciente_porhospi(cHospitales hospi)
+list<cPacientes> cANPA::Buscar_Paciente_porhospi(string hospi)
 {
 	list <cPacientes> ::iterator itpaciente;
-	list <cPacientes> pac1 = hospi.get_Pacientes();
+	list <cHospitales> ::iterator ithospi;
 	list <cPacientes> prote;
 
 	unsigned int cont_pro = 0;
-	itpaciente = pac1.begin();
 
-	for (int i = 0; i < pac1.size(); i++, itpaciente++)
+	for (int i = 0; i < hospit.size(); i++, ithospi++) //hicimos un for que recorra todos los hospitales
 	{
-		if (itpaciente->get_TieneProtesis() == true)
+		if (hospi == ithospi->get_Nombre()) //nos fijamos segun el hospital que ingresa para saber quienes tienen protesis de ese hospital
 		{
-			prote.push_back(*itpaciente);
-			cont_pro++;
-		}
+			itpaciente = ithospi->get_Pacientes().begin();
 
+			for (int k = 0; k < ithospi->get_Pacientes().size(); k++, itpaciente++) //en segundo lugar hicimos un for que recorra la lista de pacientes de ese hospital
+			{
+				if (itpaciente->get_TieneProtesis() == true)
+				{
+					prote.push_back(*itpaciente);
+					cont_pro++;
+				}
+			}
+		}
 	}
 
 	return prote;
 }
 
-string cANPA::Buscar_Paciente_porpiezas(cRegistros* regis,string piezabuscada)
+list <cPacientes> cANPA::Buscar_Paciente_porpiezas(cRegistros* regis, TipoProtesis piezabuscada)
 {
-	
-    string paciente;
+    list<cPacientes> pacientes;
 	list<cPacientes>::iterator itpac;
 	list<cHospitales>::iterator ithos;
 
-	
-
 	ithos = hospit.begin();
-
 
 	for (int i = 0; i < hospit.size(); i++, ithos++)//hicimos un for que recorra todos los hospitales
 	{
@@ -111,12 +112,13 @@ string cANPA::Buscar_Paciente_porpiezas(cRegistros* regis,string piezabuscada)
 		{
 			if (itpac->get_TieneProtesis() == true)//chequeamos que los pacientes tengan protesis
 			{
-				if (regis->get_Protesis() == piezabuscada)//nos fijamos que si el numero de serie del paciente buscado es igual al pasado por parametro 
+				if (regis->get_Protesis() == piezabuscada)
 				{
-					paciente = itpac->get_Nombre();//
+					pacientes.push_back(*itpac);
 				}
 			}
 		}				
 	}
-	return paciente;
+
+	return pacientes;
 }

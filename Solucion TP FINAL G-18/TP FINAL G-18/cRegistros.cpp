@@ -41,9 +41,9 @@ tm cRegistros::get_FechaEntregada()
 	return this->FechaEntregada;
 }
 
-string cRegistros::get_Protesis()
+TipoProtesis cRegistros::get_Protesis()
 {
-	return this->Protesis->get_numeroserie();
+	return this->Protesis->get_Protesis();
 }
 
 string cRegistros::get_NombrePaciente()

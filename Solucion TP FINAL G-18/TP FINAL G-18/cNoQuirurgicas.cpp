@@ -1,9 +1,8 @@
 #include "cNoQuirurgicas.h"
 
-cNoQuirurgicas::cNoQuirurgicas(int Dimensiones_, TipoMaterial Material_, time_t Fabricacion_, cFabricantes* Fabricante_, TipoProtesis Protesis_, unsigned int Radio_Protesis_):cPiezasOrtopedicas(Dimensiones_, Material_, Fabricacion_, Fabricante_, Protesis_)
+cNoQuirurgicas::cNoQuirurgicas(int Dimensiones_, TipoMaterial Material_, time_t Fabricacion_, cFabricantes* Fabricante_, TipoProtesis Protesis_, string numero_serie_, unsigned int Radio_Protesis_) :cPiezasOrtopedicas(Dimensiones_, Material_, Fabricacion_, Fabricante_, Protesis_, numero_serie_)
 {
 	this->Radio_Protesis = Radio_Protesis_;
-	//this->Protesis_No_Q = Protesis_No_Q_;
 }
 
 cNoQuirurgicas::~cNoQuirurgicas()

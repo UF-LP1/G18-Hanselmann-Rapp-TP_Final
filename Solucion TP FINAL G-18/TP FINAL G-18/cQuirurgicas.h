@@ -6,11 +6,10 @@
 class cQuirurgicas: public cPiezasOrtopedicas
 {
 private:
-   // TipoProtesis Protesis_Q;
 
 public:
     cQuirurgicas(int Dimensiones_, TipoMaterial Material_, time_t Fabricacion_,
-                    cFabricantes* Fabricante_, TipoProtesis Protesis_);
+                    cFabricantes* Fabricante_, TipoProtesis Protesis_, string numero_serie_);
 
     ~cQuirurgicas();
 
