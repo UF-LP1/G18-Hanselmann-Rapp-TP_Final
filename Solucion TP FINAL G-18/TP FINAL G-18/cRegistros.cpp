@@ -93,7 +93,7 @@ bool cRegistros::Diferencia_Entrega()
 	minestimrand = consrandom(59, 0);
 	horaestimrand = consrandom(20, 6); //las horas en la libreria van de 0 a 23
 	mesestimrand = consrandom(11, 0);  //los meses en la libreria van de 0 a 11
-	anioestimrand = consrandom(124, 123);  // en un rango de 3 anios
+	anioestimrand = consrandom(125, 123);  // en un rango de 3 anios
 
 	bool anio_bisiesto_estim = bisiestos(anioestimrand + 1900);
 	//ME FIJO EN CASO DE QUE SEA UN ANIO BISIESTO Y QUE TIPO DE MES ES CUANTOS DIAS SERIAN
@@ -114,7 +114,7 @@ bool cRegistros::Diferencia_Entrega()
 	minentrand = consrandom(59, 0);
 	horaentrand = consrandom(20, 6); //las horas en la libreria van de 0 a 23
 	mesentrand = consrandom(11, 0);  //los meses en la libreria van de 0 a 11
-	anioentrand = consrandom(124, 123);  // en un rango de 3 anios
+	anioentrand = consrandom(125, 123);  // en un rango de 3 anios
 
 	bool anio_bisiesto_ent = bisiestos(anioentrand + 1900);
 	//ME FIJO EN CASO DE QUE SEA UN ANIO BISIESTO Y QUE TIPO DE MES ES CUANTOS DIAS SERIAN
@@ -168,7 +168,6 @@ list<cPacientes> cRegistros::Buscar_Paciente_porhospi(cHospitales hospi)
 
 	}
 
-
 	return prote;
 }
 
@@ -185,7 +184,6 @@ list<cPacientes> cRegistros::Buscar_Paciente_porpiezas(cPiezasOrtopedicas* piezi
 		pacientes.push_back(*pac);
 	}
 
-
 	//cNoQuirurgicas* noquiru = dynamic_cast<cNoQuirurgicas*>(piezitas);
 
 	//if (noquiru != NULL)
@@ -195,5 +193,5 @@ list<cPacientes> cRegistros::Buscar_Paciente_porpiezas(cPiezasOrtopedicas* piezi
 	//	pacientes.push_back(*pacien);
 	//}
 
-	return pac;
+	return pacientes;
 }

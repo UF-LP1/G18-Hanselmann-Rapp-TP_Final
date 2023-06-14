@@ -52,6 +52,14 @@ bool cHospitales::Agregar_Paciente(cPacientes pac)
 
 bool cHospitales::Solicitar_Protesis(cOrtopedias ortop, cFabricantes fab)
 {
+	if (ortop.get_CantidadPiezas() == 0)
+	{
+		if (fab.get_SolicitudRequisitos() == true)
+		{
+			return true; // si el fabricante desea tener en cuenta los requisitos del medico se puede solicitar correctamente la protesis.
+		}
+		return false; // rechaza la solicitud del medico para hacer la protesis.
+	}
 	return false;
 }
 

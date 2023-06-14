@@ -11,7 +11,7 @@ private:
 
  public:
      cNoQuirurgicas(int Dimensiones_, TipoMaterial Material_, time_t Fabricacion_,
-                    cFabricantes* Fabricante_, unsigned int Radio_Protesis_, TipoProtesis Protesis_);
+                    cFabricantes* Fabricante_, TipoProtesis Protesis_, unsigned int Radio_Protesis_);
 
      ~cNoQuirurgicas();
 

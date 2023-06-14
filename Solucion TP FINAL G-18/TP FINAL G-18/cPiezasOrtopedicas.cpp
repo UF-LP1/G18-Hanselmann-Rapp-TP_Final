@@ -47,7 +47,7 @@ unsigned int cPiezasOrtopedicas::get_CantidadTotalPiezas()
 
 TipoProtesis cPiezasOrtopedicas::get_Protesis()
 {
-
+	return this->Protesis;
 }
 
 void cPiezasOrtopedicas::set_Dimensiones(unsigned int NuevoEstado)

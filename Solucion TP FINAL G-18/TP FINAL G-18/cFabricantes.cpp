@@ -41,3 +41,9 @@ void cFabricantes::set_Requisitos(string NuevoEstado)
 {
 	this->Requisitos = NuevoEstado;
 }
+
+void cFabricantes::Imprimir_Requisitos_Med()
+{
+	cout << "\tIngrese los requisitos para la protesis: " << endl;
+	getline(cin, Requisitos);
+}
