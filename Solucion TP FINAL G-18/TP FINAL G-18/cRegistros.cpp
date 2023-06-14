@@ -154,7 +154,6 @@ list<cPacientes> cRegistros::Buscar_Paciente_porhospi(cHospitales hospi)
 	list <cPacientes> pac1 = hospi.get_Pacientes();
 	list <cPacientes> prote;
 
-
 	unsigned int cont_pro = 0;
 	itpaciente = pac1.begin();
 

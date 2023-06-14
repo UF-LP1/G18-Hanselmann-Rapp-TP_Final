@@ -76,7 +76,7 @@ void cPacientes::Imprimir_Preguntas_Agregar_Paciente()
 	string alerg = "";
 
 	cout << "\tIngrese el Nombre de su paciente: ";
-	getline(std::cin, Nombre);
+	cin >> Nombre;
 
 	cout << endl << "\tIngrese el Apellido de su paciente: ";
 	getline(std::cin, Apellido);
@@ -171,11 +171,11 @@ void cPacientes::Imprimir_Preguntas_Agregar_Paciente()
 	switch (opcion3)
 	{
 	case(1):
-		TieneProtesis = true; //Xenobiotico
+		TieneProtesis = true; //ya tiene una protesis
 		break;
 
 	case(2):
-		TieneProtesis = false; //Sensibilidad Metalica
+		TieneProtesis = false; //no tiene ninguna protesis
 		break;
 
 	}
