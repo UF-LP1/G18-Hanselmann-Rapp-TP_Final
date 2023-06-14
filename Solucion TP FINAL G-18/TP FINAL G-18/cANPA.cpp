@@ -59,15 +59,6 @@ bool cANPA::Buscar_Protesis(cPacientes, cPiezasOrtopedicas)
 	return false;
 }
 
-ostream& operator<<(ostream& out, cANPA& anpa)
-{
-	//out << anpa.get_Ortopedia();
-	//out << anpa.get_Registro();
-	out << anpa.get_SolicitudEspecial();
-
-	return out;
-}
-
 list<cPacientes> cANPA::Buscar_Paciente_porhospi(string hospi)
 {
 	list <cPacientes> ::iterator itpaciente;
@@ -97,29 +88,43 @@ list<cPacientes> cANPA::Buscar_Paciente_porhospi(string hospi)
 	return prote;
 }
 
-list <cPacientes> cANPA::Buscar_Paciente_porpiezas(cRegistros* regis, TipoProtesis piezabuscada)
+list <cPacientes> cANPA::Buscar_Paciente_porpiezas(TipoProtesis piezabuscada)
 {
     list<cPacientes> pacientes;
-	list<cPacientes>::iterator itpac;
-	list<cHospitales>::iterator ithos;
+	list<cRegistros>::iterator itregis;
+	list <cRegistros> regis;
 
-	ithos = hospit.begin();
+	itregis = Registro.begin();
 
-	for (int i = 0; i < hospit.size(); i++, ithos++)//hicimos un for que recorra todos los hospitales
+	for (int i = 0; i < Registro.size(); i++, itregis++)//hicimos un for que recorra todos los registros
 	{
-		itpac = ithos->get_Pacientes().begin();
-
-		for (int k = 0; k < ithos->get_Pacientes().size(); k++, itpac++)//en segundo lugar hicimos un for que recorra la lista de pacientes de cada hospital
+		if (itregis->get_Protesis() == piezabuscada)//chequeamos que cada registro coincida con la protesis buscada
 		{
-			if (itpac->get_TieneProtesis() == true)//chequeamos que los pacientes tengan protesis
-			{
-				if (regis->get_Protesis() == piezabuscada)
-				{
-					pacientes.push_back(*itpac);
-				}
-			}
-		}				
+			pacientes.push_back(*itregis->get_NombrePaciente());
+		}			
+	}
+	return pacientes;
+}
+
+ostream& operator<<(ostream& out, cANPA& anpa)
+{
+	list <cRegistros>::iterator itReg;
+
+	itReg = anpa.get_Registro().begin();
+
+	for (int i = 0; i < anpa.get_Registro().size(); i++, itReg++)
+	{
+		out << "Nombre del Hospital: " << itReg->get_NombreHospital() << endl;
+		out << "Nombre del Medico: " << itReg->get_NombreMedico() << endl;
+		out << "Fecha de la Solicitud de la protesis: " << itReg->get_FechaSolicitud().tm_min << ":"  << itReg->get_FechaSolicitud().tm_hour <<
+					" del dia " << itReg->get_FechaSolicitud().tm_mday << " del mes " << itReg->get_FechaSolicitud().tm_mon << " del anio " << itReg->get_FechaSolicitud().tm_year << endl;
+		out << "Fecha Estimativa de Entrega de la protesis: " << itReg->get_FechaEstimativaEntrega().tm_min << ":" << itReg->get_FechaEstimativaEntrega().tm_hour <<
+			" del dia " << itReg->get_FechaEstimativaEntrega().tm_mday << " del mes " << itReg->get_FechaEstimativaEntrega().tm_mon << " del anio " << itReg->get_FechaEstimativaEntrega().tm_year << endl;
+		out << "Fecha Entregada de la protesis: " << itReg->get_FechaEntregada().tm_min << ":" << itReg->get_FechaEntregada().tm_hour <<
+			" del dia " << itReg->get_FechaEntregada().tm_mday << " del mes " << itReg->get_FechaEntregada().tm_mon << " del anio " << itReg->get_FechaEntregada().tm_year << endl;
+		out << "Tipo de Protesis: " << itReg->get_Protesis() << endl;
+		out << "Nombre del Paciente: " << itReg->get_NombrePaciente() << endl;
 	}
 
-	return pacientes;
+	return out;
 }

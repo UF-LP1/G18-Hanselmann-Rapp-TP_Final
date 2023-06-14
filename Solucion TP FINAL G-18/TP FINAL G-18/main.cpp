@@ -89,6 +89,7 @@ int main()
 	cPiezasOrtopedicas* PiezitaOrtoped = new cPiezasOrtopedicas(354, Ceramica, FechaFabric, Fabrica, SuperiorDerecho, "XQRW456");
 	cPacientes* Rodrigo = new cPacientes("Rodrigo", "Zavidowski", "114023342", FechaNac, SinAlergia, "Hospital Italiano", 324, true, false);
 	cRegistros* Registro = new cRegistros(Hospi, Laurita, FechaSolic, FechaEstimEntre, FechaEntre, PiezitaOrtoped, Rodrigo);
+	cRegistros Registro2 (Hospi, Laurita, FechaSolic, FechaEstimEntre, FechaEntre, PiezitaOrtoped, Rodrigo);
 	cANPA PAMPA(Register, "Solicitud Especial", Ortopedias, Hospitales);
 	cOrtopedias Ortoped("Ortopedita", "Manuel Ugarte 354", PiezitasOrtopedicas, 3456);
 	cQuirurgicas Quirur(25, Cobalto, FechaFabric, Fabrica, InferiorDerecha, "ZZ1234");
@@ -101,7 +102,8 @@ int main()
 	int opcion = 0;
 	bool regresar = true;
 	bool salir = true;
-
+	TipoProtesis protes = SuperiorDerecho;
+	int opcion2 = 0;
 
 	Menu_Principal();
 	do
@@ -113,13 +115,10 @@ int main()
 		{
 		case(1):
 			Martin.Imprimir_Preguntas_Agregar_Paciente();
+			Hospi2.Agregar_Paciente(Martin.Imprimir_Preguntas_Agregar_Paciente());
 			break;
 
 		case(2):
-			TipoProtesis protes;
-			int opcion2 = 0;
-			bool regresar = true;
-
 			system("cls");
 
 			do
@@ -139,22 +138,22 @@ int main()
 				{
 				case(1):
 					protes == 0; //Superior Izquierda
-					PAMPA.Buscar_Paciente_porpiezas(Registro, protes);
+					PAMPA.Buscar_Paciente_porpiezas(protes);
 					break;
 
 				case(2):
 					protes == 1; //Superior Derecha
-					PAMPA.Buscar_Paciente_porpiezas(Registro, protes);
+					PAMPA.Buscar_Paciente_porpiezas(protes);
 					break;
 
 				case(3):
 					protes == 2; //Inferior Izquierda
-					PAMPA.Buscar_Paciente_porpiezas(Registro, protes);
+					PAMPA.Buscar_Paciente_porpiezas(protes);
 					break;
 
 				case(4):
 					protes == 3; //Inferior Derecha
-					PAMPA.Buscar_Paciente_porpiezas(Registro, protes);
+					PAMPA.Buscar_Paciente_porpiezas(protes);
 					break;
 
 				case(0):
@@ -180,7 +179,7 @@ int main()
 
 		case(6):
 			
-			entreg = Registro.Diferencia_Entrega() ? "La protesis se entrego a tiempo." : "La protesis se entregó tarde."; //Uso el operador ternario para que me diga si se entrega a tiempo.
+			entreg = Registro2.Diferencia_Entrega() ? "La protesis se entrego a tiempo." : "La protesis se entregó tarde."; //Uso el operador ternario para que me diga si se entrega a tiempo.
 			cout << entreg << endl;
 			break;
 

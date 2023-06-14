@@ -29,7 +29,7 @@ public:
 
 	bool Buscar_Protesis(cPacientes, cPiezasOrtopedicas);
 	list<cPacientes> Buscar_Paciente_porhospi(string hospi);
-	list <cPacientes> Buscar_Paciente_porpiezas(cRegistros* regis, TipoProtesis piezabuscada);
+	list <cPacientes> Buscar_Paciente_porpiezas(TipoProtesis piezabuscada);
 	
 };
 

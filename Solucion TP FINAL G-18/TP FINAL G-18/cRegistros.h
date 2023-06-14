@@ -25,12 +25,12 @@ public:
 	~cRegistros();
 
 	cHospitales* get_NombreHospital();
-	string get_NombreMedico();
+	cMedicos* get_NombreMedico();
 	tm get_FechaSolicitud();
 	tm get_FechaEstimativaEntrega();
 	tm get_FechaEntregada();
 	TipoProtesis get_Protesis();
-	string get_NombrePaciente();
+	cPacientes* get_NombrePaciente();
 	
 	void set_FechaSolicitud(tm NuevoEstado);
 	void set_FechaEstimativaEntrega(tm NuevoEstado);

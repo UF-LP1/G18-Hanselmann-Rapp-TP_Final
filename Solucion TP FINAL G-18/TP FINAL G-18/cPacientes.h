@@ -42,7 +42,7 @@ public:
     void set_CompatibleQuirurgica(bool NuevoEstado);
     void set_TieneProtesis(bool NuevoEstado);
 
-    void Imprimir_Preguntas_Agregar_Paciente();
+    cPacientes Imprimir_Preguntas_Agregar_Paciente();
 
 };
 

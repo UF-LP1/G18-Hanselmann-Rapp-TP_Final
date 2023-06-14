@@ -21,9 +21,9 @@ cHospitales* cRegistros::get_NombreHospital()
 	return this->NombreHospital;
 }
 
-string cRegistros::get_NombreMedico()
+cMedicos* cRegistros::get_NombreMedico()
 {
-	return this->NombreMedico->get_Nombre();
+	return this->NombreMedico;
 }
 
 tm cRegistros::get_FechaSolicitud()
@@ -46,9 +46,9 @@ TipoProtesis cRegistros::get_Protesis()
 	return this->Protesis->get_Protesis();
 }
 
-string cRegistros::get_NombrePaciente()
+cPacientes* cRegistros::get_NombrePaciente()
 {
-	return this->NombrePaciente->get_Nombre();
+	return this->NombrePaciente;
 }
 
 void cRegistros::set_FechaSolicitud(tm NuevoEstado)
