@@ -53,6 +53,46 @@ void cANPA::set_hospi(list <cHospitales> NuevoEstado)
 	this->hospit = NuevoEstado;
 }
 
+bool cANPA::Agregar_Paciente(cPacientes pac, cHospitales ho)
+{
+	//hacerlo en ANPA y que recorra todos los hospitales
+	list <cPacientes>::iterator itPaciente;
+	list<cHospitales>::iterator ithos;
+	list <cPacientes> pacientito;
+
+	ithos = hospit.begin();
+	bool repite = false;
+
+
+	for (int k = 0; k <hospit.size();k++, ithos++)
+	{
+		pacientito = ithos->get_Pacientes();
+		itPaciente = pacientito.begin();
+
+		if (ho.get_Nombre() == ithos->get_Nombre())
+		{
+			for (int i = 0; i < pacientito.size(); i++, itPaciente++)
+			{
+				if (itPaciente->get_Nombre() != pac.get_Nombre() && itPaciente->get_Apellido() != pac.get_Apellido())
+				{
+				}
+				else
+				{
+					//usar exception
+					repite == true;
+				}
+			}
+		}
+	}
+	if (repite == false)
+	{
+		pacientito.push_back(pac);
+		return true;
+	}
+	
+	return false;
+}
+
 
 void cANPA::operator+(cRegistros registros)
 {

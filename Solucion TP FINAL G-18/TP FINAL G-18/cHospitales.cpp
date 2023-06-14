@@ -31,23 +31,7 @@ void cHospitales::set_Pacientes(list <cPacientes> NuevoEstado)
 	this->Pacientes = NuevoEstado;
 }
 
-bool cHospitales::Agregar_Paciente(cPacientes pac)
-{
-	//hacerlo en ANPA y que recorra todos los hospitales
-	list <cPacientes>::iterator itPaciente;
-	list <cPacientes> pacientito = get_Pacientes();
-	itPaciente = pacientito.begin();
 
-	for (int i = 0; i < pacientito.size(); i++, itPaciente++)
-	{
-
-			this->Pacientes.push_back(pac);
-			//Pacientes.unique();
-
-			return true;
-	}
-	return false;
-}
 
 bool cHospitales::Solicitar_Protesis(cOrtopedias ortop, cFabricantes fab)
 {
