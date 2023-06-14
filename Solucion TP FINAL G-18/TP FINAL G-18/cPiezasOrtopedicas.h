@@ -23,9 +23,10 @@ protected:
 	cFabricantes* NombreFabricante;
 	static unsigned int CantidadTotalPiezas;
 	TipoProtesis Protesis;
+	string numero_serie;
 
 public:
-	cPiezasOrtopedicas(int Dimensiones_, TipoMaterial Material_, time_t Fabricacion_, cFabricantes* NombreFabricante_, TipoProtesis Protesis_);
+	cPiezasOrtopedicas(int Dimensiones_, TipoMaterial Material_, time_t Fabricacion_, cFabricantes* NombreFabricante_, TipoProtesis Protesis_, string numero_serie_);
 	~cPiezasOrtopedicas();
 
 	unsigned int get_Dimensiones();
@@ -34,12 +35,16 @@ public:
 	string get_NombreFabricante();
 	static unsigned int get_CantidadTotalPiezas();
 	virtual TipoProtesis get_Protesis();
-	virtual void set_Protesis(TipoProtesis NuevoEstado);
+	string get_numeroserie();
+	
 
 	void set_Dimensiones(unsigned int NuevoEstado);
 	void set_Material(TipoMaterial NuevoEstado);
 	void set_Fabricacion(time_t NuevoEstado);
+	virtual void set_Protesis(TipoProtesis NuevoEstado);
+	void set_numeroserie(string NuevoEstado);
 	string to_string_PiezasOrtopedias();
+
 
 };
 

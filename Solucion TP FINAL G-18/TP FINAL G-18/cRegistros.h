@@ -29,7 +29,7 @@ public:
 	tm get_FechaSolicitud();
 	tm get_FechaEstimativaEntrega();
 	tm get_FechaEntregada();
-	cPiezasOrtopedicas* get_Protesis();
+	string get_Protesis();
 	string get_NombrePaciente();
 	
 	void set_FechaSolicitud(tm NuevoEstado);
@@ -40,8 +40,6 @@ public:
 	bool bisiestos(int anio); //lo uso para saber si es un anio bisiesto o no.
 	bool Diferencia_Entrega(); //lo uso para saber si la protesis se entrego a tiempo o no.
 
-	list<cPacientes>Buscar_Paciente_porhospi(cHospitales hospi);
-	list<cPacientes>Buscar_Paciente_porpiezas(cPiezasOrtopedicas* piezitas, cPacientes*pacientitos);
 	
 };
 

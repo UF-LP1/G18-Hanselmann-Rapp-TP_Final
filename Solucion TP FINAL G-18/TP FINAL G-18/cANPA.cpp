@@ -1,10 +1,11 @@
 #include "cANPA.h"
 
-cANPA::cANPA(list <cRegistros> Registro_, string SolicitudEspecial_, list <cOrtopedias> Ortopedia_)
+cANPA::cANPA(list <cRegistros> Registro_, string SolicitudEspecial_, list <cOrtopedias> Ortopedia_, list<cHospitales>hospit_)
 {
 	this->Registro = Registro_;
 	this->SolicitudEspecial = SolicitudEspecial_;
 	this->Ortopedia = Ortopedia_;
+	this->hospit = hospit_;
 }
 
 cANPA::~cANPA()
@@ -27,6 +28,11 @@ list<cOrtopedias> cANPA::get_Ortopedia()
 	return this->Ortopedia;
 }
 
+list<cHospitales> cANPA::get_hospi()
+{
+	return this->hospit;
+}
+
 void cANPA::set_Registro(list<cRegistros> NuevoEstado)
 {
 	this->Registro = NuevoEstado;
@@ -42,6 +48,11 @@ void cANPA::set_Ortopedia(list<cOrtopedias> NuevoEstado)
 	this->Ortopedia = NuevoEstado;
 }
 
+void cANPA::set_hospi(list <cHospitales> NuevoEstado)
+{
+	this->hospit = NuevoEstado;
+}
+
 
 bool cANPA::Buscar_Protesis(cPacientes, cPiezasOrtopedicas)
 {
@@ -55,4 +66,54 @@ ostream& operator<<(ostream& out, cANPA& anpa)
 	out << anpa.get_SolicitudEspecial();
 
 	return out;
+}
+
+
+list<cPacientes> cANPA::Buscar_Paciente_porhospi(cHospitales hospi)
+{
+	list <cPacientes> ::iterator itpaciente;
+	list <cPacientes> pac1 = hospi.get_Pacientes();
+	list <cPacientes> prote;
+
+	unsigned int cont_pro = 0;
+	itpaciente = pac1.begin();
+
+	for (int i = 0; i < pac1.size(); i++, itpaciente++)
+	{
+		if (itpaciente->get_TieneProtesis() == true)
+		{
+			prote.push_back(*itpaciente);
+			cont_pro++;
+		}
+
+	}
+
+	return prote;
+}
+
+list<cPacientes> cANPA::Buscar_Paciente_porpiezas(cRegistros* regis,string piezabuscada)
+{
+	list<cPacientes>pacientes;
+	list<cPacientes>::iterator itpac;
+	list<cHospitales>::iterator ithos;
+
+	ithos = hospit.begin();
+
+
+	for (int i = 0; i < hospit.size(); i++, ithos++)
+	{
+		itpac = ithos->get_Pacientes().begin();
+
+		for (int k = 0; k < ithos->get_Pacientes().size(); k++, itpac++)
+		{
+			if (itpac->get_TieneProtesis() == true)
+			{
+				if (regis->get_Protesis() == piezabuscada)
+				{
+					pacientes.push_back(*itpac);
+				}
+			}
+		}				
+	}
+	return pacientes;
 }

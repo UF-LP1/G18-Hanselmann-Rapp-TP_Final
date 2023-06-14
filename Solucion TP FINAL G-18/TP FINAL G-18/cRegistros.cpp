@@ -41,9 +41,9 @@ tm cRegistros::get_FechaEntregada()
 	return this->FechaEntregada;
 }
 
-cPiezasOrtopedicas* cRegistros::get_Protesis()
+string cRegistros::get_Protesis()
 {
-	return this->Protesis;
+	return this->Protesis->get_numeroserie();
 }
 
 string cRegistros::get_NombrePaciente()
@@ -148,49 +148,5 @@ bool cRegistros::Diferencia_Entrega()
 	return false;
 }
 
-list<cPacientes> cRegistros::Buscar_Paciente_porhospi(cHospitales hospi)
-{
-	list <cPacientes> ::iterator itpaciente;
-	list <cPacientes> pac1 = hospi.get_Pacientes();
-	list <cPacientes> prote;
 
-	unsigned int cont_pro = 0;
-	itpaciente = pac1.begin();
 
-	for (int i = 0; i < pac1.size(); i++, itpaciente++)
-	{
-		if (itpaciente->get_TieneProtesis() == true)
-		{
-			prote.push_back(*itpaciente);
-			cont_pro++;
-		}
-
-	}
-
-	return prote;
-}
-
-list<cPacientes> cRegistros::Buscar_Paciente_porpiezas(cPiezasOrtopedicas* piezitas, cPacientes*pacientitos)
-{
-	list<cPacientes>pacientes; 
-
-	cQuirurgicas* quiru = dynamic_cast <cQuirurgicas*>(piezitas);
-
-	if (quiru != NULL)
-	{
-		cPacientes* pac = quiru->get_Protesis();	
-		
-		pacientes.push_back(*pac);
-	}
-
-	//cNoQuirurgicas* noquiru = dynamic_cast<cNoQuirurgicas*>(piezitas);
-
-	//if (noquiru != NULL)
-	//{
-	//	cPacientes* pacien = noquiru->get_Protesis();
-
-	//	pacientes.push_back(*pacien);
-	//}
-
-	return pacientes;
-}
