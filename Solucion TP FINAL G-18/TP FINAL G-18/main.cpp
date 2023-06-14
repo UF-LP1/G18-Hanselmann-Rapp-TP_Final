@@ -18,6 +18,52 @@ void Menu_Principal()
 	cout << "\t0. SALIR" << endl;
 }
 
+/*void Menu_TIPOPROTESIS()
+{
+	TipoProtesis protes ;
+	int opcion = 0;
+	bool regresar = true;
+
+	system("cls");
+
+	do
+	{
+		cout << "\n\n\t\t\tMENU TIPO PROTESIS" << endl;
+		cout << "\t\t\t--------------" << endl;
+		cout << "\t1. Busco una protesis de la parte Superior Izquierda." << endl;
+		cout << "\t2. Busco una protesis de la parte Superior Derecha." << endl;
+		cout << "\t3. Busco una protesis de la parte Inferior Izquierda." << endl;
+		cout << "\t4. Busco una protesis de la parte Inferior Derecha." << endl;
+		cout << "\t0. SALIR" << endl;
+
+		cout << "\tIngrese una Opcion: ";
+		cin >> opcion;
+
+		switch (opcion)
+		{
+		case(1):
+			protes == 0; //Superior Izquierda
+
+			break;
+
+		case(2):
+			protes == 1; //Superior Derecha
+			break;
+
+		case(3):
+			protes == 2; //Inferior Izquierda
+			break;
+
+		case(0):
+			system("cls");
+			regresar = false;
+			Menu_Principal();
+			break;
+		}
+
+	} while (regresar);
+}*/
+
 int main()
 {
 	list <cMedicos> Medicos;
@@ -42,7 +88,7 @@ int main()
 	cHospitales Hospi2 ("Hospital Italiano", "Libertador 123", Medicos, Pacientes);
 	cPiezasOrtopedicas* PiezitaOrtoped = new cPiezasOrtopedicas(354, Ceramica, FechaFabric, Fabrica, SuperiorDerecho, "XQRW456");
 	cPacientes* Rodrigo = new cPacientes("Rodrigo", "Zavidowski", "114023342", FechaNac, SinAlergia, "Hospital Italiano", 324, true, false);
-	cRegistros Registro(Hospi, Laurita, FechaSolic, FechaEstimEntre, FechaEntre, PiezitaOrtoped, Rodrigo);
+	cRegistros* Registro = new cRegistros(Hospi, Laurita, FechaSolic, FechaEstimEntre, FechaEntre, PiezitaOrtoped, Rodrigo);
 	cANPA PAMPA(Register, "Solicitud Especial", Ortopedias, Hospitales);
 	cOrtopedias Ortoped("Ortopedita", "Manuel Ugarte 354", PiezitasOrtopedicas, 3456);
 	cQuirurgicas Quirur(25, Cobalto, FechaFabric, Fabrica, InferiorDerecha, "ZZ1234");
@@ -70,7 +116,55 @@ int main()
 			break;
 
 		case(2):
-			
+			TipoProtesis protes;
+			int opcion2 = 0;
+			bool regresar = true;
+
+			system("cls");
+
+			do
+			{
+				cout << "\n\n\t\t\tMENU TIPO PROTESIS" << endl;
+				cout << "\t\t\t--------------" << endl;
+				cout << "\t1. Busco una protesis de la parte Superior Izquierda." << endl;
+				cout << "\t2. Busco una protesis de la parte Superior Derecha." << endl;
+				cout << "\t3. Busco una protesis de la parte Inferior Izquierda." << endl;
+				cout << "\t4. Busco una protesis de la parte Inferior Derecha." << endl;
+				cout << "\t0. SALIR" << endl;
+
+				cout << "\tIngrese una Opcion: ";
+				cin >> opcion2;
+
+				switch (opcion2)
+				{
+				case(1):
+					protes == 0; //Superior Izquierda
+					PAMPA.Buscar_Paciente_porpiezas(Registro, protes);
+					break;
+
+				case(2):
+					protes == 1; //Superior Derecha
+					PAMPA.Buscar_Paciente_porpiezas(Registro, protes);
+					break;
+
+				case(3):
+					protes == 2; //Inferior Izquierda
+					PAMPA.Buscar_Paciente_porpiezas(Registro, protes);
+					break;
+
+				case(4):
+					protes == 3; //Inferior Derecha
+					PAMPA.Buscar_Paciente_porpiezas(Registro, protes);
+					break;
+
+				case(0):
+					system("cls");
+					regresar = false;
+					Menu_Principal();
+					break;
+				}
+
+			} while (regresar);
 			break;
 
 		case(3):
