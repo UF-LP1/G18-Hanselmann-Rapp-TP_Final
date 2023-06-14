@@ -75,6 +75,7 @@ list<cPacientes> cANPA::Buscar_Paciente_porhospi(string hospi)
 	list <cPacientes> prote;
 
 	unsigned int cont_pro = 0;
+	ithospi = hospit.begin();
 
 	for (int i = 0; i < hospit.size(); i++, ithospi++) //hicimos un for que recorra todos los hospitales
 	{
