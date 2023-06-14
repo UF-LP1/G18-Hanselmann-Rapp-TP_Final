@@ -76,6 +76,7 @@ cPacientes cPacientes::Imprimir_Preguntas_Agregar_Paciente()
 	system("cls");
 
 	string alerg = "";
+	unsigned int anio_nac = 0, anio_mes = 0;
 
 	cout << "\tIngrese el Nombre de su paciente: ";
 	cin >> Nombre;
@@ -90,10 +91,10 @@ cPacientes cPacientes::Imprimir_Preguntas_Agregar_Paciente()
 	cin >> Nacimiento.tm_mday;
 
 	cout << endl << "\tIngrese el mes de Nacimiento de su paciente: ";
-	cin >> Nacimiento.tm_mon;
+	cin >> anio_mes;
 
 	cout << endl << "\tIngrese el anio de Nacimiento de su paciente: ";
-	cin >> Nacimiento.tm_year;
+	cin >> anio_nac;
 
 	cout << endl << "\n\n\t\t\tTIPOS DE ALERGIAS" << endl;
 	cout << "\t\t\t--------------" << endl;
@@ -133,7 +134,7 @@ cPacientes cPacientes::Imprimir_Preguntas_Agregar_Paciente()
 	}
 
 	cout << endl << "\tIngrese el Nombre del hospital donde se atiende el paciente: ";
-	cin >> NombreHospital;
+	getline (cin, NombreHospital);
 
 	cout << endl << "\tIngrese el radio del miembro de su paciente: ";
 	cin >> RadioMiembro;
@@ -181,6 +182,9 @@ cPacientes cPacientes::Imprimir_Preguntas_Agregar_Paciente()
 		break;
 
 	}
+
+	Nacimiento.tm_year = anio_nac - 1900;
+	Nacimiento.tm_mon = anio_mes - 1;
 
 	Nacimiento = {0, 0, 0, Nacimiento.tm_mday, Nacimiento.tm_mon, Nacimiento.tm_year};
 

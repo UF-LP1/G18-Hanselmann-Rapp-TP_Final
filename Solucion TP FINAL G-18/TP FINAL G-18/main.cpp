@@ -114,7 +114,6 @@ int main()
 		switch (opcion)
 		{
 		case(1):
-			Martin.Imprimir_Preguntas_Agregar_Paciente();
 			Hospi2.Agregar_Paciente(Martin.Imprimir_Preguntas_Agregar_Paciente());
 			break;
 
