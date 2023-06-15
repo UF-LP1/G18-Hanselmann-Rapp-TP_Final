@@ -134,7 +134,7 @@ cPacientes cPacientes::Imprimir_Preguntas_Agregar_Paciente()
 	}
 
 	cout << endl << "\tIngrese el Nombre del hospital donde se atiende el paciente: ";
-	getline (cin, NombreHospital);
+	cin >> NombreHospital;
 
 	cout << endl << "\tIngrese el radio del miembro de su paciente: ";
 	cin >> RadioMiembro;

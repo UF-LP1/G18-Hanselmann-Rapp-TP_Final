@@ -20,7 +20,6 @@ public:
 	void set_Protesis(list <cPiezasOrtopedicas> NuevoEstado);
 	void set_CantidadPiezas(unsigned int NuevoEstado);
 
-	bool Solicitar_Protesis(cFabricantes fab);
 	string to_string_Ortopedias();
 	void Imprimir_Protesis();
 

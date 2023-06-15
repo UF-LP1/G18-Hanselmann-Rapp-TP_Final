@@ -9,7 +9,7 @@ private:
 	list <cRegistros> Registro;
 	string SolicitudEspecial;
 	list <cOrtopedias> Ortopedia;
-	list<cHospitales> hospit;
+	list <cHospitales> hospit;
 
 public:
 	cANPA(list <cRegistros> Registro_, string SolicitudEspecial_, list <cOrtopedias> Ortopedia_, list<cHospitales>hospit_);
@@ -28,7 +28,7 @@ public:
 
 	bool Agregar_Paciente(cPacientes pac, cHospitales ho);
 	void operator+ (cRegistros registros);
-	bool Buscar_Protesis(cPacientes, cPiezasOrtopedicas);
+	void operator- (const cRegistros& registros2);
 	list<cPacientes> Buscar_Paciente_porhospi(string hospi);
 	list <cPacientes> Buscar_Paciente_porpiezas(TipoProtesis piezabuscada);
 	

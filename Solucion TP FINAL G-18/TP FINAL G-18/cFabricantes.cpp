@@ -44,7 +44,7 @@ void cFabricantes::set_Requisitos(string NuevoEstado)
 
 void cFabricantes::Imprimir_Requisitos_Med()
 {
-	unsigned int Dimensiones = 0;
+	/*unsigned int Dimensiones = 0;
 	TipoMaterial Material;
 	TipoProtesis Protesis;
 	string numero_serie;
@@ -86,5 +86,5 @@ void cFabricantes::Imprimir_Requisitos_Med()
 	case(5):
 		TieneProtesis = false; //no tiene ninguna protesis
 		break;
-	}
+	}*/
 }

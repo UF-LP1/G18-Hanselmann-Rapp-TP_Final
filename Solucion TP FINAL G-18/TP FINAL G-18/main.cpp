@@ -97,7 +97,7 @@ int main()
 
 	cPacientes Martin ("Martin", "Scorza", "11223344", FechaNac, Xenobiotico, "Hospital Favalororo", 20, false, true);
 
-	string entreg = "", solic = "";
+	string entreg = "", solic = "", buschosp = "";
 
 	int opcion = 0;
 	bool regresar = true;
@@ -166,13 +166,18 @@ int main()
 			break;
 
 		case(3):
+			system("cls");
+
+			cout << "\tIngrese el nombre de su hospital: ";
+			getline(cin, buschosp);
+			PAMPA.Buscar_Paciente_porhospi(buschosp);
 			break;
 
 		case(4):
 			break;
 
 		case(5):
-			solic = Ortoped.Solicitar_Protesis(Fabrica2) ? "Se solicitó la protesis de manera correcta." : "El fabricante no acepto la solicitud de la protesis.";
+			solic = Hospi2.Solicitar_Protesis(Ortoped, Fabrica2) ? "Se solicitó la protesis de manera correcta." : "El fabricante no acepto la solicitud de la protesis.";
 			cout << solic << endl;
 			break;
 

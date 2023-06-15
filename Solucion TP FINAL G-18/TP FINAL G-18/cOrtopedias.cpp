@@ -48,22 +48,6 @@ string cOrtopedias::to_string_Ortopedias()
 	return "";
 }
 
-bool cOrtopedias::Solicitar_Protesis(cFabricantes fab)
-{
-	//devuelve la protesis
-
-	if (get_CantidadPiezas() == 0)
-	{
-		if (fab.get_SolicitudRequisitos() == true)
-		{
-			Imprimir_Protesis();
-			return true; // si el fabricante desea tener en cuenta los requisitos del medico se puede solicitar correctamente la protesis.
-		}
-		return false; // rechaza la solicitud del medico para hacer la protesis.
-	}
-	return false;
-}
-
 void cOrtopedias:: Imprimir_Protesis()
 {
 	list <cPiezasOrtopedicas> Piezitas = get_Protesis();

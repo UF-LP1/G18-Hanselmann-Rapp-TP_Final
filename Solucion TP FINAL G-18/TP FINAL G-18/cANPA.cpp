@@ -91,15 +91,26 @@ bool cANPA::Agregar_Paciente(cPacientes pac, cHospitales ho)
 	return false;
 }
 
-void cANPA::operator+(cRegistros registros)
+void cANPA::operator+ (cRegistros registros)
 {
 	Registro.push_back(registros);
 	return;
 }
 
-bool cANPA::Buscar_Protesis(cPacientes, cPiezasOrtopedicas)
+void cANPA::operator- (const cRegistros& registros2)
 {
-	return false;
+	/*list <cRegistros> ::iterator itRegi;
+	itRegi = Registro.begin();
+
+	for (int i = 0; i < Registro.size(); i++, itRegi++)
+	{
+		if (itRegi->get_NombrePaciente() == registros2.get_NombrePaciente() && itRegi->get_NombreMedico() == registros2.get_NombreMedico() && itRegi->get_NombreHospital() == registros2.get_NombreHospital())
+		{
+			this->Registro.remove(registros2);
+		}
+	}*/
+	this->Registro.remove(registros2);
+	return;
 }
 
 list<cPacientes> cANPA::Buscar_Paciente_porhospi(string hospi)
