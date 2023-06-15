@@ -53,7 +53,7 @@ void cANPA::set_hospi(list <cHospitales> NuevoEstado)
 	this->hospit = NuevoEstado;
 }
 
-void cANPA::operator+ (cRegistros registros)
+void cANPA::operator+ (const cRegistros& registros)
 {
 	Registro.push_back(registros);
 	return;
@@ -109,7 +109,7 @@ void cANPA::operator- (const cRegistros& registros2)
 			this->Registro.remove(registros2);
 		}
 	}*/
-	//this->Registro.remove(registros2);
+	//Registro.remove(registros2);
 	return;
 }
 

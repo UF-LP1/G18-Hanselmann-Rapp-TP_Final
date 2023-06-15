@@ -26,7 +26,7 @@ public:
 	void set_Ortopedia(list <cOrtopedias> NuevoEstado);
 	void set_hospi(list<cHospitales>NuevoEstado);
 
-	void operator+ (cRegistros registros);
+	void operator+ (const cRegistros& registros);
 	void operator- (const cRegistros& registros2);
 
 	bool Agregar_Paciente(cPacientes pac, cHospitales ho);
