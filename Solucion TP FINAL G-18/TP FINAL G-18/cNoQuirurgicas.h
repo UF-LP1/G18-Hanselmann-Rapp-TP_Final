@@ -10,7 +10,7 @@ private:
     unsigned int Radio_Protesis;
 
  public:
-     cNoQuirurgicas(int Dimensiones_, TipoMaterial Material_, time_t Fabricacion_,
+     cNoQuirurgicas(int Dimensiones_, TipoMaterial Material_, tm Fabricacion_,
          cFabricantes* Fabricante_, TipoProtesis Protesis_, string numero_serie_, unsigned int Radio_Protesis_);
 
      ~cNoQuirurgicas();

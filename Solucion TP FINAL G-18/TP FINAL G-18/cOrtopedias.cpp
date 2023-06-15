@@ -48,7 +48,39 @@ string cOrtopedias::to_string_Ortopedias()
 	return "";
 }
 
+bool cOrtopedias::Solicitar_Protesis(cFabricantes fab)
+{
+	//devuelve la protesis
+
+	if (get_CantidadPiezas() == 0)
+	{
+		if (fab.get_SolicitudRequisitos() == true)
+		{
+			return true; // si el fabricante desea tener en cuenta los requisitos del medico se puede solicitar correctamente la protesis.
+		}
+		return false; // rechaza la solicitud del medico para hacer la protesis.
+	}
+	return false;
+}
+
 void cOrtopedias:: Imprimir_Protesis()
 {
-	cout << this->to_string_Ortopedias() << endl;
+	list <cPiezasOrtopedicas> Piezitas = get_Protesis();
+	list <cPiezasOrtopedicas>::iterator itPieOrtop;
+
+	cout << "Nombre de la Ortopedia: " << Nombre << endl << "Direccion de la Ortopedia: " << Direccion << endl << "Cantidad de Piezas: " << this->CantidadPiezas << endl;
+
+	for (int i = 0; i < Piezitas.size(); i++, itPieOrtop)
+	{
+		cout << "Dimensiones de la pieza: " << itPieOrtop->get_Dimensiones() << endl;
+		cout << "Tipo Material: " << itPieOrtop->get_Material() << endl;
+		cout << itPieOrtop->get_Fabricacion().tm_min << ":" << itPieOrtop->get_Fabricacion().tm_hour <<
+			" del dia " << itPieOrtop->get_Fabricacion().tm_mday << " del mes " << itPieOrtop->get_Fabricacion().tm_mon << " del anio "
+			<< itPieOrtop->get_Fabricacion().tm_year << endl;
+		cout << "Nombre del Fabricante: " << itPieOrtop->get_NombreFabricante() << endl;
+		cout << "Cantidad de PIezas Totales: " << itPieOrtop->get_CantidadTotalPiezas() << endl;
+		cout << "Tipo de Protesis: " << itPieOrtop->get_Protesis() << endl;
+		cout << "Numero de serie: " << itPieOrtop->get_numeroserie() << endl;
+	}
+	return;
 }

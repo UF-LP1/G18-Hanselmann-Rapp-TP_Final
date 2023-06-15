@@ -8,7 +8,7 @@ class cQuirurgicas: public cPiezasOrtopedicas
 private:
 
 public:
-    cQuirurgicas(int Dimensiones_, TipoMaterial Material_, time_t Fabricacion_,
+    cQuirurgicas(int Dimensiones_, TipoMaterial Material_, tm Fabricacion_,
                     cFabricantes* Fabricante_, TipoProtesis Protesis_, string numero_serie_);
 
     ~cQuirurgicas();

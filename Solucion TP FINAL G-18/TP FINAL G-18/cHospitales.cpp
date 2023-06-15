@@ -31,22 +31,6 @@ void cHospitales::set_Pacientes(list <cPacientes> NuevoEstado)
 	this->Pacientes = NuevoEstado;
 }
 
-
-
-bool cHospitales::Solicitar_Protesis(cOrtopedias ortop, cFabricantes fab)
-{
-	//devuelve la protesis
-	if (ortop.get_CantidadPiezas() == 0)
-	{
-		if (fab.get_SolicitudRequisitos() == true)
-		{
-			return true; // si el fabricante desea tener en cuenta los requisitos del medico se puede solicitar correctamente la protesis.
-		}
-		return false; // rechaza la solicitud del medico para hacer la protesis.
-	}
-	return false;
-}
-
 void cHospitales::Imprimir_Pacientes()
 {
 	return;

@@ -5,7 +5,6 @@
 #include "cPiezasOrtopedicas.h"
 #include "cNoQuirurgicas.h"
 #include "cQuirurgicas.h"
-#include "cPacientes.h"
 
 class cRegistros
 {

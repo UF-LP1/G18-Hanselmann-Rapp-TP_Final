@@ -23,8 +23,6 @@ public:
 	void set_Medicos(list <cMedicos> NuevoEstado);
 	void set_Pacientes(list <cPacientes> NuevoEstado);
 
-	
-	bool Solicitar_Protesis(cOrtopedias ortop, cFabricantes fab);
 	void Imprimir_Pacientes();
 
 };

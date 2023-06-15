@@ -73,7 +73,7 @@ int main()
 	list <cRegistros> Register;
 	list <cHospitales> Hospitales;
 
-	time_t FechaFabric = 0;
+	tm FechaFabric = { 0, 0, 0, 0, 0, 0 };
 	tm FechaNac = { 0, 0, 0, 0, 0, 0 };
 	tm FechaSolic = {0, 0, 0, 0, 0, 0};
 	tm FechaEstimEntre = { 0, 0, 0, 0, 0, 0 };
@@ -114,7 +114,7 @@ int main()
 		switch (opcion)
 		{
 		case(1):
-			Hospi2.Agregar_Paciente(Martin.Imprimir_Preguntas_Agregar_Paciente());
+			PAMPA.Agregar_Paciente(Martin.Imprimir_Preguntas_Agregar_Paciente(), Hospi2);
 			break;
 
 		case(2):
