@@ -169,7 +169,7 @@ int main()
 			system("cls");
 
 			cout << "\tIngrese el nombre de su hospital: ";
-			getline(cin, buschosp);
+			cin >> buschosp;
 			PAMPA.Buscar_Paciente_porhospi(buschosp);
 			break;
 

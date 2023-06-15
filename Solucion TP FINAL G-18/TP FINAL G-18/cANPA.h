@@ -26,9 +26,10 @@ public:
 	void set_Ortopedia(list <cOrtopedias> NuevoEstado);
 	void set_hospi(list<cHospitales>NuevoEstado);
 
-	bool Agregar_Paciente(cPacientes pac, cHospitales ho);
 	void operator+ (cRegistros registros);
 	void operator- (const cRegistros& registros2);
+
+	bool Agregar_Paciente(cPacientes pac, cHospitales ho);
 	list<cPacientes> Buscar_Paciente_porhospi(string hospi);
 	list <cPacientes> Buscar_Paciente_porpiezas(TipoProtesis piezabuscada);
 	

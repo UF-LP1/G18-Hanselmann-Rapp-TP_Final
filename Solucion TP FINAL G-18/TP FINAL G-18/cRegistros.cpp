@@ -153,6 +153,3 @@ bool cRegistros::Diferencia_Entrega()
 	}
 	return false;
 }
-
-
-

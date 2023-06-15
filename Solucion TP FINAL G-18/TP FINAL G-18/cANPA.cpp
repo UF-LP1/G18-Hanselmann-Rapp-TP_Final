@@ -53,6 +53,12 @@ void cANPA::set_hospi(list <cHospitales> NuevoEstado)
 	this->hospit = NuevoEstado;
 }
 
+void cANPA::operator+ (cRegistros registros)
+{
+	Registro.push_back(registros);
+	return;
+}
+
 bool cANPA::Agregar_Paciente(cPacientes pac, cHospitales ho)
 {
 	list <cPacientes>::iterator itPaciente;
@@ -91,12 +97,6 @@ bool cANPA::Agregar_Paciente(cPacientes pac, cHospitales ho)
 	return false;
 }
 
-void cANPA::operator+ (cRegistros registros)
-{
-	Registro.push_back(registros);
-	return;
-}
-
 void cANPA::operator- (const cRegistros& registros2)
 {
 	/*list <cRegistros> ::iterator itRegi;
@@ -109,7 +109,7 @@ void cANPA::operator- (const cRegistros& registros2)
 			this->Registro.remove(registros2);
 		}
 	}*/
-	this->Registro.remove(registros2);
+	//this->Registro.remove(registros2);
 	return;
 }
 
