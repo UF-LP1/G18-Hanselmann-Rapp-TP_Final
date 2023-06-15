@@ -172,7 +172,7 @@ int main()
 			break;
 
 		case(5):
-			solic = Hospi2.Solicitar_Protesis(Ortoped, Fabrica2) ? "Se solicitó la protesis de manera correcta." : "El fabricante no acepto la solicitud de la protesis.";
+			solic = Ortoped.Solicitar_Protesis(Fabrica2) ? "Se solicitó la protesis de manera correcta." : "El fabricante no acepto la solicitud de la protesis.";
 			cout << solic << endl;
 			break;
 

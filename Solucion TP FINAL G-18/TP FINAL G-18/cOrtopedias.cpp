@@ -56,6 +56,7 @@ bool cOrtopedias::Solicitar_Protesis(cFabricantes fab)
 	{
 		if (fab.get_SolicitudRequisitos() == true)
 		{
+			Imprimir_Protesis();
 			return true; // si el fabricante desea tener en cuenta los requisitos del medico se puede solicitar correctamente la protesis.
 		}
 		return false; // rechaza la solicitud del medico para hacer la protesis.
