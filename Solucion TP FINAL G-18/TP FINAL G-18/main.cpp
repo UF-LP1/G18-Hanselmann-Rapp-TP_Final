@@ -18,52 +18,6 @@ void Menu_Principal()
 	cout << "\t0. SALIR" << endl;
 }
 
-/*void Menu_TIPOPROTESIS()
-{
-	TipoProtesis protes ;
-	int opcion = 0;
-	bool regresar = true;
-
-	system("cls");
-
-	do
-	{
-		cout << "\n\n\t\t\tMENU TIPO PROTESIS" << endl;
-		cout << "\t\t\t--------------" << endl;
-		cout << "\t1. Busco una protesis de la parte Superior Izquierda." << endl;
-		cout << "\t2. Busco una protesis de la parte Superior Derecha." << endl;
-		cout << "\t3. Busco una protesis de la parte Inferior Izquierda." << endl;
-		cout << "\t4. Busco una protesis de la parte Inferior Derecha." << endl;
-		cout << "\t0. SALIR" << endl;
-
-		cout << "\tIngrese una Opcion: ";
-		cin >> opcion;
-
-		switch (opcion)
-		{
-		case(1):
-			protes == 0; //Superior Izquierda
-
-			break;
-
-		case(2):
-			protes == 1; //Superior Derecha
-			break;
-
-		case(3):
-			protes == 2; //Inferior Izquierda
-			break;
-
-		case(0):
-			system("cls");
-			regresar = false;
-			Menu_Principal();
-			break;
-		}
-
-	} while (regresar);
-}*/
-
 int main()
 {
 	list <cMedicos> Medicos;
@@ -85,9 +39,10 @@ int main()
 	cFabricantes Fabrica2 ("Fabri Protesis", "Aguilar 345", "Habilitado", false, "Requisitos: todo confirmado");
 	cMedicos* Laurita = new cMedicos("Laura", "Gonzalez", "1188883333", "Matricula: M.P.202345", true);
 	cHospitales* Hospi = new cHospitales("Hospital Italiano", "Libertador 123", Medicos, Pacientes);
-	cHospitales Hospi2 ("Hospital Italiano", "Libertador 123", Medicos, Pacientes);
+	cHospitales Hospi2 ("HospitalItaliano", "Libertador 123", Medicos, Pacientes);
 	cPiezasOrtopedicas* PiezitaOrtoped = new cPiezasOrtopedicas(354, Ceramica, FechaFabric, Fabrica, SuperiorDerecho, "XQRW456");
 	cPacientes* Rodrigo = new cPacientes("Rodrigo", "Zavidowski", "114023342", FechaNac, SinAlergia, "Hospital Italiano", 324, true, false);
+	cPacientes Franco("Nombre", "Apellido", "114023342", FechaNac, SinAlergia, "Hospital Italiano", 324, true, false);
 	cRegistros* Registro = new cRegistros(Hospi, Laurita, FechaSolic, FechaEstimEntre, FechaEntre, PiezitaOrtoped, Rodrigo);
 	cRegistros Registro2 (Hospi, Laurita, FechaSolic, FechaEstimEntre, FechaEntre, PiezitaOrtoped, Rodrigo);
 	cANPA PAMPA(Register, "Solicitud Especial", Ortopedias, Hospitales);
@@ -97,7 +52,10 @@ int main()
 
 	cPacientes Martin ("Martin", "Scorza", "11223344", FechaNac, Xenobiotico, "Hospital Favalororo", 20, false, true);
 
-	string entreg = "", solic = "", buschosp = "";
+	Pacientes.push_back(Martin);
+	Pacientes.push_back(Franco);
+
+	string entreg = "", solic = "", buschosp = "", nombrehosp = "";
 
 	int opcion = 0;
 	bool regresar = true;
@@ -114,7 +72,15 @@ int main()
 		switch (opcion)
 		{
 		case(1):
-			PAMPA.Agregar_Paciente(Martin.Imprimir_Preguntas_Agregar_Paciente(), Hospi2);
+			try
+			{
+				PAMPA.Agregar_Paciente(Franco.Imprimir_Preguntas_Agregar_Paciente(), Hospi2);
+			}
+			catch (exception* e)
+			{
+				cout << e->what() << endl;
+				delete e;
+			}
 			break;
 
 		case(2):
@@ -169,7 +135,8 @@ int main()
 			system("cls");
 
 			cout << "\tIngrese el nombre de su hospital: ";
-			cin >> buschosp;
+			getline (cin, buschosp);
+			getline(cin, nombrehosp);
 			PAMPA.Buscar_Paciente_porhospi(buschosp);
 			break;
 

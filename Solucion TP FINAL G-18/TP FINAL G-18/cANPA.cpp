@@ -82,7 +82,7 @@ bool cANPA::Agregar_Paciente(cPacientes pac, cHospitales ho)
 				}
 				else
 				{
-					//usar exception
+					throw new exception("Este paciente ya esta en la lista.");
 					repite == true;
 				}
 			}
@@ -97,19 +97,19 @@ bool cANPA::Agregar_Paciente(cPacientes pac, cHospitales ho)
 	return false;
 }
 
-void cANPA::operator- (const cRegistros& registros2)
+void cANPA::operator- (cRegistros registros2)
 {
-	/*list <cRegistros> ::iterator itRegi;
+	list <cRegistros> ::iterator itRegi;
+
 	itRegi = Registro.begin();
 
 	for (int i = 0; i < Registro.size(); i++, itRegi++)
 	{
 		if (itRegi->get_NombrePaciente() == registros2.get_NombrePaciente() && itRegi->get_NombreMedico() == registros2.get_NombreMedico() && itRegi->get_NombreHospital() == registros2.get_NombreHospital())
 		{
-			this->Registro.remove(registros2);
+			Registro.erase(itRegi); //elimina la posicion
 		}
-	}*/
-	//Registro.remove(registros2);
+	}
 	return;
 }
 

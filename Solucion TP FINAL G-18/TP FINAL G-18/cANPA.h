@@ -19,7 +19,7 @@ public:
 	list <cRegistros> get_Registro();
 	string get_SolicitudEspecial();
 	list <cOrtopedias> get_Ortopedia();
-	list<cHospitales> get_hospi();
+	list <cHospitales> get_hospi();
 
 	void set_Registro(list <cRegistros> NuevoEstado);
 	void set_SolicitudEspecial(string NuevoEstado);
@@ -27,7 +27,7 @@ public:
 	void set_hospi(list<cHospitales>NuevoEstado);
 
 	void operator+ (const cRegistros& registros);
-	void operator- (const cRegistros& registros2);
+	void operator- (cRegistros registros2);
 
 	bool Agregar_Paciente(cPacientes pac, cHospitales ho);
 	list<cPacientes> Buscar_Paciente_porhospi(string hospi);
