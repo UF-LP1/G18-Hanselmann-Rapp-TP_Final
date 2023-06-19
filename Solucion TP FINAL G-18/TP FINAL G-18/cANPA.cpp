@@ -62,13 +62,13 @@ void cANPA::operator+ (const cRegistros& registros)
 bool cANPA::Agregar_Paciente(cPacientes pac, cHospitales ho)
 {
 	list <cPacientes>::iterator itPaciente;
-	list<cHospitales>::iterator ithos;
+	list <cHospitales>::iterator ithos;
 	list <cPacientes> pacientito;
 
 	ithos = hospit.begin();
 	bool repite = false;
 
-	for (int k = 0; k <hospit.size();k++, ithos++) //recorro todos los hospitales
+	for (int k = 0; k <hospit.size(); k++, ithos++) //recorro todos los hospitales
 	{
 		pacientito = ithos->get_Pacientes();
 		itPaciente = pacientito.begin();

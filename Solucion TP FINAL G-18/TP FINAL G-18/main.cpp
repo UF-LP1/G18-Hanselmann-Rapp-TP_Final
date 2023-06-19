@@ -39,7 +39,7 @@ int main()
 	cFabricantes Fabrica2 ("Fabri Protesis", "Aguilar 345", "Habilitado", false, "Requisitos: todo confirmado");
 	cMedicos* Laurita = new cMedicos("Laura", "Gonzalez", "1188883333", "Matricula: M.P.202345", true);
 	cHospitales* Hospi = new cHospitales("Hospital Italiano", "Libertador 123", Medicos, Pacientes);
-	cHospitales Hospi2 ("HospitalItaliano", "Libertador 123", Medicos, Pacientes);
+	cHospitales Hospi2 ("Hospital Italiano", "Libertador 123", Medicos, Pacientes);
 	cPiezasOrtopedicas* PiezitaOrtoped = new cPiezasOrtopedicas(354, Ceramica, FechaFabric, Fabrica, SuperiorDerecho, "XQRW456");
 	cPacientes* Rodrigo = new cPacientes("Rodrigo", "Zavidowski", "114023342", FechaNac, SinAlergia, "Hospital Italiano", 324, true, false);
 	cPacientes Franco("Nombre", "Apellido", "114023342", FechaNac, SinAlergia, "Hospital Italiano", 324, true, false);
@@ -54,6 +54,8 @@ int main()
 
 	Pacientes.push_back(Martin);
 	Pacientes.push_back(Franco);
+
+	Hospitales.push_back(Hospi2);
 
 	string entreg = "", solic = "", buschosp = "", nombrehosp = "";
 
@@ -136,8 +138,8 @@ int main()
 
 			cout << "\tIngrese el nombre de su hospital: ";
 			getline (cin, buschosp);
-			getline(cin, nombrehosp);
-			PAMPA.Buscar_Paciente_porhospi(buschosp);
+			getline (cin, nombrehosp); //tiene todos los datos ingresados solamente esta parte
+			PAMPA.Buscar_Paciente_porhospi(nombrehosp);
 			break;
 
 		case(4):

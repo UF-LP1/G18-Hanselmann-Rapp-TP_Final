@@ -75,7 +75,7 @@ cPacientes cPacientes::Imprimir_Preguntas_Agregar_Paciente()
 {
 	system("cls");
 
-	string alerg = "";
+	string alerg = "", nombrehop = "";
 	unsigned int anio_nac = 0, anio_mes = 0;
 
 	cout << "\tIngrese el Nombre de su paciente: ";
@@ -134,7 +134,8 @@ cPacientes cPacientes::Imprimir_Preguntas_Agregar_Paciente()
 	}
 
 	cout << endl << "\tIngrese el Nombre del hospital donde se atiende el paciente: ";
-	cin >> NombreHospital;
+	getline(cin, nombrehop);
+	getline(cin, NombreHospital);
 
 	cout << endl << "\tIngrese el radio del miembro de su paciente: ";
 	cin >> RadioMiembro;
