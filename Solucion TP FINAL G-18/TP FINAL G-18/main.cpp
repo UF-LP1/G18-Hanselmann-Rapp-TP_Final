@@ -20,19 +20,36 @@ void Menu_Principal()
 
 int main()
 {
+	tm FechaFabric = { 0, 0, 0, 0, 0, 0 };
+	tm FechaNac = { 0, 0, 0, 0, 0, 0 };
+	tm FechaSolic = { 0, 0, 0, 0, 0, 0 };
+	tm FechaEstimEntre = { 0, 0, 0, 0, 0, 0 };
+	tm FechaEntre = { 0, 0, 0, 0, 0, 0 };
+
+	//DEFINIMOS ALGUNOS PACIENTES
+	cPacientes Nicolas("Nicolas", "Rapp", "45545166", FechaNac, SinAlergia, "Hospital Favaloro", 12, true, true);
+	cPacientes Martina("Martina", "Hanselmann", "00112233", FechaNac, Xenobiotico, "Hospital Favaloro", 22, false, true);
+	cPacientes Franco("Franco", "Sorella", "33445566", FechaNac, Liquenoide, "Hospital Favaloro", 9, true, false);
+	cPacientes Martin("Martin", "Scorza", "11223344", FechaNac, Xenobiotico, "Hospital Favalororo", 20, false, true);
+	cPacientes Nadie("Nombre", "Apellido", "DNI", FechaNac, SinAlergia, "Hospital Asistente", 324, true, false);
+
+	list <cPacientes> Pacientes; //AGREGAMOS A LA LISTA A LOS PACIENTES CREADOS
+	Pacientes.push_back(Nicolas);
+	Pacientes.push_back(Martina);
+	Pacientes.push_back(Franco);
+	Pacientes.push_back(Martin);
+
+	//DEFINIMOS ALGUNOS MEDICOS
+
+
+	//cHospitales Hospi2("Hospital Italiano", "Libertador 123", Medicos, Pacientes);
+
 	list <cMedicos> Medicos;
-	list <cPacientes> Pacientes;
 	list <cOrtopedias> Ortopedias;
 	list <cPiezasOrtopedicas> PiezitasOrtopedicas;
 	list <cRegistros> Register;
 	list <cHospitales> Hospitales;
 
-	tm FechaFabric = { 0, 0, 0, 0, 0, 0 };
-	tm FechaNac = { 0, 0, 0, 0, 0, 0 };
-	tm FechaSolic = {0, 0, 0, 0, 0, 0};
-	tm FechaEstimEntre = { 0, 0, 0, 0, 0, 0 };
-	tm FechaEntre = { 0, 0, 0, 0, 0, 0 };
-	
 	//no hace falta simular las clases cAsociacion ni cPersona
 	//Simulacion
 	cFabricantes* Fabrica = new cFabricantes("Fabri Protesis", "Aguilar 345", "Habilitado", false, "Requisitos: todo confirmado");
@@ -42,7 +59,6 @@ int main()
 	cHospitales Hospi2 ("Hospital Italiano", "Libertador 123", Medicos, Pacientes);
 	cPiezasOrtopedicas* PiezitaOrtoped = new cPiezasOrtopedicas(354, Ceramica, FechaFabric, Fabrica, SuperiorDerecho, "XQRW456");
 	cPacientes* Rodrigo = new cPacientes("Rodrigo", "Zavidowski", "114023342", FechaNac, SinAlergia, "Hospital Italiano", 324, true, false);
-	cPacientes Franco("Nombre", "Apellido", "114023342", FechaNac, SinAlergia, "Hospital Italiano", 324, true, false);
 	cRegistros* Registro = new cRegistros(Hospi, Laurita, FechaSolic, FechaEstimEntre, FechaEntre, PiezitaOrtoped, Rodrigo);
 	cRegistros Registro2 (Hospi, Laurita, FechaSolic, FechaEstimEntre, FechaEntre, PiezitaOrtoped, Rodrigo);
 	cANPA PAMPA(Register, "Solicitud Especial", Ortopedias, Hospitales);
@@ -50,10 +66,10 @@ int main()
 	cQuirurgicas Quirur(25, Cobalto, FechaFabric, Fabrica, InferiorDerecha, "ZZ1234");
 	cNoQuirurgicas NoQuirur(12, Polietileno, FechaFabric, Fabrica, SuperiorIzquierdo, "AAA342", 230);
 
-	cPacientes Martin ("Martin", "Scorza", "11223344", FechaNac, Xenobiotico, "Hospital Favalororo", 20, false, true);
-
 	Pacientes.push_back(Martin);
 	Pacientes.push_back(Franco);
+
+	//Medicos.push_back();
 
 	Hospitales.push_back(Hospi2);
 
@@ -76,7 +92,7 @@ int main()
 		case(1):
 			try
 			{
-				PAMPA.Agregar_Paciente(Franco.Imprimir_Preguntas_Agregar_Paciente(), Hospi2);
+				PAMPA.Agregar_Paciente(Nadie.Imprimir_Preguntas_Agregar_Paciente(), Hospi2);
 			}
 			catch (exception* e)
 			{
