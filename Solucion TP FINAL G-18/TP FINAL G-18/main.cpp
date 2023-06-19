@@ -30,39 +30,59 @@ int main()
 	cPacientes Nicolas("Nicolas", "Rapp", "45545166", FechaNac, SinAlergia, "Hospital Favaloro", 12, true, true);
 	cPacientes Martina("Martina", "Hanselmann", "00112233", FechaNac, Xenobiotico, "Hospital Favaloro", 22, false, true);
 	cPacientes Franco("Franco", "Sorella", "33445566", FechaNac, Liquenoide, "Hospital Favaloro", 9, true, false);
-	cPacientes Martin("Martin", "Scorza", "11223344", FechaNac, Xenobiotico, "Hospital Favalororo", 20, false, true);
+	cPacientes MartinS("Martin", "Scorza", "11223344", FechaNac, Xenobiotico, "Hospital Favalororo", 20, false, true);
 	cPacientes Nadie("Nombre", "Apellido", "DNI", FechaNac, SinAlergia, "Hospital Asistente", 324, true, false);
 
-	list <cPacientes> Pacientes; //AGREGAMOS A LA LISTA A LOS PACIENTES CREADOS
-	Pacientes.push_back(Nicolas);
-	Pacientes.push_back(Martina);
-	Pacientes.push_back(Franco);
-	Pacientes.push_back(Martin);
+	cPacientes Camila("Camila", "Zavidowski", "99887766", FechaNac, SinAlergia, "Hospital Aleman", 2, true, true);
+	cPacientes Mariano("Mariano", "Bordeira", "77665544", FechaNac, Xenobiotico, "Hospital Aleman", 4, false, true);
+	cPacientes Stefan("Stefan", "Napoletano", "55443322", FechaNac, Liquenoide, "Hospital Aleman", 6, true, false);
+	cPacientes Emilia("Emilia", "Janin", "33221100", FechaNac, Xenobiotico, "Hospital Aleman", 8, false, true);
+
+	list <cPacientes> PacientesFavaloro; //AGREGAMOS A LA LISTA A LOS PACIENTES CREADOS
+	PacientesFavaloro.push_back(Nicolas);
+	PacientesFavaloro.push_back(Martina);
+	PacientesFavaloro.push_back(Franco);
+	PacientesFavaloro.push_back(MartinS);
+
+	list <cPacientes> PacientesAleman; //AGREGAMOS A LA LISTA A LOS PACIENTES CREADOS
+	PacientesAleman.push_back(Camila);
+	PacientesAleman.push_back(Mariano);
+	PacientesAleman.push_back(Stefan);
+	PacientesAleman.push_back(Emilia);
 
 	//DEFINIMOS ALGUNOS MEDICOS
-	list <cMedicos> Medicos;
 	cMedicos Maria("Maria", "Gonzalez", "1188883333", "Matricula: M.P.202345", true);
 	cMedicos Manuel("Manuel", "Martinez", "1123457896", "Matricula: M.P.346754", false);
 	cMedicos Ana("Ana", "Gomez", "11345098", "Matricula: M.P.345689", true);
 	cMedicos Maximo("Maximo", "Rapp", "11459821", "Matricula: M.P.457293", false);
 
-	Medicos.push_back(Maria);
-	Medicos.push_back(Manuel);
-	Medicos.push_back(Ana);
-	Medicos.push_back(Maximo);
+	cMedicos Delfina("Delfina", "Hanisch", "012345", "Matricula: M.P.8877654", true);
+	cMedicos Bautista("Bautista", "Rach", "56789", "Matricula: M.P.554631", false);
+	cMedicos Isabella("Isabella", "Ferrari", "98765", "Matricula: M.P.148126", true);
+	cMedicos MartinB("Martin", "Ballarino", "43210", "Matricula: M.P.78216", false);
+
+	list <cMedicos> MedicosFavaloro;
+	MedicosFavaloro.push_back(Maria);
+	MedicosFavaloro.push_back(Manuel);
+	MedicosFavaloro.push_back(Ana);
+	MedicosFavaloro.push_back(Maximo);
+
+	list <cMedicos> MedicosAleman;
+	MedicosAleman.push_back(Delfina);
+	MedicosAleman.push_back(Bautista);
+	MedicosAleman.push_back(Isabella);
+	MedicosAleman.push_back(MartinB);
 
 	//DEFINIMOS ALGUNOS HOSPITALES
 	list <cHospitales> Hospitales;
 
-	cHospitales Favaloro("Hospital Favaloro", "Libertador 123", Medicos, Pacientes);
-	cHospitales Aleman("Hospital Aleman", "Olleros 4567", Medicos, Pacientes);
+	cHospitales Favaloro("Hospital Favaloro", "Libertador 123", MedicosFavaloro, PacientesFavaloro);
+	cHospitales Aleman("Hospital Aleman", "Olleros 4567", MedicosAleman, PacientesAleman);
 
 	Hospitales.push_back(Favaloro);
 	Hospitales.push_back(Aleman);
 
-	//cHospitales Hospi2("Hospital Italiano", "Libertador 123", Medicos, Pacientes);
-
-	
+//RESTO	
 	list <cOrtopedias> Ortopedias;
 	list <cPiezasOrtopedicas> PiezitasOrtopedicas;
 	list <cRegistros> Register;
@@ -73,7 +93,7 @@ int main()
 	cFabricantes* Fabrica = new cFabricantes("Fabri Protesis", "Aguilar 345", "Habilitado", false, "Requisitos: todo confirmado");
 	cFabricantes Fabrica2 ("Fabri Protesis", "Aguilar 345", "Habilitado", false, "Requisitos: todo confirmado");
 	cMedicos* Laurita = new cMedicos("Laura", "Gonzalez", "1188883333", "Matricula: M.P.202345", true);
-	cHospitales* Hospi = new cHospitales("Hospital Italiano", "Libertador 123", Medicos, Pacientes);
+	cHospitales* Hospi = new cHospitales("Hospital Italiano", "Libertador 123", MedicosFavaloro, PacientesFavaloro);
 	cPiezasOrtopedicas* PiezitaOrtoped = new cPiezasOrtopedicas(354, Ceramica, FechaFabric, Fabrica, SuperiorDerecho, "XQRW456");
 	cPacientes* Rodrigo = new cPacientes("Rodrigo", "Zavidowski", "114023342", FechaNac, SinAlergia, "Hospital Italiano", 324, true, false);
 	cRegistros* Registro = new cRegistros(Hospi, Laurita, FechaSolic, FechaEstimEntre, FechaEntre, PiezitaOrtoped, Rodrigo);
@@ -87,7 +107,7 @@ int main()
 	string entreg = "", solic = "", buschosp = "", nombrehosp = "";
 
 	int opcion = 0;
-	bool regresar = true;
+	bool regresar = false;
 	bool salir = true;
 	TipoProtesis protes = SuperiorDerecho;
 	int opcion2 = 0;
@@ -123,7 +143,7 @@ int main()
 				cout << "\t2. Busco una protesis de la parte Superior Derecha." << endl;
 				cout << "\t3. Busco una protesis de la parte Inferior Izquierda." << endl;
 				cout << "\t4. Busco una protesis de la parte Inferior Derecha." << endl;
-				cout << "\t0. SALIR" << endl;
+				cout << "\t0. REGRESAR" << endl;
 
 				cout << "\tIngrese una Opcion: ";
 				cin >> opcion2;
@@ -152,7 +172,7 @@ int main()
 
 				case(0):
 					system("cls");
-					regresar = false;
+					regresar = true;
 					Menu_Principal();
 					break;
 				}
