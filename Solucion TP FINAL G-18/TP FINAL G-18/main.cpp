@@ -40,15 +40,33 @@ int main()
 	Pacientes.push_back(Martin);
 
 	//DEFINIMOS ALGUNOS MEDICOS
+	list <cMedicos> Medicos;
+	cMedicos Maria("Maria", "Gonzalez", "1188883333", "Matricula: M.P.202345", true);
+	cMedicos Manuel("Manuel", "Martinez", "1123457896", "Matricula: M.P.346754", false);
+	cMedicos Ana("Ana", "Gomez", "11345098", "Matricula: M.P.345689", true);
+	cMedicos Maximo("Maximo", "Rapp", "11459821", "Matricula: M.P.457293", false);
 
+	Medicos.push_back(Maria);
+	Medicos.push_back(Manuel);
+	Medicos.push_back(Ana);
+	Medicos.push_back(Maximo);
+
+	//DEFINIMOS ALGUNOS HOSPITALES
+	list <cHospitales> Hospitales;
+
+	cHospitales Favaloro("Hospital Favaloro", "Libertador 123", Medicos, Pacientes);
+	cHospitales Aleman("Hospital Aleman", "Olleros 4567", Medicos, Pacientes);
+
+	Hospitales.push_back(Favaloro);
+	Hospitales.push_back(Aleman);
 
 	//cHospitales Hospi2("Hospital Italiano", "Libertador 123", Medicos, Pacientes);
 
-	list <cMedicos> Medicos;
+	
 	list <cOrtopedias> Ortopedias;
 	list <cPiezasOrtopedicas> PiezitasOrtopedicas;
 	list <cRegistros> Register;
-	list <cHospitales> Hospitales;
+	
 
 	//no hace falta simular las clases cAsociacion ni cPersona
 	//Simulacion
@@ -56,7 +74,6 @@ int main()
 	cFabricantes Fabrica2 ("Fabri Protesis", "Aguilar 345", "Habilitado", false, "Requisitos: todo confirmado");
 	cMedicos* Laurita = new cMedicos("Laura", "Gonzalez", "1188883333", "Matricula: M.P.202345", true);
 	cHospitales* Hospi = new cHospitales("Hospital Italiano", "Libertador 123", Medicos, Pacientes);
-	cHospitales Hospi2 ("Hospital Italiano", "Libertador 123", Medicos, Pacientes);
 	cPiezasOrtopedicas* PiezitaOrtoped = new cPiezasOrtopedicas(354, Ceramica, FechaFabric, Fabrica, SuperiorDerecho, "XQRW456");
 	cPacientes* Rodrigo = new cPacientes("Rodrigo", "Zavidowski", "114023342", FechaNac, SinAlergia, "Hospital Italiano", 324, true, false);
 	cRegistros* Registro = new cRegistros(Hospi, Laurita, FechaSolic, FechaEstimEntre, FechaEntre, PiezitaOrtoped, Rodrigo);
@@ -66,12 +83,6 @@ int main()
 	cQuirurgicas Quirur(25, Cobalto, FechaFabric, Fabrica, InferiorDerecha, "ZZ1234");
 	cNoQuirurgicas NoQuirur(12, Polietileno, FechaFabric, Fabrica, SuperiorIzquierdo, "AAA342", 230);
 
-	Pacientes.push_back(Martin);
-	Pacientes.push_back(Franco);
-
-	//Medicos.push_back();
-
-	Hospitales.push_back(Hospi2);
 
 	string entreg = "", solic = "", buschosp = "", nombrehosp = "";
 
@@ -92,7 +103,7 @@ int main()
 		case(1):
 			try
 			{
-				PAMPA.Agregar_Paciente(Nadie.Imprimir_Preguntas_Agregar_Paciente(), Hospi2);
+				PAMPA.Agregar_Paciente(Nadie.Imprimir_Preguntas_Agregar_Paciente(), Favaloro);
 			}
 			catch (exception* e)
 			{
@@ -162,7 +173,7 @@ int main()
 			break;
 
 		case(5):
-			solic = Hospi2.Solicitar_Protesis(Ortoped, Fabrica2) ? "Se solicitó la protesis de manera correcta." : "El fabricante no acepto la solicitud de la protesis.";
+			solic = Favaloro.Solicitar_Protesis(Ortoped, Fabrica2) ? "Se solicitó la protesis de manera correcta." : "El fabricante no acepto la solicitud de la protesis.";
 			cout << solic << endl;
 			break;
 
