@@ -125,12 +125,22 @@ int main()
 
 	//DEFINIMOS ALGUNAS FABRICAS DINÁMICAS
 	cFabricantes* Fabrica = new cFabricantes("Fabri Protesis", "Aguilar 345", "Habilitado", false, "Requisitos: todo confirmado");
+	cFabricantes* Fabrica1 = new cFabricantes("Prote", "Cespedes 123", "No habilitado", true, "Requisitos: todo confirmado");
+	cFabricantes* Fabrica2 = new cFabricantes("PiezasOrtopedicas", "Olleros 456", "Habilitado", false, "Requisitos: todo confirmado");
+	cFabricantes* Fabrica3 = new cFabricantes("Ayudin", "Cabildo 1400", "No habilitado", true, "Requisitos: todo confirmado");
 
 	//DEFINIMOS ALGUNAS PIEZAS ORTOPEDICAS DINÁMICAS
 	cPiezasOrtopedicas* PiezitaOrtoped = new cPiezasOrtopedicas(354, Ceramica, FechaFabric, Fabrica, SuperiorDerecho, "XQRW456");
+	cPiezasOrtopedicas* PiezitaOrtoped1 = new cPiezasOrtopedicas(457, Titanio, FechaFabric, Fabrica, InferiorIzquierda, "DFY645");
+	cPiezasOrtopedicas* PiezitaOrtoped2 = new cPiezasOrtopedicas(61, Cromo, FechaFabric, Fabrica, InferiorDerecha, "W38IF5");
+	cPiezasOrtopedicas* PiezitaOrtoped3 = new cPiezasOrtopedicas(28, Polietileno, FechaFabric, Fabrica, SuperiorIzquierdo, "SD3G95");
 
 	//DEFINIMOS ALGUNOS REGISTROS ESTÁTICOS
-	cRegistros Registro2(Italian, Laurit, FechaSolic, FechaEstimEntre, FechaEntre, PiezitaOrtoped, Rodrig);
+	cRegistros Registro1(Italian, Laurit, FechaSolic, FechaEstimEntre, FechaEntre, PiezitaOrtoped, Rodrig);
+	cRegistros Registro2(Italian, Renat, FechaSolic, FechaEstimEntre, FechaEntre, PiezitaOrtoped3, Mari);
+	cRegistros Registro3(Italian, So, FechaSolic, FechaEstimEntre, FechaEntre, PiezitaOrtoped2, Mate);
+	cRegistros Registro4(Italian, Marco, FechaSolic, FechaEstimEntre, FechaEntre, PiezitaOrtoped1, Federic);
+
 
 	list <cOrtopedias> Ortopedias;
 	list <cPiezasOrtopedicas> PiezitasOrtopedicas;
