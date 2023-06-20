@@ -57,10 +57,10 @@ int main()
 	PacientesAleman.push_back(Emilia);
 
 	list <cPacientes> PacientesItaliano; //AGREGAMOS A LA LISTA A LOS PACIENTES CREADOS
-	PacientesAleman.push_back(Rodrigo);
-	PacientesAleman.push_back(Federico);
-	PacientesAleman.push_back(Mateo);
-	PacientesAleman.push_back(MariaD);
+	PacientesItaliano.push_back(Rodrigo);
+	PacientesItaliano.push_back(Federico);
+	PacientesItaliano.push_back(Mateo);
+	PacientesItaliano.push_back(MariaD);
 
 	//DEFINIMOS ALGUNOS MEDICOS ESTÁTICOS
 	cMedicos MariaG("Maria", "Gonzalez", "1188883333", "Matricula: M.P.202345", true);

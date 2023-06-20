@@ -116,19 +116,19 @@ void cANPA::operator- (cRegistros registros2)
 list<cPacientes> cANPA::Buscar_Paciente_porhospi(string hospi)
 {
 	list <cPacientes> ::iterator itpaciente;
+	list <cPacientes>  pacientes;
 	list <cHospitales> ::iterator ithospi;
 	list <cPacientes> prote;
 
 	unsigned int cont_pro = 0;
-	ithospi = hospit.begin();
 
-	for (int i = 0; i < hospit.size(); i++, ithospi++) //hicimos un for que recorra todos los hospitales
+	for (ithospi = hospit.begin(); ithospi != hospit.end(); ithospi++) //hicimos un for que recorra todos los hospitales
 	{
 		if (hospi == ithospi->get_Nombre()) //nos fijamos segun el hospital que ingresa para saber quienes tienen protesis de ese hospital
 		{
-			itpaciente = ithospi->get_Pacientes().begin();
+			pacientes = ithospi->get_Pacientes();
 
-			for (int k = 0; k < ithospi->get_Pacientes().size(); k++, itpaciente++) //en segundo lugar hicimos un for que recorra la lista de pacientes de ese hospital
+			for (itpaciente = pacientes.begin(); itpaciente != pacientes.end(); itpaciente++) //en segundo lugar hicimos un for que recorra la lista de pacientes de ese hospital
 			{
 				if (itpaciente->get_TieneProtesis() == true)
 				{
