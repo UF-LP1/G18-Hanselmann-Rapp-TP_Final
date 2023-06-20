@@ -194,6 +194,7 @@ int main()
 		switch (opcion)
 		{
 		case(1):
+			//ARREGLARLO
 			try
 			{
 				//PAMPA.Agregar_Paciente(Nadie->Imprimir_Preguntas_Agregar_Paciente(), Favaloro);
@@ -206,6 +207,7 @@ int main()
 			break;
 
 		case(2):
+			//ARREGALRO
 			system("cls");
 
 			do
@@ -268,7 +270,6 @@ int main()
 			system("cls");
 			do
 			{
-
 				cout << "\n\n\t\t\tMENU TIPO PROTESIS" << endl;
 				cout << "\t\t\t--------------" << endl;
 				cout << "\t1. Busco una protesis de la parte Superior Izquierda." << endl;
@@ -313,6 +314,7 @@ int main()
 		break;
 
 		case(5):
+			//ARREGLARLO
 			solic = Favaloro->Solicitar_Protesis(Ortopedia_BsAs, Fabrica_BsAs) ? "Se solicito la protesis de manera correcta." : "El fabricante no acepto la solicitud de la protesis.";
 			cout << solic << endl;
 			break;
