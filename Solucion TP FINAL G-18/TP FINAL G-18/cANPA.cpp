@@ -78,21 +78,46 @@ cPacientes* cANPA::Buscar_Protesis(TipoProtesis prote)
 		{ 
 			if ((*itpieort)->get_Protesis() == prote) //que se fija si la protesis es igual a la pedidad
 			{
-				for (ithos = hospit.begin(); ithos != hospit.end(); ithos++) //recorro todos los hospitales
-				{
-					pacientes = (*ithos)->get_Pacientes();
+				cNoQuirurgicas* noquiru = dynamic_cast<cNoQuirurgicas*>(*itpieort);//verificamos si es no quirurgica
 
-					for (itpaciente = pacientes.begin(); itpaciente != pacientes.end(); itpaciente++) //en segundo lugar hicimos un for que recorra la lista de pacientes de los hospitales
+				if (noquiru != nullptr)
+				{
+
+					for (ithos = hospit.begin(); ithos != hospit.end(); ithos++) //recorro todos los hospitales
 					{
-						if ((*itpaciente)->get_TieneProtesis() == false) //se fija si el paciente ya tenia una protesis
+						pacientes = (*ithos)->get_Pacientes();
+
+						for (itpaciente = pacientes.begin(); itpaciente != pacientes.end(); itpaciente++) //en segundo lugar hicimos un for que recorra la lista de pacientes de los hospitales
 						{
-							if ((*itpaciente)->get_RadioMiembro() == (*itpieort)->get_Dimensiones()) //si el radio del miembro es el mismo o no
+							if ((*itpaciente)->get_TieneProtesis() == false) //se fija si el paciente ya tenia una protesis
 							{
-								return (*itpaciente); //si cumple con lo anterior buscamos la protesis y se la damos al paciente
+								if ((*itpaciente)->get_RadioMiembro() == (*itpieort)->get_Dimensiones()) //si el radio del miembro es el mismo o no
+								{
+									return (*itpaciente); //si cumple con lo anterior buscamos la protesis y se la damos al paciente
+								}
 							}
 						}
 					}
 				}
+				else //si es quirurgica 
+				{
+					for (ithos = hospit.begin(); ithos != hospit.end(); ithos++) //recorro todos los hospitales
+					{
+						pacientes = (*ithos)->get_Pacientes();
+
+						for (itpaciente = pacientes.begin(); itpaciente != pacientes.end(); itpaciente++) //en segundo lugar hicimos un for que recorra la lista de pacientes de los hospitales
+						{
+							if ((*itpaciente)->get_TieneProtesis() == false) //se fija si el paciente ya tenia una protesis
+							{
+								if ((*itpaciente)->get_CompatibleQuirurgica() == true) //si el paciente es compatible quirurgicamente
+								{
+									return (*itpaciente); //si cumple con lo anterior buscamos la protesis y se la damos al paciente
+								}
+							}
+						}
+					}
+				}
+				
 			}
 		}
 	}
