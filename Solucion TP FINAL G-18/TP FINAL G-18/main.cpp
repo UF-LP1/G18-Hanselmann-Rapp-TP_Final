@@ -108,22 +108,49 @@ int main()
 	Hospitales.push_back(Italiano);
 
 	//DEFINIMOS ALGUNAS FABRICAS DINÁMICAS
-	cFabricantes* Fabrica = new cFabricantes("Fabri Protesis", "Aguilar 345", "Habilitado", false, "Requisitos: todo confirmado");
-	cFabricantes* Fabrica1 = new cFabricantes("Prote", "Cespedes 123", "No habilitado", true, "Requisitos: todo confirmado");
-	cFabricantes* Fabrica4 = new cFabricantes("PiezasOrtopedicas", "Olleros 456", "Habilitado", false, "Requisitos: todo confirmado");
-	cFabricantes* Fabrica3 = new cFabricantes("Ayudin", "Cabildo 1400", "No habilitado", true, "Requisitos: todo confirmado");
+	cFabricantes* Fabrica_BsAs = new cFabricantes("Fabrica Buenos Aires", "Aguilar 345", "Habilitado", false, "Requisitos: todo confirmado");
+	cFabricantes* Fabrica_Catamarca = new cFabricantes("Fabrica Catamarca", "Cespedes 123", "No habilitado", true, "Requisitos: todo confirmado");
+	cFabricantes* Fabrica_Merlo = new cFabricantes("Fabrica Merlo", "Olleros 456", "Habilitado", false, "Requisitos: todo confirmado");
 
 	//DEFINIMOS ALGUNAS PIEZAS ORTOPEDICAS DINÁMICAS
-	cPiezasOrtopedicas* PiezitaOrtoped = new cPiezasOrtopedicas(354, Ceramica, FechaFabric, Fabrica, SuperiorDerecho, "XQRW456");
-	cPiezasOrtopedicas* PiezitaOrtoped1 = new cPiezasOrtopedicas(457, Titanio, FechaFabric, Fabrica, InferiorIzquierda, "DFY645");
-	cPiezasOrtopedicas* PiezitaOrtoped2 = new cPiezasOrtopedicas(61, Cromo, FechaFabric, Fabrica, InferiorDerecha, "W38IF5");
-	cPiezasOrtopedicas* PiezitaOrtoped3 = new cPiezasOrtopedicas(28, Polietileno, FechaFabric, Fabrica, SuperiorIzquierdo, "SD3G95");
+	list <cPiezasOrtopedicas*> Piezitas_BuenosAires; //PIEZAS ORTOPEDICAS BUENOS AIRES
+	cPiezasOrtopedicas* PiezitaBsAs1 = new cPiezasOrtopedicas(2, Ceramica, FechaFabric, Fabrica_BsAs, SuperiorDerecho, "XQRW456");
+	cPiezasOrtopedicas* PiezitaBsAs2 = new cPiezasOrtopedicas(4, Titanio, FechaFabric, Fabrica_BsAs, InferiorIzquierda, "DFY645");
+	cPiezasOrtopedicas* PiezitaBsAs3 = new cPiezasOrtopedicas(6, Cromo, FechaFabric, Fabrica_BsAs, InferiorDerecha, "W38IF5");
+	cPiezasOrtopedicas* PiezitaBsAs4 = new cPiezasOrtopedicas(8, Polietileno, FechaFabric, Fabrica_BsAs, SuperiorIzquierdo, "SD3G95");
 
-	//DEFINIMOS ALGUNOS REGISTROS ESTÁTICOS
-	cRegistros* Registro1 = new cRegistros(Italiano, Laura, FechaSolic, FechaEstimEntre, FechaEntre, PiezitaOrtoped, Rodrigo);
-	cRegistros* Registro2 = new cRegistros(Italiano, Renata, FechaSolic, FechaEstimEntre, FechaEntre, PiezitaOrtoped3, MariaD);
-	cRegistros* Registro3 = new cRegistros(Italiano, Sol, FechaSolic, FechaEstimEntre, FechaEntre, PiezitaOrtoped2, Mateo);
-	cRegistros* Registro4 = new cRegistros(Italiano, Marcos, FechaSolic, FechaEstimEntre, FechaEntre, PiezitaOrtoped1, Federico);
+	Piezitas_BuenosAires.push_back(PiezitaBsAs1);
+	Piezitas_BuenosAires.push_back(PiezitaBsAs2);
+	Piezitas_BuenosAires.push_back(PiezitaBsAs3);
+	Piezitas_BuenosAires.push_back(PiezitaBsAs4);
+
+	list <cPiezasOrtopedicas*> Piezitas_Catamarca; //PIEZAS ORTOPEDICAS CATAMARCA
+	cPiezasOrtopedicas* PiezitaCatamarca1 = new cPiezasOrtopedicas(10, Ceramica, FechaFabric, Fabrica_Catamarca, SuperiorDerecho, "FSFG548");
+	cPiezasOrtopedicas* PiezitaCatamarca2 = new cPiezasOrtopedicas(12, Titanio, FechaFabric, Fabrica_Catamarca, InferiorIzquierda, "GHFJS495");
+	cPiezasOrtopedicas* PiezitaCatamarca3 = new cPiezasOrtopedicas(14, Cromo, FechaFabric, Fabrica_Catamarca, InferiorDerecha, "GRGMSFD457");
+	cPiezasOrtopedicas* PiezitaCatamarca4 = new cPiezasOrtopedicas(16, Polietileno, FechaFabric, Fabrica_Catamarca, SuperiorIzquierdo, "AEJGEZ876");
+
+	Piezitas_Catamarca.push_back(PiezitaCatamarca1);
+	Piezitas_Catamarca.push_back(PiezitaCatamarca2);
+	Piezitas_Catamarca.push_back(PiezitaCatamarca3);
+	Piezitas_Catamarca.push_back(PiezitaCatamarca4);
+
+	list <cPiezasOrtopedicas*> Piezitas_Merlo; //PIEZAS ORTOPEDICAS MERLO
+	cPiezasOrtopedicas* PiezitaMerlo1 = new cPiezasOrtopedicas(18, Ceramica, FechaFabric, Fabrica_Merlo, SuperiorDerecho, "FGG3554");
+	cPiezasOrtopedicas* PiezitaMerlo2 = new cPiezasOrtopedicas(20, Titanio, FechaFabric, Fabrica_Merlo, InferiorIzquierda, "DFERH64");
+	cPiezasOrtopedicas* PiezitaMerlo3 = new cPiezasOrtopedicas(22, Cromo, FechaFabric, Fabrica_Merlo, InferiorDerecha, "JYDFGW46");
+	cPiezasOrtopedicas* PiezitaMerlo4 = new cPiezasOrtopedicas(24, Polietileno, FechaFabric, Fabrica_Merlo, SuperiorIzquierdo, "254RY56");
+
+	Piezitas_Merlo.push_back(PiezitaMerlo1);
+	Piezitas_Merlo.push_back(PiezitaMerlo2);
+	Piezitas_Merlo.push_back(PiezitaMerlo3);
+	Piezitas_Merlo.push_back(PiezitaMerlo4);
+
+	//DEFINIMOS ALGUNOS REGISTROS DINAMICAS
+	cRegistros* Registro1 = new cRegistros(Italiano, Laura, FechaSolic, FechaEstimEntre, FechaEntre, PiezitaBsAs1, Rodrigo);
+	cRegistros* Registro2 = new cRegistros(Italiano, Renata, FechaSolic, FechaEstimEntre, FechaEntre, PiezitaCatamarca2, MariaD);
+	cRegistros* Registro3 = new cRegistros(Italiano, Sol, FechaSolic, FechaEstimEntre, FechaEntre, PiezitaMerlo3, Mateo);
+	cRegistros* Registro4 = new cRegistros(Italiano, Marcos, FechaSolic, FechaEstimEntre, FechaEntre, PiezitaBsAs4, Federico);
 
 	list <cRegistros*> Register;
 	Register.push_back(Registro1);
@@ -131,20 +158,23 @@ int main()
 	Register.push_back(Registro3);
 	Register.push_back(Registro4);
 
+	//DEFINIMOS ALGUNAS ORTOPEDIAS DINAMICAS
+	cOrtopedias* Ortopedia_BsAs = new cOrtopedias("Ortopedia Buenos Aires", "Manuel Ugarte 354", Piezitas_BuenosAires, 3456);
+	cOrtopedias* Ortopedia_Catamarca = new cOrtopedias("Ortopedia Catamarca", "Manuel Ugarte 354", Piezitas_Catamarca, 3456);
+	cOrtopedias* Ortopedia_Merlo = new cOrtopedias("Ortopedia Merlo", "Manuel Ugarte 354", Piezitas_Merlo, 3456);
+
+	list <cOrtopedias*> Ortopedias;
+	Ortopedias.push_back(Ortopedia_BsAs);
+	Ortopedias.push_back(Ortopedia_Catamarca);
+	Ortopedias.push_back(Ortopedia_Merlo);
 
 	//RESTO
-	list <cOrtopedias*> Ortopedias;
-	list <cPiezasOrtopedicas*> PiezitasOrtopedicas;
-	
-
 	//no hace falta simular las clases cAsociacion ni cPersona
 	//Simulacion
-	cFabricantes Fabrica2 ("Fabri Protesis", "Aguilar 345", "Habilitado", true, "Requisitos: todo confirmado");
-	//cRegistros* Registro = new cRegistros(Italian, Laurit, FechaSolic, FechaEstimEntre, FechaEntre, PiezitaOrtoped, Rodrig);
+
 	cANPA PAMPA(Register, "Solicitud Especial", Ortopedias, Hospitales);
-	cOrtopedias Ortoped("Ortopedita", "Manuel Ugarte 354", PiezitasOrtopedicas, 3456);
-	cQuirurgicas Quirur(25, Cobalto, FechaFabric, Fabrica, InferiorDerecha, "ZZ1234");
-	cNoQuirurgicas NoQuirur(12, Polietileno, FechaFabric, Fabrica, SuperiorIzquierdo, "AAA342", 230);
+	cQuirurgicas Quirur(25, Cobalto, FechaFabric, Fabrica_BsAs, InferiorDerecha, "ZZ1234");
+	cNoQuirurgicas NoQuirur(12, Polietileno, FechaFabric, Fabrica_BsAs, SuperiorIzquierdo, "AAA342", 230);
 
 
 	string entreg = "", solic = "", buschosp = "", nombrehosp = "";
@@ -283,7 +313,7 @@ int main()
 		break;
 
 		case(5):
-			solic = Favaloro->Solicitar_Protesis(Ortoped, Fabrica2) ? "Se solicito la protesis de manera correcta." : "El fabricante no acepto la solicitud de la protesis.";
+			solic = Favaloro->Solicitar_Protesis(Ortopedia_BsAs, Fabrica_BsAs) ? "Se solicito la protesis de manera correcta." : "El fabricante no acepto la solicitud de la protesis.";
 			cout << solic << endl;
 			break;
 
