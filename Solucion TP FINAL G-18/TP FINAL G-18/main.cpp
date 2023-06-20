@@ -207,7 +207,6 @@ int main()
 			break;
 
 		case(2):
-			//ARREGALRO
 			system("cls");
 
 			do

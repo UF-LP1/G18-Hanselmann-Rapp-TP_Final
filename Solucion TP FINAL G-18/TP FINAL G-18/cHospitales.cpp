@@ -39,7 +39,6 @@ void cHospitales::Imprimir_Pacientes()
 bool cHospitales::Solicitar_Protesis(cOrtopedias* ortop, cFabricantes* fab)
 {
 	//devuelve la protesis
-
 	if (ortop->get_CantidadPiezas() == 0)
 	{
 		if (fab->get_SolicitudRequisitos() == true)
