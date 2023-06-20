@@ -107,7 +107,7 @@ void cANPA::operator- (cRegistros registros2)
 	{
 		if (itRegi->get_NombrePaciente() == registros2.get_NombrePaciente() && itRegi->get_NombreMedico() == registros2.get_NombreMedico() && itRegi->get_NombreHospital() == registros2.get_NombreHospital())
 		{
-			Registro.remove(registros2); //elimina la posicion
+			Registro.erase(itRegi); //elimina la posicion
 		}
 	}
 	return;
