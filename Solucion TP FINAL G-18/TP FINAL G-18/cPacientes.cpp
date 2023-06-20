@@ -71,12 +71,12 @@ void cPacientes::set_TieneProtesis(bool NuevoEstado)
 	this->TieneProtesis = NuevoEstado;
 }
 
-cPacientes cPacientes::Imprimir_Preguntas_Agregar_Paciente()
+cPacientes* cPacientes::Imprimir_Preguntas_Agregar_Paciente()
 {
 	system("cls");
 
 	string alerg = "", nombrehop = "";
-	unsigned int anio_nac = 0, anio_mes = 0;
+	unsigned int anio_nac = 0, anio_mes = 0, radio = 0;
 
 	cout << "\tIngrese el Nombre de su paciente: ";
 	cin >> Nombre;
@@ -189,7 +189,7 @@ cPacientes cPacientes::Imprimir_Preguntas_Agregar_Paciente()
 
 	Nacimiento = {0, 0, 0, Nacimiento.tm_mday, Nacimiento.tm_mon, Nacimiento.tm_year};
 
-	cPacientes PacienteCreado(Nombre, Apellido, Telefono, Nacimiento, Alergias, NombreHospital, RadioMiembro, CompatibleQuirurgica, TieneProtesis);
+	cPacientes* PacienteCreado = new cPacientes (Nombre, Apellido, Telefono, Nacimiento, Alergias, NombreHospital, RadioMiembro, CompatibleQuirurgica, TieneProtesis);
 
 	return PacienteCreado;
 }

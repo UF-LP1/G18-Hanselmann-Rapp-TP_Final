@@ -194,16 +194,16 @@ int main()
 		switch (opcion)
 		{
 		case(1):
-			//ARREGLARLO
 			try
 			{
-				//PAMPA.Agregar_Paciente(Nadie->Imprimir_Preguntas_Agregar_Paciente(), Favaloro);
+				PAMPA.Agregar_Paciente(Nadie->Imprimir_Preguntas_Agregar_Paciente(), Favaloro);
 			}
 			catch (exception* e)
 			{
 				cout << e->what() << endl;
 				delete e;
 			}
+			Menu_Principal();
 			break;
 
 		case(2):
