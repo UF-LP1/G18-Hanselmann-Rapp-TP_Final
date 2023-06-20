@@ -59,6 +59,47 @@ void cANPA::operator+ (cRegistros* registros)
 	return;
 }
 
+cPacientes* cANPA::Buscar_Protesis(TipoProtesis prote)
+{
+	//USAR DYNAMICCAST
+
+	list <cHospitales*>::iterator ithos;
+	list <cOrtopedias*>::iterator itortop;
+	list <cPiezasOrtopedicas*>::iterator itpieort;
+	list <cPiezasOrtopedicas*> piezita;
+	list <cPacientes*> ::iterator itpaciente;
+	list <cPacientes*>  pacientes;
+
+	for (itortop = Ortopedia.begin(); itortop != Ortopedia.end(); itortop++)//recorro todas las ortopedias
+	{
+		piezita = (*itortop)->get_Protesis();
+
+		for (itpieort = piezita.begin(); itpieort != piezita.end(); itpieort++) //recorra todas las piezas ortopedicas
+		{ 
+			if ((*itpieort)->get_Protesis() == prote) //que se fija si la protesis es igual a la pedidad
+			{
+				for (ithos = hospit.begin(); ithos != hospit.end(); ithos++) //recorro todos los hospitales
+				{
+					pacientes = (*ithos)->get_Pacientes();
+
+					for (itpaciente = pacientes.begin(); itpaciente != pacientes.end(); itpaciente++) //en segundo lugar hicimos un for que recorra la lista de pacientes de los hospitales
+					{
+						if ((*itpaciente)->get_TieneProtesis() == false) //se fija si el paciente ya tenia una protesis
+						{
+							if ((*itpaciente)->get_RadioMiembro() == (*itpieort)->get_Dimensiones()) //si el radio del miembro es el mismo o no
+							{
+								return (*itpaciente); //si cumple con lo anterior buscamos la protesis y se la damos al paciente
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	return nullptr;
+}
+
 bool cANPA::Agregar_Paciente(cPacientes* pac, cHospitales* ho)
 {
 	list <cPacientes*>::iterator itPaciente;

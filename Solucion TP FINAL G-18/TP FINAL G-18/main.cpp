@@ -126,6 +126,10 @@ int main()
 	cRegistros* Registro4 = new cRegistros(Italiano, Marcos, FechaSolic, FechaEstimEntre, FechaEntre, PiezitaOrtoped1, Federico);
 
 	list <cRegistros*> Register;
+	Register.push_back(Registro1);
+	Register.push_back(Registro2);
+	Register.push_back(Registro3);
+	Register.push_back(Registro4);
 
 
 	//RESTO
@@ -149,7 +153,7 @@ int main()
 	bool regresar = false;
 	bool salir = true;
 	TipoProtesis protes = SuperiorDerecho;
-	int opcion2 = 0;
+	int opcion2 = 0, opcion4 = 0;
 
 	Menu_Principal();
 	do
@@ -217,6 +221,7 @@ int main()
 				}
 
 			} while (regresar);
+			Menu_Principal();
 			break;
 
 		case(3):
@@ -230,8 +235,52 @@ int main()
 			break;
 
 		case(4):
-			//BUSCAR UNA PROTESIS Y ASIGANRLA A UN PACIENTE QUE LA NECESITE
-			break;
+			system("cls");
+			do
+			{
+
+				cout << "\n\n\t\t\tMENU TIPO PROTESIS" << endl;
+				cout << "\t\t\t--------------" << endl;
+				cout << "\t1. Busco una protesis de la parte Superior Izquierda." << endl;
+				cout << "\t2. Busco una protesis de la parte Superior Derecha." << endl;
+				cout << "\t3. Busco una protesis de la parte Inferior Izquierda." << endl;
+				cout << "\t4. Busco una protesis de la parte Inferior Derecha." << endl;
+				cout << "\t0. REGRESAR" << endl;
+
+				cout << "\tIngrese una Opcion: ";
+				cin >> opcion4;
+
+				switch (opcion4)
+				{
+				case(1):
+					protes == 0; //Superior Izquierda
+					PAMPA.Buscar_Protesis(protes);
+					break;
+
+				case(2):
+					protes == 1; //Superior Derecha
+					PAMPA.Buscar_Protesis(protes);
+					break;
+
+				case(3):
+					protes == 2; //Inferior Izquierda
+					PAMPA.Buscar_Protesis(protes);
+					break;
+
+				case(4):
+					protes == 3; //Inferior Derecha
+					PAMPA.Buscar_Protesis(protes);
+					break;
+
+				case(0):
+					system("cls");
+					regresar = true;
+					Menu_Principal();
+					break;
+				}
+			} while (regresar);
+			Menu_Principal();
+		break;
 
 		case(5):
 			solic = Favaloro->Solicitar_Protesis(Ortoped, Fabrica2) ? "Se solicito la protesis de manera correcta." : "El fabricante no acepto la solicitud de la protesis.";
