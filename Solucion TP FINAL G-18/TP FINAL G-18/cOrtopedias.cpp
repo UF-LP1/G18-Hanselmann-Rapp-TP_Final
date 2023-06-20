@@ -1,8 +1,8 @@
 #include "cOrtopedias.h"
 
-cOrtopedias::cOrtopedias(string Nombre_, string Direccion_, list<cPiezasOrtopedicas*> Protesis_, unsigned int CantidadPiezas_) :cAsociacion(Nombre_, Direccion_)
+cOrtopedias::cOrtopedias(string Nombre_, string Direccion_, list<cPiezasOrtopedicas*> ListaProtesis_, unsigned int CantidadPiezas_) :cAsociacion(Nombre_, Direccion_)
 {
-	this->Protesis = Protesis;
+	this->ListaProtesis = ListaProtesis_;
 	this->CantidadPiezas = CantidadPiezas_;
 }
 
@@ -11,9 +11,9 @@ cOrtopedias::~cOrtopedias()
 
 }
 
-list <cPiezasOrtopedicas*> cOrtopedias::get_Protesis()
+list <cPiezasOrtopedicas*> cOrtopedias::get_ListaProtesis()
 {
-	return this->Protesis;
+	return this->ListaProtesis;
 }
 
 unsigned int cOrtopedias::get_CantidadPiezas()
@@ -23,7 +23,7 @@ unsigned int cOrtopedias::get_CantidadPiezas()
 
 void cOrtopedias::set_Protesis(list <cPiezasOrtopedicas*> NuevoEstado)
 {
-	this->Protesis = NuevoEstado;
+	this->ListaProtesis = NuevoEstado;
 }
 
 void cOrtopedias::set_CantidadPiezas(unsigned int NuevoEstado)
@@ -50,7 +50,7 @@ string cOrtopedias::to_string_Ortopedias()
 
 void cOrtopedias:: Imprimir_Protesis()
 {
-	list <cPiezasOrtopedicas*> Piezitas = get_Protesis();
+	list <cPiezasOrtopedicas*> Piezitas = get_ListaProtesis();
 	list <cPiezasOrtopedicas*>::iterator itPieOrtop;
 
 	cout << "Nombre de la Ortopedia: " << Nombre << endl << "Direccion de la Ortopedia: " << Direccion << endl << "Cantidad de Piezas: " << this->CantidadPiezas << endl;

@@ -72,7 +72,7 @@ cPacientes* cANPA::Buscar_Protesis(TipoProtesis prote)
 
 	for (itortop = Ortopedia.begin(); itortop != Ortopedia.end(); itortop++)//recorro todas las ortopedias
 	{
-		piezita = (*itortop)->get_Protesis();
+		piezita = (*itortop)->get_ListaProtesis();
 
 		for (itpieort = piezita.begin(); itpieort != piezita.end(); itpieort++) //recorra todas las piezas ortopedicas
 		{ 
