@@ -6,32 +6,32 @@
 class cANPA
 {
 private:
-	list <cRegistros> Registro;
+	list <cRegistros*> Registro;
 	string SolicitudEspecial;
-	list <cOrtopedias> Ortopedia;
-	list <cHospitales> hospit;
+	list <cOrtopedias*> Ortopedia;
+	list <cHospitales*> hospit;
 
 public:
-	cANPA(list <cRegistros> Registro_, string SolicitudEspecial_, list <cOrtopedias> Ortopedia_, list<cHospitales> hospit_);
+	cANPA(list <cRegistros*> Registro_, string SolicitudEspecial_, list <cOrtopedias*> Ortopedia_, list<cHospitales*> hospit_);
 
 	~cANPA();
 
-	list <cRegistros> get_Registro();
+	list <cRegistros*> get_Registro();
 	string get_SolicitudEspecial();
-	list <cOrtopedias> get_Ortopedia();
-	list <cHospitales> get_hospi();
+	list <cOrtopedias*> get_Ortopedia();
+	list <cHospitales*> get_hospi();
 
-	void set_Registro(list <cRegistros> NuevoEstado);
+	void set_Registro(list <cRegistros*> NuevoEstado);
 	void set_SolicitudEspecial(string NuevoEstado);
-	void set_Ortopedia(list <cOrtopedias> NuevoEstado);
-	void set_hospi(list<cHospitales> NuevoEstado);
+	void set_Ortopedia(list <cOrtopedias*> NuevoEstado);
+	void set_hospi(list<cHospitales*> NuevoEstado);
 
-	void operator+ (cRegistros registros);
-	void operator- (cRegistros registros2);
+	void operator+ (cRegistros* registros);
+	void operator- (cRegistros* registros2);
 
-	bool Agregar_Paciente(cPacientes pac, cHospitales ho);
-	list<cPacientes> Buscar_Paciente_porhospi(string hospi);
-	list <cPacientes> Buscar_Paciente_porpiezas(TipoProtesis piezabuscada);
+	bool Agregar_Paciente(cPacientes* pac, cHospitales* ho);
+	list<cPacientes*> Buscar_Paciente_porhospi(string hospi);
+	list <cPacientes*> Buscar_Paciente_porpiezas(TipoProtesis piezabuscada);
 	
 };
 

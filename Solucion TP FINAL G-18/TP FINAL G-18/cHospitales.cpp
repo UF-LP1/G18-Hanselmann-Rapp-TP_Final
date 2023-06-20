@@ -1,6 +1,6 @@
 #include "cHospitales.h"
 
-cHospitales::cHospitales(string Nombre_, string Direccion_, list<cMedicos> Medicos_, list<cPacientes> Pacientes_) :cAsociacion(Nombre_, Direccion_)
+cHospitales::cHospitales(string Nombre_, string Direccion_, list<cMedicos*> Medicos_, list<cPacientes*> Pacientes_) :cAsociacion(Nombre_, Direccion_)
 {
 	this->Medicos = Medicos_;
 	this->Pacientes = Pacientes_;
@@ -11,22 +11,22 @@ cHospitales::~cHospitales()
 
 }
 
-list <cMedicos> cHospitales::get_Medicos()
+list <cMedicos*> cHospitales::get_Medicos()
 {
 	return this->Medicos;
 }
 
-list <cPacientes> cHospitales::get_Pacientes()
+list <cPacientes*> cHospitales::get_Pacientes()
 {
 	return this->Pacientes;
 }
 
-void cHospitales::set_Medicos(list <cMedicos> NuevoEstado)
+void cHospitales::set_Medicos(list <cMedicos*> NuevoEstado)
 {
 	this->Medicos = NuevoEstado;
 }
 
-void cHospitales::set_Pacientes(list <cPacientes> NuevoEstado)
+void cHospitales::set_Pacientes(list <cPacientes*> NuevoEstado)
 {
 	this->Pacientes = NuevoEstado;
 }
@@ -49,5 +49,6 @@ bool cHospitales::Solicitar_Protesis(cOrtopedias ortop, cFabricantes fab)
 		}
 		return false; // rechaza la solicitud del medico para hacer la protesis.
 	}
-	return false;
+	return true;
+	ortop.Imprimir_Protesis();
 }
