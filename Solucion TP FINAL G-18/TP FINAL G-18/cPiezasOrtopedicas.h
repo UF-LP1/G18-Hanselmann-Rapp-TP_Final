@@ -11,6 +11,7 @@
 #include <algorithm>
 #include <list>
 #include <iterator>
+#include <sstream>
 
 using namespace std;
 
@@ -43,8 +44,8 @@ public:
 	void set_Fabricacion(tm NuevoEstado);
 	virtual void set_Protesis(TipoProtesis NuevoEstado);
 	void set_numeroserie(string NuevoEstado);
-	string to_string_PiezasOrtopedias();
 
+	string to_string_PiezasOrtopedias();
 
 };
 

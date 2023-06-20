@@ -83,12 +83,13 @@ void cPiezasOrtopedicas::set_numeroserie(string NuevoEstado)
 
 string cPiezasOrtopedicas::to_string_PiezasOrtopedias()
 {
-	/*stringstream salida;
+	stringstream salida;
 
-	salida << "Dimensiones: " << this->Dimensiones << endl << "Tipo de Material: " << this->Material << endl << "Fecha de Fabricacion: " <<
-			this->Fabricacion << endl << "Nombre del Fabricante: " << this->NombreFabricante->get_Nombre() << endl << "Cantidad de Piezas Totales: " << CantidadTotalPiezas;
+	salida << "Dimensiones: " << this->Dimensiones << endl << "Tipo de Material: " << this->Material << endl << "Fecha de Fabricacion: " << "Día: " << 
+			this->Fabricacion.tm_mday << " del mes " << this->Fabricacion.tm_mon << " del anio " << this->Fabricacion.tm_year << endl << "Nombre del Fabricante: " <<
+			this->NombreFabricante->get_Nombre() << endl << "Cantidad de Piezas Totales: " << CantidadTotalPiezas << endl << "Tipo de Protesis: " << this->get_Protesis() << endl << 
+			"Numero de Serie: " << this->get_numeroserie();
 	
-	return salida.str();*/
-	return "";
+	return salida.str();
 }
 

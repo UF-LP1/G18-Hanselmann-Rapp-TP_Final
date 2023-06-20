@@ -316,6 +316,11 @@ int main()
 			//ARREGLARLO
 			solic = Favaloro->Solicitar_Protesis(Ortopedia_BsAs, Fabrica_BsAs) ? "Se solicito la protesis de manera correcta." : "El fabricante no acepto la solicitud de la protesis.";
 			cout << solic << endl;
+			/*if (Favaloro->Solicitar_Protesis(Ortopedia_BsAs, Fabrica_BsAs) == true)
+			{
+				Ortopedia_BsAs->Imprimir_Protesis();
+			}*/
+			Menu_Principal();
 			break;
 
 		case(6):

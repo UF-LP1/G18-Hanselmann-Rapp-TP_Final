@@ -55,17 +55,9 @@ void cOrtopedias:: Imprimir_Protesis()
 
 	cout << "Nombre de la Ortopedia: " << Nombre << endl << "Direccion de la Ortopedia: " << Direccion << endl << "Cantidad de Piezas: " << this->CantidadPiezas << endl;
 
-	for (int i = 0; i < Piezitas.size(); i++, itPieOrtop)
+	for (itPieOrtop = Piezitas.begin(); itPieOrtop != Piezitas.end(); itPieOrtop++)
 	{
-		cout << "Dimensiones de la pieza: " << (*itPieOrtop)->get_Dimensiones() << endl;
-		cout << "Tipo Material: " << (*itPieOrtop)->get_Material() << endl;
-		cout << (*itPieOrtop)->get_Fabricacion().tm_min << ":" << (*itPieOrtop)->get_Fabricacion().tm_hour <<
-			" del dia " << (*itPieOrtop)->get_Fabricacion().tm_mday << " del mes " << (*itPieOrtop)->get_Fabricacion().tm_mon << " del anio "
-			<< (*itPieOrtop)->get_Fabricacion().tm_year << endl;
-		cout << "Nombre del Fabricante: " << (*itPieOrtop)->get_NombreFabricante() << endl;
-		cout << "Cantidad de PIezas Totales: " << (*itPieOrtop)->get_CantidadTotalPiezas() << endl;
-		cout << "Tipo de Protesis: " << (*itPieOrtop)->get_Protesis() << endl;
-		cout << "Numero de serie: " << (*itPieOrtop)->get_numeroserie() << endl;
+		cout << "\tCaracteristicas de las Piezas: " << (*itPieOrtop)->to_string_PiezasOrtopedias() << endl;
 	}
 	return;
 }
