@@ -15,6 +15,7 @@ void Menu_Principal()
 	cout << "\t4. Quiero buscar una protesis." << endl;
 	cout << "\t5. Quiero solicitar una protesis." << endl;
 	cout << "\t6. La protesis fue entregada a tiempo?" << endl;
+	cout << "\t7. Quiero ver los registros del ANPA" << endl;
 	cout << "\t0. SALIR" << endl;
 }
 
@@ -173,11 +174,15 @@ int main()
 	//Simulacion
 
 	cANPA PAMPA(Register, "Solicitud Especial", Ortopedias, Hospitales);
+
 	cQuirurgicas Quirur(25, Cobalto, FechaFabric, Fabrica_BsAs, InferiorDerecha, "ZZ1234");
+
 	cNoQuirurgicas NoQuirur(12, Polietileno, FechaFabric, Fabrica_BsAs, SuperiorIzquierdo, "AAA342", 230);
 
 
 	string entreg = "", solic = "", buschosp = "", nombrehosp = "";
+
+	list <cRegistros*> regis;
 
 	int opcion = 0;
 	bool regresar = false;
@@ -313,20 +318,23 @@ int main()
 		break;
 
 		case(5):
-			//ARREGLARLO
+			//PROBARLO
 			solic = Favaloro->Solicitar_Protesis(Ortopedia_BsAs, Fabrica_BsAs) ? "Se solicito la protesis de manera correcta." : "El fabricante no acepto la solicitud de la protesis.";
 			cout << solic << endl;
 			/*if (Favaloro->Solicitar_Protesis(Ortopedia_BsAs, Fabrica_BsAs) == true)
 			{
 				Ortopedia_BsAs->Imprimir_Protesis();
 			}*/
-
 			Menu_Principal();
 			break;
 
 		case(6):
 			entreg = Registro2->Diferencia_Entrega() ? "La protesis se entrego a tiempo." : "La protesis se entregó tarde."; //Uso el operador ternario para que me diga si se entrega a tiempo.
 			cout << entreg << endl;
+			break;
+
+		case(7):
+			//cout << regis << endl;
 			break;
 
 		case(0):
