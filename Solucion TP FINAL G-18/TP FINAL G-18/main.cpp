@@ -5,6 +5,8 @@
 #include "cNoQuirurgicas.h"
 #include "main.h"
 
+#include <iostream>
+
 void Menu_Principal()
 {
 	cout << "\n\n\t\t\tMENU PRINCIPAL" << endl;
@@ -22,6 +24,7 @@ void Menu_Principal()
 int main()
 {
 	tm FechaFabric = { 0, 0, 0, 0, 0, 0 };
+
 	tm FechaNac = { 0, 0, 0, 0, 0, 0 };
 	tm FechaSolic = { 0, 0, 0, 0, 0, 0 };
 	tm FechaEstimEntre = { 0, 0, 0, 0, 0, 0 };
@@ -46,7 +49,7 @@ int main()
 	cPacientes* MariaD = new cPacientes("Maria", "Durand", "45566677", FechaNac, Carcinogenicos, "Hospital Italiano", 7, false, true);
 
 	list <cPacientes*> PacientesFavaloro; //AGREGAMOS A LA LISTA A LOS PACIENTES CREADOS
-	PacientesFavaloro.push_back(Nicolas);
+	PacientesFavaloro.push_back (Nicolas);
 	PacientesFavaloro.push_back(Martina);
 	PacientesFavaloro.push_back(Franco);
 	PacientesFavaloro.push_back(MartinS);
@@ -154,11 +157,7 @@ int main()
 	cRegistros* Registro4 = new cRegistros(Italiano, Marcos, FechaSolic, FechaEstimEntre, FechaEntre, PiezitaBsAs4, Federico);
 
 	list <cRegistros*> Register;
-	Register.push_back(Registro1);
-	Register.push_back(Registro2);
-	Register.push_back(Registro3);
-	Register.push_back(Registro4);
-
+	
 	//DEFINIMOS ALGUNAS ORTOPEDIAS DINAMICAS
 	cOrtopedias* Ortopedia_BsAs = new cOrtopedias("Ortopedia Buenos Aires", "Manuel Ugarte 354", Piezitas_BuenosAires, 3456);
 	cOrtopedias* Ortopedia_Catamarca = new cOrtopedias("Ortopedia Catamarca", "Manuel Ugarte 354", Piezitas_Catamarca, 3456);
@@ -331,6 +330,20 @@ int main()
 			break;
 
 		case(7):
+			try
+			{
+				PAMPA + Registro1;
+				PAMPA + Registro2;
+				PAMPA + Registro3;
+				PAMPA + Registro4;
+				PAMPA + Registro3;
+			}
+			catch (exception* ex)
+			{
+				cout << ex->what() << endl;
+				delete ex;
+			}
+			PAMPA - Registro1;
 			cout << PAMPA << endl;
 			break;
 

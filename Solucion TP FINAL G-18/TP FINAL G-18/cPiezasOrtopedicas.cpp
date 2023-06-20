@@ -92,4 +92,3 @@ string cPiezasOrtopedicas::to_string_PiezasOrtopedias()
 	
 	return salida.str();
 }
-

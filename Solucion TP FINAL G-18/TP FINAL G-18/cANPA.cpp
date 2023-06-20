@@ -55,7 +55,21 @@ void cANPA::set_hospi(list <cHospitales*> NuevoEstado)
 
 void cANPA::operator+ (cRegistros* registros)
 {
-	Registro.push_back(registros);
+	list <cRegistros*>::iterator itregis;
+	bool repite = false;
+
+	for (itregis = Registro.begin(); itregis != Registro.end(); itregis++)
+	{
+		if (*itregis == registros)
+		{
+			throw new exception("ERROR: Hay un registro que ya esta aniadido.");
+			repite = true;
+		}
+	}
+	if (repite == false)
+	{
+		Registro.push_back(registros);
+	}
 	return;
 }
 
@@ -132,17 +146,16 @@ bool cANPA::Agregar_Paciente(cPacientes* pac, cHospitales* ho)
 	list <cHospitales*>::iterator ithos;
 	list <cPacientes*> pacientito;
 
-	//ithos = hospit.begin();
 	bool repite = false;
 
 	for (ithos = hospit.begin(); ithos !=hospit.end(); ithos++) //recorro todos los hospitales
 	{
 		pacientito = (*ithos)->get_Pacientes();
-		itPaciente = pacientito.begin();
+		//itPaciente = pacientito.begin();
 
 		if (ho->get_Nombre() == (*ithos)->get_Nombre())
 		{
-			for (int i = 0; i < pacientito.size(); i++, itPaciente++)
+			for (itPaciente = pacientito.begin(); itPaciente != pacientito.end(); itPaciente++)
 			{
 				if ((*itPaciente)->get_Nombre() != pac->get_Nombre() && (*itPaciente)->get_Apellido() != pac->get_Apellido())
 				{
@@ -158,7 +171,8 @@ bool cANPA::Agregar_Paciente(cPacientes* pac, cHospitales* ho)
 
 	if (repite == false)
 	{
-		pacientito.push_back(pac);
+		ho->AgregarPa(pac);
+		ho->Imprimir_ListaPacientes();
 		return true;
 	}
 	
@@ -168,10 +182,11 @@ bool cANPA::Agregar_Paciente(cPacientes* pac, cHospitales* ho)
 void cANPA::operator- (cRegistros* registros2)
 {
 	list <cRegistros*> ::iterator itRegi;
+	list <cRegistros*> reg;
 
-	itRegi = Registro.begin();
+	reg = Registro;
 
-	for (int i = 0; i < Registro.size(); i++, itRegi++)
+	for (itRegi = reg.begin(); itRegi != reg.end(); itRegi++)
 	{
 		if ((*itRegi)->get_NombrePaciente() == registros2->get_NombrePaciente() && (*itRegi)->get_NombreMedico() == registros2->get_NombreMedico() && (*itRegi)->get_NombreHospital() == registros2->get_NombreHospital())
 		{
@@ -222,6 +237,7 @@ list <cPacientes*> cANPA::Buscar_Paciente_porpiezas(TipoProtesis piezabuscada)
 		if ((*itregis)->get_Protesis() == piezabuscada)//chequeamos que cada registro coincida con la protesis buscada
 		{
 			pacientes.push_back((* itregis)->get_NombrePaciente());
+
 		}			
 	}
 	return pacientes;
@@ -243,7 +259,7 @@ ostream& operator<<(ostream& out, cANPA& anpa)
 		out << "Fecha Estimativa de Entrega de la protesis: " << (*itReg)->get_FechaEstimativaEntrega().tm_min << ":" << (*itReg)->get_FechaEstimativaEntrega().tm_hour <<
 			" del dia " << (*itReg)->get_FechaEstimativaEntrega().tm_mday << " del mes " << (*itReg)->get_FechaEstimativaEntrega().tm_mon << " del anio " << (*itReg)->get_FechaEstimativaEntrega().tm_year << endl;
 		out << "Fecha Entregada de la protesis: " << (*itReg)->get_FechaEntregada().tm_min << ":" << (*itReg)->get_FechaEntregada().tm_hour <<
-			" del dia " << (*itReg)->get_FechaEntregada().tm_mday << " del mes " << (*itReg)->get_FechaEntregada().tm_mon << " del anio " << (*itReg)->get_FechaEntregada().tm_year << endl;
+			" del dia " << (*itReg)->get_FechaEntregada().tm_mday << " del mes " << ((*itReg)->get_FechaEntregada().tm_mon + 1) << " del anio " << ((*itReg)->get_FechaEntregada().tm_year + 1900) << endl;
 		out << "Tipo de Protesis: " << (*itReg)->get_Protesis() << endl;
 		out << "Nombre del Paciente: " << (*itReg)->get_NombrePaciente()->get_Nombre() << endl;
 	}

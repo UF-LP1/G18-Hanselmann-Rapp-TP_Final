@@ -31,9 +31,21 @@ void cHospitales::set_Pacientes(list <cPacientes*> NuevoEstado)
 	this->Pacientes = NuevoEstado;
 }
 
-void cHospitales::Imprimir_Pacientes()
+void cHospitales::Imprimir_ListaPacientes()
 {
+	list <cPacientes*> Pacie = get_Pacientes();
+	list <cPacientes*>::iterator itpaci;
+
+	for (itpaci = Pacie.begin(); itpaci != Pacie.end(); itpaci++)
+	{
+		cout << "\tCaracteristicas de las Piezas: " << (*itpaci)->to_string_Pacientes() << endl;
+	}
 	return;
+}
+
+void cHospitales::AgregarPa(cPacientes* pac)
+{
+	this->Pacientes.push_back(pac);
 }
 
 bool cHospitales::Solicitar_Protesis(cOrtopedias* ortop, cFabricantes* fab)

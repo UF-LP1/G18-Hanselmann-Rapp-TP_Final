@@ -4,6 +4,7 @@
 #include "TipoAlergia.h"
 #include "cPersona.h"
 
+#include <sstream>
 #include <iostream>
 #include <string>
 #include <algorithm>
@@ -41,6 +42,8 @@ public:
     void set_RadioMiembro(unsigned int NuevoEstado);
     void set_CompatibleQuirurgica(bool NuevoEstado);
     void set_TieneProtesis(bool NuevoEstado);
+
+    string to_string_Pacientes();
 
     cPacientes* Imprimir_Preguntas_Agregar_Paciente();
 

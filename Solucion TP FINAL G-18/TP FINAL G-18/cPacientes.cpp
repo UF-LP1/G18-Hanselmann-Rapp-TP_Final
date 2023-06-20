@@ -193,3 +193,18 @@ cPacientes* cPacientes::Imprimir_Preguntas_Agregar_Paciente()
 
 	return PacienteCreado;
 }
+
+string cPacientes::to_string_Pacientes()
+{
+	stringstream salida;
+
+	string compat = CompatibleQuirurgica ? "si" : "no";
+	string tprote = TieneProtesis ? "si" : "no";
+
+	salida << "Nombre: " << this->Nombre << endl << "Apellido: " << this->Apellido << endl << "Telefono: " << this->Telefono << endl << "Fecha de Nacimiento: " << "Día: " <<
+		this->Nacimiento.tm_mday << " del mes " << this->Nacimiento.tm_mon << " del anio " << this->Nacimiento.tm_year << endl << "Tipo de Alergia: " <<
+		this->Alergias << endl << "Nombre del Hospital asistido: " << this->NombreHospital << endl << "Radio del miembro: " << this->RadioMiembro << endl <<
+		"Es compatible quirurgicamente: " << compat << endl << "Tiene Protesis: " << tprote;
+
+	return salida.str();
+}
