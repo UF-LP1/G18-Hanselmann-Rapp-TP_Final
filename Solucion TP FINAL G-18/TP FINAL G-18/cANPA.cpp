@@ -149,11 +149,12 @@ bool cANPA::Agregar_Paciente(cPacientes* pac, cHospitales* ho)
 				else
 				{
 					throw new exception("Este paciente ya esta en la lista.");
-					repite == true;
+					repite = true;
 				}
 			}
 		}
 	}
+
 	if (repite == false)
 	{
 		pacientito.push_back(pac);
@@ -229,9 +230,7 @@ ostream& operator<<(ostream& out, cANPA& anpa)
 {
 	list <cRegistros*>::iterator itReg;
 
-	itReg = anpa.get_Registro().begin();
-
-	for (int i = 0; i < anpa.get_Registro().size(); i++, itReg++)
+	for (itReg = anpa.get_Registro().begin(); itReg != anpa.get_Registro().end(); itReg++)
 	{
 		out << "Nombre del Hospital: " << (*itReg)->get_NombreHospital()->get_Nombre() << endl;
 		out << "Nombre del Medico: " << (*itReg)->get_NombreMedico()->get_Nombre() << endl;

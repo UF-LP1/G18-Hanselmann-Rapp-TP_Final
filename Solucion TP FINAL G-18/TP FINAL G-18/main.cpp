@@ -182,8 +182,6 @@ int main()
 
 	string entreg = "", solic = "", buschosp = "", nombrehosp = "";
 
-	list <cRegistros*> regis;
-
 	int opcion = 0;
 	bool regresar = false;
 	bool salir = true;
@@ -230,22 +228,22 @@ int main()
 				switch (opcion2)
 				{
 				case(1):
-					protes == 0; //Superior Izquierda
+					protes = SuperiorIzquierdo; //Superior Izquierda
 					PAMPA.Buscar_Paciente_porpiezas(protes);
 					break;
 
 				case(2):
-					protes == 1; //Superior Derecha
+					protes = SuperiorDerecho; //Superior Derecha
 					PAMPA.Buscar_Paciente_porpiezas(protes);
 					break;
 
 				case(3):
-					protes == 2; //Inferior Izquierda
+					protes = InferiorIzquierda; //Inferior Izquierda
 					PAMPA.Buscar_Paciente_porpiezas(protes);
 					break;
 
 				case(4):
-					protes == 3; //Inferior Derecha
+					protes = InferiorDerecha; //Inferior Derecha
 					PAMPA.Buscar_Paciente_porpiezas(protes);
 					break;
 
@@ -288,22 +286,22 @@ int main()
 				switch (opcion4)
 				{
 				case(1):
-					protes == 0; //Superior Izquierda
+					protes = SuperiorIzquierdo; //Superior Izquierda
 					PAMPA.Buscar_Protesis(protes);
 					break;
 
 				case(2):
-					protes == 1; //Superior Derecha
+					protes = SuperiorDerecho; //Superior Derecha
 					PAMPA.Buscar_Protesis(protes);
 					break;
 
 				case(3):
-					protes == 2; //Inferior Izquierda
+					protes = InferiorIzquierda; //Inferior Izquierda
 					PAMPA.Buscar_Protesis(protes);
 					break;
 
 				case(4):
-					protes == 3; //Inferior Derecha
+					protes = InferiorDerecha; //Inferior Derecha
 					PAMPA.Buscar_Protesis(protes);
 					break;
 
@@ -334,7 +332,7 @@ int main()
 			break;
 
 		case(7):
-			//cout << regis << endl;
+			cout << PAMPA << endl;
 			break;
 
 		case(0):
