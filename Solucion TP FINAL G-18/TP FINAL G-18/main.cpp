@@ -183,7 +183,7 @@ int main()
 	string entreg = "", solic = "", buschosp = "", nombrehosp = "";
 
 	int opcion = 0;
-	bool regresar = false;
+	bool regresar = true, regresar2 = true;
 	bool salir = true;
 	TipoProtesis protes = SuperiorDerecho;
 	int opcion2 = 0, opcion4 = 0;
@@ -212,8 +212,6 @@ int main()
 		case(2):
 			system("cls");
 
-			do
-			{
 				cout << "\n\n\t\t\tMENU TIPO PROTESIS" << endl;
 				cout << "\t\t\t--------------" << endl;
 				cout << "\t1. Busco una protesis de la parte Superior Izquierda." << endl;
@@ -222,7 +220,9 @@ int main()
 				cout << "\t4. Busco una protesis de la parte Inferior Derecha." << endl;
 				cout << "\t0. REGRESAR" << endl;
 
-				cout << "\tIngrese una Opcion: ";
+			do
+			{
+				cout << "\tIngrese una Opcion del Menu Tipo Protesis: ";
 				cin >> opcion2;
 
 				switch (opcion2)
@@ -249,13 +249,12 @@ int main()
 
 				case(0):
 					system("cls");
-					regresar = true;
+					regresar = false;
 					Menu_Principal();
 					break;
 				}
 
 			} while (regresar);
-			Menu_Principal();
 			break;
 
 		case(3):
@@ -270,17 +269,18 @@ int main()
 
 		case(4):
 			system("cls");
-			do
-			{
+
 				cout << "\n\n\t\t\tMENU TIPO PROTESIS" << endl;
 				cout << "\t\t\t--------------" << endl;
-				cout << "\t1. Busco una protesis de la parte Superior Izquierda." << endl;
-				cout << "\t2. Busco una protesis de la parte Superior Derecha." << endl;
-				cout << "\t3. Busco una protesis de la parte Inferior Izquierda." << endl;
-				cout << "\t4. Busco una protesis de la parte Inferior Derecha." << endl;
+				cout << "\t1. El paciente quiere una protesis de la parte Superior Izquierda." << endl;
+				cout << "\t2. El paciente quiere una protesis de la parte Superior Derecha." << endl;
+				cout << "\t3. El paciente quiere una protesis de la parte Inferior Izquierda." << endl;
+				cout << "\t4. El paciente quiere una protesis de la parte Inferior Derecha." << endl;
 				cout << "\t0. REGRESAR" << endl;
 
-				cout << "\tIngrese una Opcion: ";
+			do
+			{
+				cout << "\tIngrese una Opcion del Menu Tipo Protesis: ";
 				cin >> opcion4;
 
 				switch (opcion4)
@@ -307,22 +307,21 @@ int main()
 
 				case(0):
 					system("cls");
-					regresar = true;
+					regresar2 = false;
 					Menu_Principal();
 					break;
 				}
-			} while (regresar);
-			Menu_Principal();
+			} while (regresar2);
+
 		break;
 
 		case(5):
-			//PROBARLO
 			solic = Favaloro->Solicitar_Protesis(Ortopedia_BsAs, Fabrica_BsAs) ? "Se solicito la protesis de manera correcta." : "El fabricante no acepto la solicitud de la protesis.";
 			cout << solic << endl;
-			/*if (Favaloro->Solicitar_Protesis(Ortopedia_BsAs, Fabrica_BsAs) == true)
+			if (Favaloro->Solicitar_Protesis(Ortopedia_BsAs, Fabrica_BsAs) == true)
 			{
 				Ortopedia_BsAs->Imprimir_Protesis();
-			}*/
+			}
 			Menu_Principal();
 			break;
 

@@ -61,8 +61,6 @@ void cANPA::operator+ (cRegistros* registros)
 
 cPacientes* cANPA::Buscar_Protesis(TipoProtesis prote)
 {
-	//USAR DYNAMICCAST
-
 	list <cHospitales*>::iterator ithos;
 	list <cOrtopedias*>::iterator itortop;
 	list <cPiezasOrtopedicas*>::iterator itpieort;
@@ -70,19 +68,19 @@ cPacientes* cANPA::Buscar_Protesis(TipoProtesis prote)
 	list <cPacientes*> ::iterator itpaciente;
 	list <cPacientes*>  pacientes;
 
-	for (itortop = Ortopedia.begin(); itortop != Ortopedia.end(); itortop++)//recorro todas las ortopedias
+	for (itortop = Ortopedia.begin(); itortop != Ortopedia.end(); itortop++) //recorro todas las ortopedias
 	{
 		piezita = (*itortop)->get_ListaProtesis();
 
 		for (itpieort = piezita.begin(); itpieort != piezita.end(); itpieort++) //recorra todas las piezas ortopedicas
-		{ 
-			if ((*itpieort)->get_Protesis() == prote) //que se fija si la protesis es igual a la pedidad
+		{
+			cNoQuirurgicas* noquiru = dynamic_cast<cNoQuirurgicas*>(*itpieort);//verificamos si es no quirurgica
+
+			if (noquiru != nullptr)
 			{
-				cNoQuirurgicas* noquiru = dynamic_cast<cNoQuirurgicas*>(*itpieort);//verificamos si es no quirurgica
-
-				if (noquiru != nullptr)
+				if ((*itpieort)->get_Protesis() == prote) //que se fija si la protesis es igual a la pedida
 				{
-
+					
 					for (ithos = hospit.begin(); ithos != hospit.end(); ithos++) //recorro todos los hospitales
 					{
 						pacientes = (*ithos)->get_Pacientes();
@@ -99,7 +97,10 @@ cPacientes* cANPA::Buscar_Protesis(TipoProtesis prote)
 						}
 					}
 				}
-				else //si es quirurgica 
+			}
+			else //si es quirurgica 
+			{
+				if ((*itpieort)->get_Protesis() == prote) //que se fija si la protesis es igual a la pedida
 				{
 					for (ithos = hospit.begin(); ithos != hospit.end(); ithos++) //recorro todos los hospitales
 					{
@@ -117,11 +118,11 @@ cPacientes* cANPA::Buscar_Protesis(TipoProtesis prote)
 						}
 					}
 				}
-				
 			}
-		}
-	}
 
+		}
+
+	}
 	return nullptr;
 }
 
@@ -229,8 +230,11 @@ list <cPacientes*> cANPA::Buscar_Paciente_porpiezas(TipoProtesis piezabuscada)
 ostream& operator<<(ostream& out, cANPA& anpa)
 {
 	list <cRegistros*>::iterator itReg;
+	list <cRegistros*> regist;
 
-	for (itReg = anpa.get_Registro().begin(); itReg != anpa.get_Registro().end(); itReg++)
+	regist = anpa.get_Registro();
+
+	for (itReg = regist.begin(); itReg != regist.end(); itReg++)
 	{
 		out << "Nombre del Hospital: " << (*itReg)->get_NombreHospital()->get_Nombre() << endl;
 		out << "Nombre del Medico: " << (*itReg)->get_NombreMedico()->get_Nombre() << endl;
