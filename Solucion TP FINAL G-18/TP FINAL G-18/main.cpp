@@ -320,6 +320,7 @@ int main()
 			{
 				Ortopedia_BsAs->Imprimir_Protesis();
 			}*/
+
 			Menu_Principal();
 			break;
 
