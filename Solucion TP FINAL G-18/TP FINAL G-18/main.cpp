@@ -126,7 +126,7 @@ int main()
 	//DEFINIMOS ALGUNAS FABRICAS DINÁMICAS
 	cFabricantes* Fabrica = new cFabricantes("Fabri Protesis", "Aguilar 345", "Habilitado", false, "Requisitos: todo confirmado");
 	cFabricantes* Fabrica1 = new cFabricantes("Prote", "Cespedes 123", "No habilitado", true, "Requisitos: todo confirmado");
-	cFabricantes* Fabrica2 = new cFabricantes("PiezasOrtopedicas", "Olleros 456", "Habilitado", false, "Requisitos: todo confirmado");
+	cFabricantes* Fabrica4 = new cFabricantes("PiezasOrtopedicas", "Olleros 456", "Habilitado", false, "Requisitos: todo confirmado");
 	cFabricantes* Fabrica3 = new cFabricantes("Ayudin", "Cabildo 1400", "No habilitado", true, "Requisitos: todo confirmado");
 
 	//DEFINIMOS ALGUNAS PIEZAS ORTOPEDICAS DINÁMICAS

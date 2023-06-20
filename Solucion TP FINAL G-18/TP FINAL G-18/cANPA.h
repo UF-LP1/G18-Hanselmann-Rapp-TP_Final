@@ -12,7 +12,7 @@ private:
 	list <cHospitales> hospit;
 
 public:
-	cANPA(list <cRegistros> Registro_, string SolicitudEspecial_, list <cOrtopedias> Ortopedia_, list<cHospitales>hospit_);
+	cANPA(list <cRegistros> Registro_, string SolicitudEspecial_, list <cOrtopedias> Ortopedia_, list<cHospitales> hospit_);
 
 	~cANPA();
 
@@ -24,9 +24,9 @@ public:
 	void set_Registro(list <cRegistros> NuevoEstado);
 	void set_SolicitudEspecial(string NuevoEstado);
 	void set_Ortopedia(list <cOrtopedias> NuevoEstado);
-	void set_hospi(list<cHospitales>NuevoEstado);
+	void set_hospi(list<cHospitales> NuevoEstado);
 
-	void operator+ (const cRegistros& registros);
+	void operator+ (cRegistros registros);
 	void operator- (cRegistros registros2);
 
 	bool Agregar_Paciente(cPacientes pac, cHospitales ho);

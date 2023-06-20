@@ -1,6 +1,6 @@
 #include "cANPA.h"
 
-cANPA::cANPA(list <cRegistros> Registro_, string SolicitudEspecial_, list <cOrtopedias> Ortopedia_, list<cHospitales>hospit_)
+cANPA::cANPA(list <cRegistros> Registro_, string SolicitudEspecial_, list <cOrtopedias> Ortopedia_, list<cHospitales> hospit_)
 {
 	this->Registro = Registro_;
 	this->SolicitudEspecial = SolicitudEspecial_;
@@ -53,7 +53,7 @@ void cANPA::set_hospi(list <cHospitales> NuevoEstado)
 	this->hospit = NuevoEstado;
 }
 
-void cANPA::operator+ (const cRegistros& registros)
+void cANPA::operator+ (cRegistros registros)
 {
 	Registro.push_back(registros);
 	return;
@@ -107,7 +107,7 @@ void cANPA::operator- (cRegistros registros2)
 	{
 		if (itRegi->get_NombrePaciente() == registros2.get_NombrePaciente() && itRegi->get_NombreMedico() == registros2.get_NombreMedico() && itRegi->get_NombreHospital() == registros2.get_NombreHospital())
 		{
-			Registro.erase(itRegi); //elimina la posicion
+			Registro.remove(registros2); //elimina la posicion
 		}
 	}
 	return;
