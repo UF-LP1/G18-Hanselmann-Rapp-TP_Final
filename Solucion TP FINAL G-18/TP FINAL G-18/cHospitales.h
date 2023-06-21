@@ -6,6 +6,8 @@
 #include "cPersona.h"
 #include "cPacientes.h"
 #include "cOrtopedias.h"
+#include "cNoQuirurgicas.h"
+#include "cQuirurgicas.h"
 
 class cHospitales: public cAsociacion
 {
