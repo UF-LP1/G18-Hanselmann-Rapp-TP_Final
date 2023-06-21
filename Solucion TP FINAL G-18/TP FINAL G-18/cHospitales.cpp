@@ -62,8 +62,8 @@ bool cHospitales::Solicitar_Protesis(cOrtopedias* ortop, cFabricantes* fab, Tipo
 		{
 			if (fab->get_SolicitudRequisitos() == true)
 			{
-				return true; // si el fabricante desea tener en cuenta los requisitos del medico se puede solicitar correctamente la protesis.
 				fab->to_string_pro();
+				return true; // si el fabricante desea tener en cuenta los requisitos del medico se puede solicitar correctamente la protesis.
 			}
 			else
 			{
@@ -74,15 +74,16 @@ bool cHospitales::Solicitar_Protesis(cOrtopedias* ortop, cFabricantes* fab, Tipo
 		{
 			if ((*itpi)->get_Protesis() == prote) //si la ortopedia tiene piezas, que busque si es la misma
 			{
-				return true;
 				nuevo.push_back(*itpi);
 				ortop->set_Protesis(nuevo);
 				ortop->Imprimir_Protesis();
+				return true;
 			}
 			else //si la ortopedia tiene piezas, pero no de las que necesita
 			{
 				if (fab->get_SolicitudRequisitos() == true)
 				{
+					fab->to_string_pro();
 					return true; // si el fabricante desea tener en cuenta los requisitos del medico se puede solicitar correctamente la protesis.
 				}
 				else
