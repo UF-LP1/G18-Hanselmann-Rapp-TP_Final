@@ -1,8 +1,9 @@
 #include "cPacientes.h"
 
-cPacientes::cPacientes(string Nombre_, string Apellido_, string Telefono_, tm Nacimiento_, TipoAlergia Alergias_, string NombreHospital_, 
+cPacientes::cPacientes(string Nombre_, string Apellido_, string Telefono_, string DNI_,  tm Nacimiento_, TipoAlergia Alergias_, string NombreHospital_, 
 							unsigned int RadioMiembro_, bool CompatibleQuirurgica_, bool TieneProtesis_) :cPersona(Nombre_, Apellido_, Telefono_)
 {
+	this->DNI = DNI_;
 	this->Nacimiento = Nacimiento_;
 	this->Alergias = Alergias_;
 	this->NombreHospital = NombreHospital_;
@@ -14,6 +15,11 @@ cPacientes::cPacientes(string Nombre_, string Apellido_, string Telefono_, tm Na
 cPacientes::~cPacientes()
 {
 
+}
+
+string cPacientes::get_DNI()
+{
+	return this->DNI;
 }
 
 tm cPacientes::get_Nacimiento()
@@ -86,6 +92,9 @@ cPacientes* cPacientes::Imprimir_Preguntas_Agregar_Paciente()
 
 	cout << endl << "\tIngrese el telefono de su paciente: ";
 	cin >> Telefono;
+
+	cout << endl << "\tIngrese el DNI de su paciente: ";
+	cin >> DNI;
 
 	cout << endl << "\tIngrese el dia de Nacimiento de su paciente: ";
 	cin >> Nacimiento.tm_mday;
@@ -189,7 +198,7 @@ cPacientes* cPacientes::Imprimir_Preguntas_Agregar_Paciente()
 
 	Nacimiento = {0, 0, 0, Nacimiento.tm_mday, Nacimiento.tm_mon, Nacimiento.tm_year};
 
-	cPacientes* PacienteCreado = new cPacientes (Nombre, Apellido, Telefono, Nacimiento, Alergias, NombreHospital, RadioMiembro, CompatibleQuirurgica, TieneProtesis);
+	cPacientes* PacienteCreado = new cPacientes (Nombre, Apellido, Telefono, DNI, Nacimiento, Alergias, NombreHospital, RadioMiembro, CompatibleQuirurgica, TieneProtesis);
 
 	return PacienteCreado;
 }
@@ -201,8 +210,8 @@ string cPacientes::to_string_Pacientes()
 	string compat = CompatibleQuirurgica ? "si" : "no";
 	string tprote = TieneProtesis ? "si" : "no";
 
-	salida << "Nombre: " << this->Nombre << endl << "Apellido: " << this->Apellido << endl << "Telefono: " << this->Telefono << endl << "Fecha de Nacimiento: " << "Día: " <<
-		this->Nacimiento.tm_mday << " del mes " << this->Nacimiento.tm_mon << " del anio " << this->Nacimiento.tm_year << endl << "Tipo de Alergia: " <<
+	salida << "Nombre: " << this->Nombre << endl << "Apellido: " << this->Apellido << endl << "Telefono: " << this->Telefono << endl << "DNI: " << this->DNI << endl <<
+		"Fecha de Nacimiento: " << "Día: " << this->Nacimiento.tm_mday << " del mes " << this->Nacimiento.tm_mon << " del anio " << this->Nacimiento.tm_year << endl << "Tipo de Alergia: " <<
 		this->Alergias << endl << "Nombre del Hospital asistido: " << this->NombreHospital << endl << "Radio del miembro: " << this->RadioMiembro << endl <<
 		"Es compatible quirurgicamente: " << compat << endl << "Tiene Protesis: " << tprote;
 

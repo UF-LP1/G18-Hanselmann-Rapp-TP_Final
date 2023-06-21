@@ -171,7 +171,7 @@ bool cANPA::Agregar_Paciente(cPacientes* pac, cHospitales* ho)
 		{
 			for (itPaciente = pacientito.begin(); itPaciente != pacientito.end(); itPaciente++)
 			{
-				if ((*itPaciente)->get_Nombre() != pac->get_Nombre() && (*itPaciente)->get_Apellido() != pac->get_Apellido())
+				if ((*itPaciente)->get_DNI() != pac->get_DNI())// me fijo en el DNI que es unico
 				{
 				}
 				else

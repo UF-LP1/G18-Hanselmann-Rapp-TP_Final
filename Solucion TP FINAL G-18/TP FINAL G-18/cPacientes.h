@@ -17,6 +17,7 @@ using namespace std;
 class cPacientes: public cPersona
 {
 private:
+    string DNI;
     tm Nacimiento;
     TipoAlergia Alergias;
     string NombreHospital; //lo dejo en string porque sino hay recursividad y varios problemas
@@ -25,11 +26,12 @@ private:
     bool TieneProtesis;
 
 public:
-    cPacientes(string Nombre_, string Apellido_, string Telefono_, tm Nacimiento_, TipoAlergia Alergias_,
+    cPacientes(string Nombre_, string Apellido_, string Telefono_, string DNI_, tm Nacimiento_, TipoAlergia Alergias_,
                 string NombreHospital_, unsigned int RadioMiembro_, bool CompatibleQuirurgica_, bool TieneProtesis_);
   
     ~cPacientes();
 
+    string get_DNI();
     tm get_Nacimiento();
     TipoAlergia get_Alergias();
     string get_NombreHospital();

@@ -31,22 +31,22 @@ int main()
 	tm FechaEntre = { 0, 0, 0, 0, 0, 0 };
 
 	//DEFINIMOS ALGUNOS PACIENTES DINAMICOS
-	cPacientes* Nicolas = new cPacientes("Nicolas", "Rapp", "45545166", FechaNac, SinAlergia, "Hospital Favaloro", 12, true, true);
-	cPacientes* Martina = new cPacientes("Martina", "Hanselmann", "00112233", FechaNac, Xenobiotico, "Hospital Favaloro", 22, false, true);
-	cPacientes* Franco = new cPacientes("Franco", "Sorella", "33445566", FechaNac, Liquenoide, "Hospital Favaloro", 9, true, false);
-	cPacientes* MartinS = new cPacientes("Martin", "Scorza", "11223344", FechaNac, Xenobiotico, "Hospital Favalororo", 20, false, true);
+	cPacientes* Nicolas = new cPacientes("Nicolas", "Rapp", "54782", "45545166", FechaNac, SinAlergia, "Hospital Favaloro", 12, true, true);
+	cPacientes* Martina = new cPacientes("Martina", "Hanselmann", "32255", "00112233", FechaNac, Xenobiotico, "Hospital Favaloro", 22, false, true);
+	cPacientes* Franco = new cPacientes("Franco", "Sorella", "782124", "33445566", FechaNac, Liquenoide, "Hospital Favaloro", 9, true, false);
+	cPacientes* MartinS = new cPacientes("Martin", "Scorza", "8512656", "11223344", FechaNac, Xenobiotico, "Hospital Favalororo", 20, false, true);
 
-	cPacientes* Nadie = new cPacientes("Nombre", "Apellido", "DNI", FechaNac, SinAlergia, "Hospital Asistente", 324, true, false);
+	cPacientes* Nadie = new cPacientes("Nombre", "Apellido", "Telefono", "DNI", FechaNac, SinAlergia, "Hospital Asistente", 324, true, false);
 
-	cPacientes* Camila = new cPacientes("Camila", "Zavidowski", "99887766", FechaNac, SinAlergia, "Hospital Aleman", 2, true, true);
-	cPacientes* Mariano = new cPacientes("Mariano", "Bordeira", "77665544", FechaNac, Xenobiotico, "Hospital Aleman", 4, false, true);
-	cPacientes* Stefan = new cPacientes("Stefan", "Napoletano", "55443322", FechaNac, Liquenoide, "Hospital Aleman", 6, true, false);
-	cPacientes* Emilia = new cPacientes("Emilia", "Janin", "33221100", FechaNac, Xenobiotico, "Hospital Aleman", 8, false, true);
+	cPacientes* Camila = new cPacientes("Camila", "Zavidowski", "46725", "99887766", FechaNac, SinAlergia, "Hospital Aleman", 2, true, true);
+	cPacientes* Mariano = new cPacientes("Mariano", "Bordeira", "275678", "77665544", FechaNac, Xenobiotico, "Hospital Aleman", 4, false, true);
+	cPacientes* Stefan = new cPacientes("Stefan", "Napoletano", "78324", "55443322", FechaNac, Liquenoide, "Hospital Aleman", 6, true, false);
+	cPacientes* Emilia = new cPacientes("Emilia", "Janin", "754575", "33221100", FechaNac, Xenobiotico, "Hospital Aleman", 8, false, true);
 
-	cPacientes* Rodrigo = new cPacientes("Rodrigo", "Zavidowski", "114023342", FechaNac, SinAlergia, "Hospital Italiano", 1, true, true);
-	cPacientes* Federico = new cPacientes("Federico", "Fioriti", "98877766", FechaNac, Xenobiotico, "Hospital Italiano", 3, true, false);
-	cPacientes* Mateo = new cPacientes("Mateo", "Espejo", "12233344", FechaNac, Liquenoide, "Hospital Italiano", 5, false, false);
-	cPacientes* MariaD = new cPacientes("Maria", "Durand", "45566677", FechaNac, Carcinogenicos, "Hospital Italiano", 7, false, true);
+	cPacientes* Rodrigo = new cPacientes("Rodrigo", "Zavidowski", "85565678", "114023342", FechaNac, SinAlergia, "Hospital Italiano", 1, true, true);
+	cPacientes* Federico = new cPacientes("Federico", "Fioriti", "457763", "98877766", FechaNac, Xenobiotico, "Hospital Italiano", 3, true, false);
+	cPacientes* Mateo = new cPacientes("Mateo", "Espejo", "537575", "12233344", FechaNac, Liquenoide, "Hospital Italiano", 5, false, false);
+	cPacientes* MariaD = new cPacientes("Maria", "Durand", "24585", "45566677", FechaNac, Carcinogenicos, "Hospital Italiano", 7, false, true);
 
 	list <cPacientes*> PacientesFavaloro; //AGREGAMOS A LA LISTA A LOS PACIENTES CREADOS
 	PacientesFavaloro.push_back (Nicolas);
@@ -155,12 +155,17 @@ int main()
 	cRegistros* Registro2 = new cRegistros(Italiano, Renata, FechaSolic, FechaEstimEntre, FechaEntre, PiezitaCatamarca2, MariaD);
 	cRegistros* Registro3 = new cRegistros(Italiano, Sol, FechaSolic, FechaEstimEntre, FechaEntre, PiezitaMerlo3, Mateo);
 	cRegistros* Registro4 = new cRegistros(Italiano, Marcos, FechaSolic, FechaEstimEntre, FechaEntre, PiezitaBsAs4, Federico);
+	cRegistros* Registro5 = new cRegistros(Favaloro, Manuel, FechaSolic, FechaEstimEntre, FechaEntre, PiezitaCatamarca3, Nicolas);
+	cRegistros* Registro6 = new cRegistros(Italiano, Maximo, FechaSolic, FechaEstimEntre, FechaEntre, PiezitaMerlo4, Martina);
+	cRegistros* Registro7 = new cRegistros(Italiano, Ana, FechaSolic, FechaEstimEntre, FechaEntre, PiezitaBsAs2, Franco);
 
 	list <cRegistros*> Register;
 	Register.push_back(Registro1);
 	Register.push_back(Registro2);
 	Register.push_back(Registro3);
 	Register.push_back(Registro4);
+	Register.push_back(Registro5);
+	Register.push_back(Registro6);
 	
 	//DEFINIMOS ALGUNAS ORTOPEDIAS DINAMICAS
 	cOrtopedias* Ortopedia_BsAs = new cOrtopedias("Ortopedia Buenos Aires", "Manuel Ugarte 354", Piezitas_BuenosAires, 0);
@@ -388,6 +393,7 @@ int main()
 			try
 			{
 				PAMPA + Registro3;
+				PAMPA + Registro7;
 			}
 			catch (exception* ex)
 			{
