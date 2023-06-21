@@ -233,7 +233,7 @@ string cPacientes::to_string_Pacientes()
 	string tprote = TieneProtesis ? "si" : "no";
 
 	salida << "\t\tNombre y Apellido: " << this->Nombre << " " << this->Apellido << endl << "\t\tTelefono: " << this->Telefono << endl << "\t\tDNI: " << this->DNI << endl <<
-		"\t\tFecha de Nacimiento: " << "Dia: " << this->Nacimiento.tm_mday << " del mes " << this->Nacimiento.tm_mon << " del anio " << this->Nacimiento.tm_year << endl << "\t\tTipo de Alergia: " <<
+		"\t\tFecha de Nacimiento: " << "Dia: " << this->Nacimiento.tm_mday << " del mes " << this->Nacimiento.tm_mon << " del anio " << this->Nacimiento.tm_year + 1900 << endl << "\t\tTipo de Alergia: " <<
 		this->Alergias << endl << "\t\tNombre del Hospital asistido: " << this->NombreHospital << endl << "\t\tRadio del miembro: " << this->RadioMiembro << endl <<
 		"\t\tEs compatible quirurgicamente: " << compat << endl << "\t\tTiene Protesis: " << tprote;
 
