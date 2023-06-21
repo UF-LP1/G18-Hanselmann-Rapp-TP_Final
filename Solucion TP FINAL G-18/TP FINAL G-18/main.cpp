@@ -7,6 +7,38 @@
 
 #include <iostream>
 
+void Menu_Buscar_Protesis()
+{
+	cout << "\n\n\t\t\tMENU TIPO PROTESIS" << endl;
+	cout << "\t\t\t--------------" << endl;
+	cout << "\t1. El paciente quiere una protesis de la parte Superior Izquierda." << endl;
+	cout << "\t2. El paciente quiere una protesis de la parte Superior Derecha." << endl;
+	cout << "\t3. El paciente quiere una protesis de la parte Inferior Izquierda." << endl;
+	cout << "\t4. El paciente quiere una protesis de la parte Inferior Derecha." << endl;
+	cout << "\t0. REGRESAR" << endl;
+}
+
+void Menu_Hospital_Buscar()
+{
+	cout << endl << "\n\n\t\t\tHOSPITAL INGRESADO: " << endl;
+	cout << "\t\t\t--------------" << endl;
+	cout << "\t1. Que pacientes tienen protesis en el Hospital Favaloro." << endl;
+	cout << "\t2. Que pacientes tienen protesis en el Hospital Aleman." << endl;
+	cout << "\t3. Que pacientes tienen protesis en el Hospital Italiano." << endl;
+	cout << "\t0. REGRESAR" << endl;
+}
+
+void Menu_Solicitar_Protesis()
+{
+	cout << "\n\n\t\t\tMENU TIPO PROTESIS" << endl;
+	cout << "\t\t\t--------------" << endl;
+	cout << "\t1. Quiero solicitar una protesis de la parte Superior Izquierda." << endl;
+	cout << "\t2. Quiero solicitar una protesis de la parte Superior Derecha." << endl;
+	cout << "\t3. Quiero solicitar una protesis de la parte Inferior Izquierda." << endl;
+	cout << "\t4. Quiero solicitar una protesis de la parte Inferior Derecha." << endl;
+	cout << "\t0. REGRESAR" << endl;
+}
+
 void Menu_Principal()
 {
 	cout << "\n\n\t\t\tMENU PRINCIPAL" << endl;
@@ -191,7 +223,7 @@ int main()
 	string entreg = "", solic = "", buschosp = "", nombrehosp = "";
 
 	int opcion = 0, opcion0 = 0, opcion2 = 0, opcion4 = 0, opcion5 = 0;
-	bool regresar = true, regresar2 = true, regresar3 = true;
+	bool regresar2 = true, regresar3 = true, regresar4 = true, regresar5 = true;
 	bool salir = true;
 	TipoProtesis protes = SuperiorDerecho;
 	TipoProtesis protesis2 = InferiorDerecha;
@@ -258,133 +290,48 @@ int main()
 
 				case(0):
 					system("cls");
-					regresar = false;
+					regresar2 = false;
 					Menu_Principal();
 					break;
 				}
 
-			} while (regresar);
+			} while (regresar2);
 			break;
 
 		case(3):
 			system("cls");
 
-			cout << endl << "\n\n\t\t\tHOSPITAL INGRESADO: " << endl;
-			cout << "\t\t\t--------------" << endl;
-			cout << "\t1. Mi paciente se atiende en el Hospital Favaloro." << endl;
-			cout << "\t2. Mi paciente se atiende en el Hospital Aleman." << endl;
-			cout << "\t3. Mi paciente se atiende en el Hospital Italiano." << endl;
-
-			cout << "\tIngrese una Opcion: ";
-			cin >> opcion0;
-
-			switch (opcion0)
-			{
-			case(1):
-				nombrehosp = "Hospital Favaloro"; //Hospital Favaloro
-				break;
-
-			case(2):
-				nombrehosp = "Hospital Aleman"; //Hospital Aleman
-				break;
-
-			case(3):
-				nombrehosp = "Hospital Italiano"; //Hospital Italiano
-				break;
-			}
-			
-			PAMPA.Buscar_Paciente_porhospi(nombrehosp);
-			Menu_Principal();
-			break;
-
-		case(4):
-			system("cls");
-
-				cout << "\n\n\t\t\tMENU TIPO PROTESIS" << endl;
-				cout << "\t\t\t--------------" << endl;
-				cout << "\t1. El paciente quiere una protesis de la parte Superior Izquierda." << endl;
-				cout << "\t2. El paciente quiere una protesis de la parte Superior Derecha." << endl;
-				cout << "\t3. El paciente quiere una protesis de la parte Inferior Izquierda." << endl;
-				cout << "\t4. El paciente quiere una protesis de la parte Inferior Derecha." << endl;
-				cout << "\t0. REGRESAR" << endl;
+			Menu_Hospital_Buscar();
 
 			do
 			{
-				cout << "\tIngrese una Opcion del Menu Tipo Protesis: ";
-				cin >> opcion4;
+				cout << "\tIngrese una Opcion: ";
+				cin >> opcion0;
 
-				switch (opcion4)
+				switch (opcion0)
 				{
 				case(1):
-					protesis2 = SuperiorIzquierdo; //Superior Izquierda
-					PAMPA.Buscar_Protesis(protesis2);
-					break;
-
-				case(2):
-					protesis2 = SuperiorDerecho; //Superior Derecha
-					PAMPA.Buscar_Protesis(protesis2);
-					break;
-
-				case(3):
-					protesis2 = InferiorIzquierda; //Inferior Izquierda
-					PAMPA.Buscar_Protesis(protesis2);
-					break;
-
-				case(4):
-					protesis2 = InferiorDerecha; //Inferior Derecha
-					PAMPA.Buscar_Protesis(protesis2);
-					break;
-
-				case(0):
 					system("cls");
-					regresar2 = false;
-					Menu_Principal();
-					break;
-				}
-			} while (regresar2);
+					nombrehosp = "Hospital Favaloro"; //Hospital Favaloro
+					PAMPA.Buscar_Paciente_porhospi(nombrehosp);
 
-		break;
-
-		case(5):
-			system("cls");
-
-			cout << "\n\n\t\t\tMENU TIPO PROTESIS" << endl;
-			cout << "\t\t\t--------------" << endl;
-			cout << "\t1. Quiero solicitar una protesis de la parte Superior Izquierda." << endl;
-			cout << "\t2. Quiero solicitar una protesis de la parte Superior Derecha." << endl;
-			cout << "\t3. Quiero solicitar una protesis de la parte Inferior Izquierda." << endl;
-			cout << "\t4. Quiero solicitar una protesis de la parte Inferior Derecha." << endl;
-			cout << "\t0. REGRESAR" << endl;
-
-			do
-			{
-				cout << "\tIngrese una Opcion del Menu Tipo Protesis: ";
-				cin >> opcion5;
-
-				switch (opcion5)
-				{
-				case(1):
-					protesis3 = SuperiorIzquierdo; //Superior Izquierda
-					solic = Favaloro->Solicitar_Protesis(Ortopedia_BsAs, Fabrica_BsAs, protesis3) ? "Se solicito la protesis de manera correcta." : "El fabricante no acepto la solicitud de la protesis.";
-					cout << solic << endl;	
+					Menu_Hospital_Buscar();
 					break;
 
 				case(2):
-					protesis3 = SuperiorDerecho; //Superior Derecha
-					solic = Favaloro->Solicitar_Protesis(Ortopedia_BsAs, Fabrica_BsAs, protesis3) ? "Se solicito la protesis de manera correcta." : "El fabricante no acepto la solicitud de la protesis.";
-					cout << solic << endl;
+					system("cls");
+					nombrehosp = "Hospital Aleman"; //Hospital Aleman
+					PAMPA.Buscar_Paciente_porhospi(nombrehosp);
+
+					Menu_Hospital_Buscar();
 					break;
 
 				case(3):
-					protesis3 = InferiorIzquierda; //Inferior Izquierda
-					solic = Favaloro->Solicitar_Protesis(Ortopedia_BsAs, Fabrica_BsAs, protesis3) ? "Se solicito la protesis de manera correcta." : "El fabricante no acepto la solicitud de la protesis.";
-					cout << solic << endl;
-					break;
+					system("cls");
+					nombrehosp = "Hospital Italiano"; //Hospital Italiano
+					PAMPA.Buscar_Paciente_porhospi(nombrehosp);
 
-				case(4):
-					protesis3 = InferiorDerecha; //Inferior Derecha
-					solic = Favaloro->Solicitar_Protesis(Ortopedia_BsAs, Fabrica_BsAs, protesis3) ? "Se solicito la protesis de manera correcta." : "El fabricante no acepto la solicitud de la protesis.";
-					cout << solic << endl;
+					Menu_Hospital_Buscar();
 					break;
 
 				case(0):
@@ -394,6 +341,122 @@ int main()
 					break;
 				}
 			} while (regresar3);
+			
+		break;
+
+		case(4):
+			system("cls");
+
+			void Menu_Buscar_Protesis();
+
+			do
+			{
+				cout << "\tIngrese una Opcion del Menu Tipo Protesis: ";
+				cin >> opcion4;
+
+				switch (opcion4)
+				{
+				case(1):
+					system("cls");
+					protesis2 = SuperiorIzquierdo; //Superior Izquierda
+					PAMPA.Buscar_Protesis(protesis2);
+
+					void Menu_Buscar_Protesis();
+					break;
+
+				case(2):
+					system("cls");
+					protesis2 = SuperiorDerecho; //Superior Derecha
+					PAMPA.Buscar_Protesis(protesis2);
+
+					void Menu_Buscar_Protesis();
+					break;
+
+				case(3):
+					system("cls");
+					protesis2 = InferiorIzquierda; //Inferior Izquierda
+					PAMPA.Buscar_Protesis(protesis2);
+
+					void Menu_Buscar_Protesis();
+					break;
+
+				case(4):
+					system("cls");
+					protesis2 = InferiorDerecha; //Inferior Derecha
+					PAMPA.Buscar_Protesis(protesis2);
+
+					void Menu_Buscar_Protesis();
+					break;
+
+				case(0):
+					system("cls");
+					regresar4 = false;
+					Menu_Principal();
+					break;
+				}
+			} while (regresar4);
+
+		break;
+
+		case(5):
+			system("cls");
+
+			Menu_Solicitar_Protesis();
+
+			do
+			{
+				cout << "\tIngrese una Opcion del Menu Tipo Protesis: ";
+				cin >> opcion5;
+
+				switch (opcion5)
+				{
+				case(1):
+					system("cls");
+
+					protesis3 = SuperiorIzquierdo; //Superior Izquierda
+					solic = Favaloro->Solicitar_Protesis(Ortopedia_BsAs, Fabrica_BsAs, protesis3) ? "Se solicito la protesis de manera correcta." : "El fabricante no acepto la solicitud de la protesis.";
+					cout << solic << endl;	
+
+					Menu_Solicitar_Protesis();
+					break;
+
+				case(2):
+					system("cls");
+
+					protesis3 = SuperiorDerecho; //Superior Derecha
+					solic = Favaloro->Solicitar_Protesis(Ortopedia_Catamarca, Fabrica_Catamarca, protesis3) ? "Se solicito la protesis de manera correcta." : "El fabricante no acepto la solicitud de la protesis.";
+					cout << solic << endl;
+
+					Menu_Solicitar_Protesis();
+					break;
+
+				case(3):
+					system("cls");
+
+					protesis3 = InferiorIzquierda; //Inferior Izquierda
+					solic = Favaloro->Solicitar_Protesis(Ortopedia_BsAs, Fabrica_BsAs, protesis3) ? "Se solicito la protesis de manera correcta." : "El fabricante no acepto la solicitud de la protesis.";
+					cout << solic << endl;
+
+					Menu_Solicitar_Protesis();
+					break;
+
+				case(4):
+					system("cls");
+
+					protesis3 = InferiorDerecha; //Inferior Derecha
+					solic = Favaloro->Solicitar_Protesis(Ortopedia_Merlo, Fabrica_Merlo, protesis3) ? "Se solicito la protesis de manera correcta." : "El fabricante no acepto la solicitud de la protesis.";
+					cout << solic << endl;
+
+					Menu_Solicitar_Protesis();
+					break;
+
+				case(0):
+					system("cls");
+					regresar5 = false;
+					Menu_Principal();
+					break;
+				}
+			} while (regresar5);
 			break;
 
 		case(6):

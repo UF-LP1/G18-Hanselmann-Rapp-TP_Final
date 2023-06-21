@@ -40,7 +40,7 @@ void cOrtopedias:: Imprimir_Protesis()
 
 	for (itPieOrtop = Piezitas.begin(); itPieOrtop != Piezitas.end(); itPieOrtop++)
 	{
-		cout << "\tCaracteristicas de las Piezas: " << (*itPieOrtop)->to_string_PiezasOrtopedias() << endl;
+		cout << endl << "\tCaracteristicas de las Piezas: " << endl << (*itPieOrtop)->to_string_PiezasOrtopedias() << endl;
 	}
 	return;
 }
