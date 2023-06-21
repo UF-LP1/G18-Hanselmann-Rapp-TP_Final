@@ -197,7 +197,7 @@ void cANPA::operator- (cRegistros* registros2)
 	return;
 }
 
-list<cPacientes*> cANPA::Buscar_Paciente_porhospi(string hospi)
+void cANPA::Buscar_Paciente_porhospi(string hospi)
 {
 	list <cPacientes*> ::iterator itpaciente;
 	list <cPacientes*>  pacientes;
@@ -226,10 +226,10 @@ list<cPacientes*> cANPA::Buscar_Paciente_porhospi(string hospi)
 		}
 	}
 
-	return prote;
+	return ;
 }
 
-list <cPacientes*> cANPA::Buscar_Paciente_porpiezas(TipoProtesis piezabuscada)
+void cANPA::Buscar_Paciente_porpiezas(TipoProtesis piezabuscada)
 {
     list <cPacientes*> pacientes;
 	list <cRegistros*>::iterator itregis;
@@ -247,7 +247,7 @@ list <cPacientes*> cANPA::Buscar_Paciente_porpiezas(TipoProtesis piezabuscada)
 		}
 	}
 
-	return pacientes;
+	return ;
 }
 
 ostream& operator<<(ostream& out, cANPA& anpa)

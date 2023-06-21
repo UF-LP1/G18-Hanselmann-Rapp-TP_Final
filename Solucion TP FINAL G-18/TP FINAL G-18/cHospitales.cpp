@@ -59,12 +59,16 @@ bool cHospitales::Solicitar_Protesis(cOrtopedias* ortop, cFabricantes* fab, Tipo
 	{
 		if ((* itpi)->get_Protesis() == prote)
 		{
-			if (fab->get_SolicitudRequisitos() == true)
+			if ((* itpi)->get_CantidadTotalPiezas() == 0)
 			{
-				return true; // si el fabricante desea tener en cuenta los requisitos del medico se puede solicitar correctamente la protesis.
+				if (fab->get_SolicitudRequisitos() == true)
+				{
+					return true; // si el fabricante desea tener en cuenta los requisitos del medico se puede solicitar correctamente la protesis.
+				}
+
+				return false; // rechaza la solicitud del medico para hacer la protesis.
 			}
-			return false; // rechaza la solicitud del medico para hacer la protesis.
 		}
 	}
-	return true;
+	return false;
 }

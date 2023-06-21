@@ -188,7 +188,7 @@ int main()
 	int opcion = 0;
 	bool regresar = true, regresar2 = true, regresar3 = true;
 	bool salir = true;
-	TipoProtesis protes = SuperiorDerecho;
+	TipoProtesis protes = SuperiorDerecho, protesis2 = InferiorDerecha, protesis3 = InferiorIzquierda;
 	int opcion2 = 0, opcion4 = 0, opcion5 = 0;
 
 	Menu_Principal();
@@ -289,23 +289,23 @@ int main()
 				switch (opcion4)
 				{
 				case(1):
-					protes = SuperiorIzquierdo; //Superior Izquierda
-					PAMPA.Buscar_Protesis(protes);
+					protesis2 = SuperiorIzquierdo; //Superior Izquierda
+					PAMPA.Buscar_Protesis(protesis2);
 					break;
 
 				case(2):
-					protes = SuperiorDerecho; //Superior Derecha
-					PAMPA.Buscar_Protesis(protes);
+					protesis2 = SuperiorDerecho; //Superior Derecha
+					PAMPA.Buscar_Protesis(protesis2);
 					break;
 
 				case(3):
-					protes = InferiorIzquierda; //Inferior Izquierda
-					PAMPA.Buscar_Protesis(protes);
+					protesis2 = InferiorIzquierda; //Inferior Izquierda
+					PAMPA.Buscar_Protesis(protesis2);
 					break;
 
 				case(4):
-					protes = InferiorDerecha; //Inferior Derecha
-					PAMPA.Buscar_Protesis(protes);
+					protesis2 = InferiorDerecha; //Inferior Derecha
+					PAMPA.Buscar_Protesis(protesis2);
 					break;
 
 				case(0):
@@ -337,40 +337,40 @@ int main()
 				switch (opcion5)
 				{
 				case(1):
-					protes = SuperiorIzquierdo; //Superior Izquierda
-					solic = Favaloro->Solicitar_Protesis(Ortopedia_BsAs, Fabrica_BsAs, protes) ? "Se solicito la protesis de manera correcta." : "El fabricante no acepto la solicitud de la protesis.";
+					protesis3 = SuperiorIzquierdo; //Superior Izquierda
+					solic = Favaloro->Solicitar_Protesis(Ortopedia_BsAs, Fabrica_BsAs, protesis3) ? "Se solicito la protesis de manera correcta." : "El fabricante no acepto la solicitud de la protesis.";
 					cout << solic << endl;
-					if (Favaloro->Solicitar_Protesis(Ortopedia_BsAs, Fabrica_BsAs, protes) == true)
+					if (Favaloro->Solicitar_Protesis(Ortopedia_BsAs, Fabrica_BsAs, protesis3) == true)
 					{
 						Ortopedia_BsAs->Imprimir_Protesis();
 					}
 					break;
 
 				case(2):
-					protes = SuperiorDerecho; //Superior Derecha
-					solic = Favaloro->Solicitar_Protesis(Ortopedia_BsAs, Fabrica_BsAs, protes) ? "Se solicito la protesis de manera correcta." : "El fabricante no acepto la solicitud de la protesis.";
+					protesis3 = SuperiorDerecho; //Superior Derecha
+					solic = Favaloro->Solicitar_Protesis(Ortopedia_BsAs, Fabrica_BsAs, protesis3) ? "Se solicito la protesis de manera correcta." : "El fabricante no acepto la solicitud de la protesis.";
 					cout << solic << endl;
-					if (Favaloro->Solicitar_Protesis(Ortopedia_BsAs, Fabrica_BsAs, protes) == true)
+					if (Favaloro->Solicitar_Protesis(Ortopedia_BsAs, Fabrica_BsAs, protesis3) == true)
 					{
 						Ortopedia_BsAs->Imprimir_Protesis();
 					}
 					break;
 
 				case(3):
-					protes = InferiorIzquierda; //Inferior Izquierda
-					solic = Favaloro->Solicitar_Protesis(Ortopedia_BsAs, Fabrica_BsAs, protes) ? "Se solicito la protesis de manera correcta." : "El fabricante no acepto la solicitud de la protesis.";
+					protesis3 = InferiorIzquierda; //Inferior Izquierda
+					solic = Favaloro->Solicitar_Protesis(Ortopedia_BsAs, Fabrica_BsAs, protesis3) ? "Se solicito la protesis de manera correcta." : "El fabricante no acepto la solicitud de la protesis.";
 					cout << solic << endl;
-					if (Favaloro->Solicitar_Protesis(Ortopedia_BsAs, Fabrica_BsAs, protes) == true)
+					if (Favaloro->Solicitar_Protesis(Ortopedia_BsAs, Fabrica_BsAs, protesis3) == true)
 					{
 						Ortopedia_BsAs->Imprimir_Protesis();
 					}
 					break;
 
 				case(4):
-					protes = InferiorDerecha; //Inferior Derecha
-					solic = Favaloro->Solicitar_Protesis(Ortopedia_BsAs, Fabrica_BsAs, protes) ? "Se solicito la protesis de manera correcta." : "El fabricante no acepto la solicitud de la protesis.";
+					protesis3 = InferiorDerecha; //Inferior Derecha
+					solic = Favaloro->Solicitar_Protesis(Ortopedia_BsAs, Fabrica_BsAs, protesis3) ? "Se solicito la protesis de manera correcta." : "El fabricante no acepto la solicitud de la protesis.";
 					cout << solic << endl;
-					if (Favaloro->Solicitar_Protesis(Ortopedia_BsAs, Fabrica_BsAs, protes) == true)
+					if (Favaloro->Solicitar_Protesis(Ortopedia_BsAs, Fabrica_BsAs, protesis3) == true)
 					{
 						Ortopedia_BsAs->Imprimir_Protesis();
 					}

@@ -31,8 +31,8 @@ public:
 
 	cPacientes* Buscar_Protesis(TipoProtesis prote);
 	bool Agregar_Paciente(cPacientes* pac, cHospitales* ho);
-	list<cPacientes*> Buscar_Paciente_porhospi(string hospi);
-	list <cPacientes*> Buscar_Paciente_porpiezas(TipoProtesis piezabuscada);
+	void Buscar_Paciente_porhospi(string hospi);
+	void Buscar_Paciente_porpiezas(TipoProtesis piezabuscada);
 	
 };
 
