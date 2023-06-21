@@ -73,14 +73,16 @@ void cANPA::operator+ (cRegistros* registros)
 	return;
 }
 
-cPacientes* cANPA::Buscar_Protesis(TipoProtesis prote)
+void cANPA::Buscar_Protesis(TipoProtesis prote)
 {
 	list <cHospitales*>::iterator ithos;
 	list <cOrtopedias*>::iterator itortop;
 	list <cPiezasOrtopedicas*>::iterator itpieort;
 	list <cPiezasOrtopedicas*> piezita;
+	list <cPiezasOrtopedicas*> nuevapi;
 	list <cPacientes*> ::iterator itpaciente;
 	list <cPacientes*>  pacientes;
+	list <cPacientes*>  nuevopac;
 
 	for (itortop = Ortopedia.begin(); itortop != Ortopedia.end(); itortop++) //recorro todas las ortopedias
 	{
@@ -105,7 +107,13 @@ cPacientes* cANPA::Buscar_Protesis(TipoProtesis prote)
 							{
 								if ((*itpaciente)->get_RadioMiembro() == (*itpieort)->get_Dimensiones()) //si el radio del miembro es el mismo o no
 								{
-									return (*itpaciente); //si cumple con lo anterior buscamos la protesis y se la damos al paciente
+									nuevopac.push_back(*itpaciente);
+									nuevapi.push_back(*itpieort);
+									(*itortop)->set_Protesis(nuevapi);
+									(*itortop)->Imprimir_Protesis();
+									(*ithos)->set_Pacientes(nuevopac);
+									(*ithos)->Imprimir_ListaPacientes();
+									return; //si cumple con lo anterior buscamos la protesis y se la damos al paciente
 								}
 							}
 						}
@@ -126,7 +134,13 @@ cPacientes* cANPA::Buscar_Protesis(TipoProtesis prote)
 							{
 								if ((*itpaciente)->get_CompatibleQuirurgica() == true) //si el paciente es compatible quirurgicamente
 								{
-									return (*itpaciente); //si cumple con lo anterior buscamos la protesis y se la damos al paciente
+									nuevopac.push_back(*itpaciente);
+									nuevapi.push_back(*itpieort);
+									(*itortop)->set_Protesis(nuevapi);
+									(*itortop)->Imprimir_Protesis();
+									(*ithos)->set_Pacientes(nuevopac);
+									(*ithos)->Imprimir_ListaPacientes();
+									return; //si cumple con lo anterior buscamos la protesis y se la damos al paciente
 								}
 							}
 						}
@@ -137,7 +151,7 @@ cPacientes* cANPA::Buscar_Protesis(TipoProtesis prote)
 		}
 
 	}
-	return nullptr;
+	return;
 }
 
 bool cANPA::Agregar_Paciente(cPacientes* pac, cHospitales* ho)

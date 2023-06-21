@@ -29,7 +29,7 @@ public:
 	void operator+ (cRegistros* registros);
 	void operator- (cRegistros* registros2);
 
-	cPacientes* Buscar_Protesis(TipoProtesis prote);
+	void Buscar_Protesis(TipoProtesis prote);
 	bool Agregar_Paciente(cPacientes* pac, cHospitales* ho);
 	void Buscar_Paciente_porhospi(string hospi);
 	void Buscar_Paciente_porpiezas(TipoProtesis piezabuscada);

@@ -42,15 +42,15 @@ void cFabricantes::set_Requisitos(string NuevoEstado)
 	this->Requisitos = NuevoEstado;
 }
 
-string cFabricantes::to_string_pro()
+void cFabricantes::Imprimir_pro()
 {
-	stringstream salida;
+	//stringstream salida;
 
 	string req = SolicitudRequisitos ? "si" : "no";
 
-	salida << "\tCaracteristicas Protesis:" << endl << "Nombre de la Fabrica: " << this->Nombre << endl << "Direccion de la Fabrica: " << this->Direccion << endl 
+	cout << "\tCaracteristicas Protesis:" << endl << "Nombre de la Fabrica: " << this->Nombre << endl << "Direccion de la Fabrica: " << this->Direccion << endl 
 			<< "Habilitacion: " << this->Habilitacion << endl << "El fabricante acepta los requisitos dados : " << req << endl << "Requisitos: " << this->Requisitos << endl;
 
-	return salida.str();
+	return;
 }
 
