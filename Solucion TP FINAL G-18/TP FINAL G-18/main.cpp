@@ -11,12 +11,12 @@ void Menu_Principal()
 {
 	cout << "\n\n\t\t\tMENU PRINCIPAL" << endl;
 	cout << "\t\t\t--------------" << endl;
-	cout << "\t1. Quiero agregar un paciente en el hospital." << endl;
-	cout << "\t2. Quiero saber que pacientes usan esta protesis: " << endl;
-	cout << "\t3. Quiero saber que pacientes tienen protesis segun el hospital: " << endl;
+	cout << "\t1. Quiero agregar un paciente a un hospital." << endl;
+	cout << "\t2. Quiero saber que pacientes usaran un tipo de protesis. " << endl;
+	cout << "\t3. Quiero saber que pacientes tienen protesis segun un hospital. " << endl;
 	cout << "\t4. Quiero buscar una protesis." << endl;
-	cout << "\t5. Quiero solicitar una protesis." << endl;
-	cout << "\t6. La protesis fue entregada a tiempo?" << endl;
+	cout << "\t5. Quiero solicitar una protesis y asignarla." << endl;
+	cout << "\t6. Quiero saber si la protesis fue entregada a tiempo" << endl;
 	cout << "\t7. Quiero ver los registros del ANPA" << endl;
 	cout << "\t0. SALIR" << endl;
 }

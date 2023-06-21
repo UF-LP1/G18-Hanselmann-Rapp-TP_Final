@@ -246,8 +246,11 @@ void cANPA::Buscar_Paciente_porhospi(string hospi)
 void cANPA::Buscar_Paciente_porpiezas(TipoProtesis piezabuscada)
 {
     list <cPacientes*> pacientes;
+	list <cMedicos*> med;
 	list <cRegistros*>::iterator itregis;
 	list <cRegistros*> regis;
+
+	cHospitales* hos = new cHospitales("Hospital SinAsignar", "Pueyrredon 122", med, pacientes);
 
 	regis = Registro;
 
@@ -256,10 +259,15 @@ void cANPA::Buscar_Paciente_porpiezas(TipoProtesis piezabuscada)
 		if ((*itregis)->get_Protesis() == piezabuscada) //chequeamos que cada registro coincida con la protesis buscada
 		{
 			pacientes.push_back((*itregis)->get_NombrePaciente());
-			(*itregis)->get_NombreHospital()->set_Pacientes(pacientes); //le reasigno la lista que cree recien
-			(*itregis)->get_NombreHospital()->Imprimir_ListaPacientes();
+			//(*itregis)->get_NombreHospital()->set_Pacientes(pacientes); //le reasigno la lista que cree recien			
+			hos->set_Pacientes(pacientes); //le reasigno la lista creada recien
+			//(*itregis)->get_NombreHospital()->Imprimir_ListaPacientes();
 		}
 	}
+
+	hos->Imprimir_ListaPacientes(); //imprimo la lista creada
+
+	delete hos;
 
 	return ;
 }
