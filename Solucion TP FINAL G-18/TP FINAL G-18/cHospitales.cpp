@@ -63,6 +63,7 @@ bool cHospitales::Solicitar_Protesis(cOrtopedias* ortop, cFabricantes* fab, Tipo
 			if (fab->get_SolicitudRequisitos() == true)
 			{
 				return true; // si el fabricante desea tener en cuenta los requisitos del medico se puede solicitar correctamente la protesis.
+				fab->to_string_pro();
 			}
 			else
 			{

@@ -1,6 +1,7 @@
 #ifndef _CASOCIACION_H
 #define _CASOCIACION_H
 
+#include <sstream>
 #include <iostream>
 #include <string>
 #include <algorithm>

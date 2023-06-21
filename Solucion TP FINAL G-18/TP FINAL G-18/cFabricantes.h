@@ -22,7 +22,7 @@ public:
 	void set_SolicitudRequisitos(bool NuevoEstado);
 	void set_Requisitos(string NuevoEstado);
 
-
+	string to_string_pro();
 };
 
 #endif //_CFABRICANTES_H
