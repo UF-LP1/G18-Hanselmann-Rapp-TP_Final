@@ -25,7 +25,7 @@ public:
 
 	void AgregarPa(cPacientes* pac);
 
-	bool Solicitar_Protesis(cOrtopedias* ortop, cFabricantes* fab);
+	bool Solicitar_Protesis(cOrtopedias* ortop, cFabricantes* fab, TipoProtesis prote);
 	void Imprimir_ListaPacientes();
 
 };

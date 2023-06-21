@@ -220,6 +220,9 @@ list<cPacientes*> cANPA::Buscar_Paciente_porhospi(string hospi)
 					cont_pro++;
 				}
 			}
+
+			(*ithospi)->set_Pacientes(prote);
+			(*ithospi)->Imprimir_ListaPacientes();
 		}
 	}
 
@@ -232,14 +235,18 @@ list <cPacientes*> cANPA::Buscar_Paciente_porpiezas(TipoProtesis piezabuscada)
 	list <cRegistros*>::iterator itregis;
 	list <cRegistros*> regis;
 
-	for (itregis = Registro.begin(); itregis != Registro.end(); itregis++)//hicimos un for que recorra todos los registros
-	{
-		if ((*itregis)->get_Protesis() == piezabuscada)//chequeamos que cada registro coincida con la protesis buscada
-		{
-			pacientes.push_back((* itregis)->get_NombrePaciente());
+	regis = Registro;
 
-		}			
+	for (itregis = regis.begin(); itregis != regis.end(); itregis++)//hicimos un for que recorra todos los registros
+	{
+		if ((*itregis)->get_Protesis() == piezabuscada) //chequeamos que cada registro coincida con la protesis buscada
+		{
+			pacientes.push_back((*itregis)->get_NombrePaciente());
+			(*itregis)->get_NombreHospital()->set_Pacientes(pacientes); //le reasigno la lista que cree recien
+			(*itregis)->get_NombreHospital()->Imprimir_ListaPacientes();
+		}
 	}
+
 	return pacientes;
 }
 

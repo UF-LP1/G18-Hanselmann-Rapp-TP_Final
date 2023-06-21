@@ -48,16 +48,23 @@ void cHospitales::AgregarPa(cPacientes* pac)
 	this->Pacientes.push_back(pac);
 }
 
-bool cHospitales::Solicitar_Protesis(cOrtopedias* ortop, cFabricantes* fab)
+bool cHospitales::Solicitar_Protesis(cOrtopedias* ortop, cFabricantes* fab, TipoProtesis prote)
 {
-	//devuelve la protesis
-	if (ortop->get_CantidadPiezas() == 0)
+	list<cPiezasOrtopedicas*>::iterator itpi;
+	list<cPiezasOrtopedicas*> pi;
+
+	pi = ortop->get_ListaProtesis();
+
+	for (itpi = pi.begin(); itpi != pi.end(); itpi++)
 	{
-		if (fab->get_SolicitudRequisitos() == true)
+		if ((* itpi)->get_Protesis() == prote)
 		{
-			return true; // si el fabricante desea tener en cuenta los requisitos del medico se puede solicitar correctamente la protesis.
+			if (fab->get_SolicitudRequisitos() == true)
+			{
+				return true; // si el fabricante desea tener en cuenta los requisitos del medico se puede solicitar correctamente la protesis.
+			}
+			return false; // rechaza la solicitud del medico para hacer la protesis.
 		}
-		return false; // rechaza la solicitud del medico para hacer la protesis.
 	}
 	return true;
 }

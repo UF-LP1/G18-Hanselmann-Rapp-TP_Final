@@ -112,7 +112,7 @@ int main()
 	Hospitales.push_back(Italiano);
 
 	//DEFINIMOS ALGUNAS FABRICAS DINÁMICAS
-	cFabricantes* Fabrica_BsAs = new cFabricantes("Fabrica Buenos Aires", "Aguilar 345", "Habilitado", false, "Requisitos: todo confirmado");
+	cFabricantes* Fabrica_BsAs = new cFabricantes("Fabrica Buenos Aires", "Aguilar 345", "Habilitado", true, "Requisitos: todo confirmado");
 	cFabricantes* Fabrica_Catamarca = new cFabricantes("Fabrica Catamarca", "Cespedes 123", "No habilitado", true, "Requisitos: todo confirmado");
 	cFabricantes* Fabrica_Merlo = new cFabricantes("Fabrica Merlo", "Olleros 456", "Habilitado", false, "Requisitos: todo confirmado");
 
@@ -157,9 +157,13 @@ int main()
 	cRegistros* Registro4 = new cRegistros(Italiano, Marcos, FechaSolic, FechaEstimEntre, FechaEntre, PiezitaBsAs4, Federico);
 
 	list <cRegistros*> Register;
+	Register.push_back(Registro1);
+	Register.push_back(Registro2);
+	Register.push_back(Registro3);
+	Register.push_back(Registro4);
 	
 	//DEFINIMOS ALGUNAS ORTOPEDIAS DINAMICAS
-	cOrtopedias* Ortopedia_BsAs = new cOrtopedias("Ortopedia Buenos Aires", "Manuel Ugarte 354", Piezitas_BuenosAires, 3456);
+	cOrtopedias* Ortopedia_BsAs = new cOrtopedias("Ortopedia Buenos Aires", "Manuel Ugarte 354", Piezitas_BuenosAires, 0);
 	cOrtopedias* Ortopedia_Catamarca = new cOrtopedias("Ortopedia Catamarca", "Manuel Ugarte 354", Piezitas_Catamarca, 3456);
 	cOrtopedias* Ortopedia_Merlo = new cOrtopedias("Ortopedia Merlo", "Manuel Ugarte 354", Piezitas_Merlo, 3456);
 
@@ -182,10 +186,10 @@ int main()
 	string entreg = "", solic = "", buschosp = "", nombrehosp = "";
 
 	int opcion = 0;
-	bool regresar = true, regresar2 = true;
+	bool regresar = true, regresar2 = true, regresar3 = true;
 	bool salir = true;
 	TipoProtesis protes = SuperiorDerecho;
-	int opcion2 = 0, opcion4 = 0;
+	int opcion2 = 0, opcion4 = 0, opcion5 = 0;
 
 	Menu_Principal();
 	do
@@ -315,13 +319,70 @@ int main()
 		break;
 
 		case(5):
-			solic = Favaloro->Solicitar_Protesis(Ortopedia_BsAs, Fabrica_BsAs) ? "Se solicito la protesis de manera correcta." : "El fabricante no acepto la solicitud de la protesis.";
-			cout << solic << endl;
-			if (Favaloro->Solicitar_Protesis(Ortopedia_BsAs, Fabrica_BsAs) == true)
+			system("cls");
+
+			cout << "\n\n\t\t\tMENU TIPO PROTESIS" << endl;
+			cout << "\t\t\t--------------" << endl;
+			cout << "\t1. Quiero solicitar una protesis de la parte Superior Izquierda." << endl;
+			cout << "\t2. Quiero solicitar una protesis de la parte Superior Derecha." << endl;
+			cout << "\t3. Quiero solicitar una protesis de la parte Inferior Izquierda." << endl;
+			cout << "\t4. Quiero solicitar una protesis de la parte Inferior Derecha." << endl;
+			cout << "\t0. REGRESAR" << endl;
+
+			do
 			{
-				Ortopedia_BsAs->Imprimir_Protesis();
-			}
-			Menu_Principal();
+				cout << "\tIngrese una Opcion del Menu Tipo Protesis: ";
+				cin >> opcion5;
+
+				switch (opcion5)
+				{
+				case(1):
+					protes = SuperiorIzquierdo; //Superior Izquierda
+					solic = Favaloro->Solicitar_Protesis(Ortopedia_BsAs, Fabrica_BsAs, protes) ? "Se solicito la protesis de manera correcta." : "El fabricante no acepto la solicitud de la protesis.";
+					cout << solic << endl;
+					if (Favaloro->Solicitar_Protesis(Ortopedia_BsAs, Fabrica_BsAs, protes) == true)
+					{
+						Ortopedia_BsAs->Imprimir_Protesis();
+					}
+					break;
+
+				case(2):
+					protes = SuperiorDerecho; //Superior Derecha
+					solic = Favaloro->Solicitar_Protesis(Ortopedia_BsAs, Fabrica_BsAs, protes) ? "Se solicito la protesis de manera correcta." : "El fabricante no acepto la solicitud de la protesis.";
+					cout << solic << endl;
+					if (Favaloro->Solicitar_Protesis(Ortopedia_BsAs, Fabrica_BsAs, protes) == true)
+					{
+						Ortopedia_BsAs->Imprimir_Protesis();
+					}
+					break;
+
+				case(3):
+					protes = InferiorIzquierda; //Inferior Izquierda
+					solic = Favaloro->Solicitar_Protesis(Ortopedia_BsAs, Fabrica_BsAs, protes) ? "Se solicito la protesis de manera correcta." : "El fabricante no acepto la solicitud de la protesis.";
+					cout << solic << endl;
+					if (Favaloro->Solicitar_Protesis(Ortopedia_BsAs, Fabrica_BsAs, protes) == true)
+					{
+						Ortopedia_BsAs->Imprimir_Protesis();
+					}
+					break;
+
+				case(4):
+					protes = InferiorDerecha; //Inferior Derecha
+					solic = Favaloro->Solicitar_Protesis(Ortopedia_BsAs, Fabrica_BsAs, protes) ? "Se solicito la protesis de manera correcta." : "El fabricante no acepto la solicitud de la protesis.";
+					cout << solic << endl;
+					if (Favaloro->Solicitar_Protesis(Ortopedia_BsAs, Fabrica_BsAs, protes) == true)
+					{
+						Ortopedia_BsAs->Imprimir_Protesis();
+					}
+					break;
+
+				case(0):
+					system("cls");
+					regresar3 = false;
+					Menu_Principal();
+					break;
+				}
+			} while (regresar3);
 			break;
 
 		case(6):
@@ -332,10 +393,6 @@ int main()
 		case(7):
 			try
 			{
-				PAMPA + Registro1;
-				PAMPA + Registro2;
-				PAMPA + Registro3;
-				PAMPA + Registro4;
 				PAMPA + Registro3;
 			}
 			catch (exception* ex)
