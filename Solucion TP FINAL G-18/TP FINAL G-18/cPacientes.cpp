@@ -142,7 +142,7 @@ cPacientes* cPacientes::Imprimir_Preguntas_Agregar_Paciente()
 
 	}
 
-	cout << endl << "\tHOSPITAL INGRESADO: " << endl;
+	cout << endl << "\n\n\t\t\tHOSPITAL INGRESADO: " << endl;
 	cout << "\t\t\t--------------" << endl;
 	cout << "\t1. Mi paciente se atiende en el Hospital Favaloro." << endl;
 	cout << "\t2. Mi paciente se atiende en el Hospital Aleman." << endl;
@@ -232,10 +232,10 @@ string cPacientes::to_string_Pacientes()
 	string compat = CompatibleQuirurgica ? "si" : "no";
 	string tprote = TieneProtesis ? "si" : "no";
 
-	salida << "Nombre y Apellido: " << this->Nombre << " " << this->Apellido << endl << "Telefono: " << this->Telefono << endl << "DNI: " << this->DNI << endl <<
-		"Fecha de Nacimiento: " << "Dia: " << this->Nacimiento.tm_mday << " del mes " << this->Nacimiento.tm_mon << " del anio " << this->Nacimiento.tm_year << endl << "Tipo de Alergia: " <<
-		this->Alergias << endl << "Nombre del Hospital asistido: " << this->NombreHospital << endl << "Radio del miembro: " << this->RadioMiembro << endl <<
-		"Es compatible quirurgicamente: " << compat << endl << "Tiene Protesis: " << tprote;
+	salida << "\t\tNombre y Apellido: " << this->Nombre << " " << this->Apellido << endl << "\t\tTelefono: " << this->Telefono << endl << "\t\tDNI: " << this->DNI << endl <<
+		"\t\tFecha de Nacimiento: " << "Dia: " << this->Nacimiento.tm_mday << " del mes " << this->Nacimiento.tm_mon << " del anio " << this->Nacimiento.tm_year << endl << "\t\tTipo de Alergia: " <<
+		this->Alergias << endl << "\t\tNombre del Hospital asistido: " << this->NombreHospital << endl << "\t\tRadio del miembro: " << this->RadioMiembro << endl <<
+		"\t\tEs compatible quirurgicamente: " << compat << endl << "\t\tTiene Protesis: " << tprote;
 
 	return salida.str();
 }
