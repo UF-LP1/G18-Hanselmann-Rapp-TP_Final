@@ -7,6 +7,17 @@
 
 #include <iostream>
 
+void Menu_Buscar_Pacientes_Usaram_Protesis()
+{
+	cout << "\n\n\t\t\tMENU TIPO PROTESIS" << endl;
+	cout << "\t\t\t--------------" << endl;
+	cout << "\t1. Busco una protesis de la parte Superior Izquierda." << endl;
+	cout << "\t2. Busco una protesis de la parte Superior Derecha." << endl;
+	cout << "\t3. Busco una protesis de la parte Inferior Izquierda." << endl;
+	cout << "\t4. Busco una protesis de la parte Inferior Derecha." << endl;
+	cout << "\t0. REGRESAR" << endl;
+}
+
 void Menu_Buscar_Protesis()
 {
 	cout << "\n\n\t\t\tMENU TIPO PROTESIS" << endl;
@@ -253,13 +264,7 @@ int main()
 		case(2):
 			system("cls");
 
-				cout << "\n\n\t\t\tMENU TIPO PROTESIS" << endl;
-				cout << "\t\t\t--------------" << endl;
-				cout << "\t1. Busco una protesis de la parte Superior Izquierda." << endl;
-				cout << "\t2. Busco una protesis de la parte Superior Derecha." << endl;
-				cout << "\t3. Busco una protesis de la parte Inferior Izquierda." << endl;
-				cout << "\t4. Busco una protesis de la parte Inferior Derecha." << endl;
-				cout << "\t0. REGRESAR" << endl;
+			Menu_Buscar_Pacientes_Usaram_Protesis();
 
 			do
 			{
@@ -269,23 +274,35 @@ int main()
 				switch (opcion2)
 				{
 				case(1):
+					system("cls");
 					protes = SuperiorIzquierdo; //Superior Izquierda
 					PAMPA.Buscar_Paciente_porpiezas(protes);
+
+					Menu_Buscar_Pacientes_Usaram_Protesis();
 					break;
 
 				case(2):
+					system("cls");
 					protes = SuperiorDerecho; //Superior Derecha
 					PAMPA.Buscar_Paciente_porpiezas(protes);
+
+					Menu_Buscar_Pacientes_Usaram_Protesis();
 					break;
 
 				case(3):
+					system("cls");
 					protes = InferiorIzquierda; //Inferior Izquierda
 					PAMPA.Buscar_Paciente_porpiezas(protes);
+
+					Menu_Buscar_Pacientes_Usaram_Protesis();
 					break;
 
 				case(4):
+					system("cls");
 					protes = InferiorDerecha; //Inferior Derecha
 					PAMPA.Buscar_Paciente_porpiezas(protes);
+
+					Menu_Buscar_Pacientes_Usaram_Protesis();
 					break;
 
 				case(0):
@@ -347,7 +364,7 @@ int main()
 		case(4):
 			system("cls");
 
-			void Menu_Buscar_Protesis();
+			Menu_Buscar_Protesis();
 
 			do
 			{
@@ -361,7 +378,7 @@ int main()
 					protesis2 = SuperiorIzquierdo; //Superior Izquierda
 					PAMPA.Buscar_Protesis(protesis2);
 
-					void Menu_Buscar_Protesis();
+					Menu_Buscar_Protesis();
 					break;
 
 				case(2):
@@ -369,7 +386,7 @@ int main()
 					protesis2 = SuperiorDerecho; //Superior Derecha
 					PAMPA.Buscar_Protesis(protesis2);
 
-					void Menu_Buscar_Protesis();
+					Menu_Buscar_Protesis();
 					break;
 
 				case(3):
@@ -377,7 +394,7 @@ int main()
 					protesis2 = InferiorIzquierda; //Inferior Izquierda
 					PAMPA.Buscar_Protesis(protesis2);
 
-					void Menu_Buscar_Protesis();
+					Menu_Buscar_Protesis();
 					break;
 
 				case(4):
@@ -385,7 +402,7 @@ int main()
 					protesis2 = InferiorDerecha; //Inferior Derecha
 					PAMPA.Buscar_Protesis(protesis2);
 
-					void Menu_Buscar_Protesis();
+					Menu_Buscar_Protesis();
 					break;
 
 				case(0):
