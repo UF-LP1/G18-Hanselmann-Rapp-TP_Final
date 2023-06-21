@@ -28,7 +28,7 @@ list<cOrtopedias*> cANPA::get_Ortopedia()
 	return this->Ortopedia;
 }
 
-list<cHospitales*> cANPA::get_hospi()
+list<cHospitales*> cANPA::get_hospit()
 {
 	return this->hospit;
 }
@@ -48,7 +48,7 @@ void cANPA::set_Ortopedia(list<cOrtopedias*> NuevoEstado)
 	this->Ortopedia = NuevoEstado;
 }
 
-void cANPA::set_hospi(list <cHospitales*> NuevoEstado)
+void cANPA::set_hospit(list <cHospitales*> NuevoEstado)
 {
 	this->hospit = NuevoEstado;
 }

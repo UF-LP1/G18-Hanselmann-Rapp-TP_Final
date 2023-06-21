@@ -22,7 +22,6 @@ public:
 	void set_SolicitudRequisitos(bool NuevoEstado);
 	void set_Requisitos(string NuevoEstado);
 
-	void Imprimir_Requisitos_Med(); //ingresan los requisitos que le puso el doctor al fabricante para hacer la protesis
 
 };
 

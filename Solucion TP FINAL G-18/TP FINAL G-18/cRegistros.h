@@ -3,8 +3,7 @@
 
 #include "cHospitales.h"
 #include "cPiezasOrtopedicas.h"
-#include "cNoQuirurgicas.h"
-#include "cQuirurgicas.h"
+
 
 class cRegistros
 {

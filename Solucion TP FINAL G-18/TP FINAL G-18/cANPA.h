@@ -19,12 +19,12 @@ public:
 	list <cRegistros*> get_Registro();
 	string get_SolicitudEspecial();
 	list <cOrtopedias*> get_Ortopedia();
-	list <cHospitales*> get_hospi();
+	list <cHospitales*> get_hospit();
 
 	void set_Registro(list <cRegistros*> NuevoEstado);
 	void set_SolicitudEspecial(string NuevoEstado);
 	void set_Ortopedia(list <cOrtopedias*> NuevoEstado);
-	void set_hospi(list<cHospitales*> NuevoEstado);
+	void set_hospit(list<cHospitales*> NuevoEstado);
 
 	void operator+ (cRegistros* registros);
 	void operator- (cRegistros* registros2);

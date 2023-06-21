@@ -22,11 +22,13 @@ protected:
 	TipoMaterial Material;
 	tm Fabricacion;
 	cFabricantes* NombreFabricante;
-	static unsigned int CantidadTotalPiezas;
 	TipoProtesis Protesis;
 	string numero_serie;
 
 public:
+
+	static unsigned int CantidadTotalPiezas;
+
 	cPiezasOrtopedicas(int Dimensiones_, TipoMaterial Material_, tm Fabricacion_, cFabricantes* NombreFabricante_, TipoProtesis Protesis_, string numero_serie_);
 	~cPiezasOrtopedicas();
 
