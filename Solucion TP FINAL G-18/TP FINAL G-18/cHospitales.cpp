@@ -52,6 +52,7 @@ bool cHospitales::Solicitar_Protesis(cOrtopedias* ortop, cFabricantes* fab, Tipo
 {
 	list<cPiezasOrtopedicas*>::iterator itpi;
 	list<cPiezasOrtopedicas*> pi;
+	list<cPiezasOrtopedicas*> nuevo;
 
 	pi = ortop->get_ListaProtesis();
 
@@ -73,6 +74,8 @@ bool cHospitales::Solicitar_Protesis(cOrtopedias* ortop, cFabricantes* fab, Tipo
 			if ((*itpi)->get_Protesis() == prote) //si la ortopedia tiene piezas, que busque si es la misma
 			{
 				return true;
+				nuevo.push_back(*itpi);
+				ortop->set_Protesis(nuevo);
 				ortop->Imprimir_Protesis();
 			}
 			else //si la ortopedia tiene piezas, pero no de las que necesita
