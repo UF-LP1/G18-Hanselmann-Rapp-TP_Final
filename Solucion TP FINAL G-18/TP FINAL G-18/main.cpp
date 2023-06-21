@@ -186,10 +186,16 @@ int main()
 	string entreg = "", solic = "", buschosp = "", nombrehosp = "";
 
 	int opcion = 0;
-	bool regresar = true, regresar2 = true, regresar3 = true;
+	bool regresar = true;
+	bool regresar2 = true;
+	bool regresar3 = true;
 	bool salir = true;
-	TipoProtesis protes = SuperiorDerecho, protesis2 = InferiorDerecha, protesis3 = InferiorIzquierda;
-	int opcion2 = 0, opcion4 = 0, opcion5 = 0;
+	TipoProtesis protes = SuperiorDerecho;
+	TipoProtesis protesis2 = InferiorDerecha;
+	TipoProtesis protesis3 = InferiorIzquierda;
+	int opcion2 = 0;
+	int opcion4 = 0;
+	int opcion5 = 0;
 
 	Menu_Principal();
 	do
