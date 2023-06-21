@@ -20,9 +20,7 @@ public:
 	void set_Protesis(list <cPiezasOrtopedicas*> NuevoEstado);
 	void set_CantidadPiezas(unsigned int NuevoEstado);
 
-	string to_string_Ortopedias();
 	void Imprimir_Protesis();
-
 };
 
 #endif //_CORTOPEDIAS_H

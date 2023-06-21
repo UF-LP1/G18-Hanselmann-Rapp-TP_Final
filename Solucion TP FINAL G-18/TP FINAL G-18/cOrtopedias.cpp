@@ -31,29 +31,12 @@ void cOrtopedias::set_CantidadPiezas(unsigned int NuevoEstado)
 	this->CantidadPiezas = NuevoEstado;
 }
 
-string cOrtopedias::to_string_Ortopedias()
-{
-	/*stringstream salida;
-	list <cPiezasOrtopedicas> Piezitas = get_Protesis();
-	list <cPiezasOrtopedicas>::iterator itPieOrtop;
-	itPieOrtop = Piezitas.begin();
-
-
-	salida << "Nombre de la Ortopedia: " << this->Nombre << endl << "Direccion de la Ortopedia: " << this->Direccion << endl << "Cantidad de Piezas: " << this->CantidadPiezas << endl;
-	for (int i = 0; i < Piezitas.size(); i++, itPieOrtop)
-	{
-		salida << (itPieOrtop->to_string_PiezasOrtopedias()) << endl;
-	}
-	return salida.str();*/
-	return "";
-}
-
 void cOrtopedias:: Imprimir_Protesis()
 {
 	list <cPiezasOrtopedicas*> Piezitas = get_ListaProtesis();
 	list <cPiezasOrtopedicas*>::iterator itPieOrtop;
 
-	cout << "Nombre de la Ortopedia: " << Nombre << endl << "Direccion de la Ortopedia: " << Direccion << endl << "Cantidad de Piezas: " << this->CantidadPiezas << endl;
+	cout << "\t\tNombre de la Ortopedia: " << Nombre << endl << "\t\tDireccion de la Ortopedia: " << Direccion << endl << "\t\tCantidad de Piezas: " << this->CantidadPiezas << endl;
 
 	for (itPieOrtop = Piezitas.begin(); itPieOrtop != Piezitas.end(); itPieOrtop++)
 	{

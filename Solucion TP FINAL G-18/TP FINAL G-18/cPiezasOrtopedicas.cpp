@@ -85,10 +85,10 @@ string cPiezasOrtopedicas::to_string_PiezasOrtopedias()
 {
 	stringstream salida;
 
-	salida << "Dimensiones: " << this->Dimensiones << endl << "Tipo de Material: " << this->Material << endl << "Fecha de Fabricacion: " << "Día: " << 
-			this->Fabricacion.tm_mday << " del mes " << this->Fabricacion.tm_mon << " del anio " << this->Fabricacion.tm_year << endl << "Nombre del Fabricante: " <<
-			this->NombreFabricante->get_Nombre() << endl << "Cantidad de Piezas Totales: " << CantidadTotalPiezas << endl << "Tipo de Protesis: " << this->get_Protesis() << endl << 
-			"Numero de Serie: " << this->get_numeroserie();
+	salida << "\t\tDimensiones: " << this->Dimensiones << endl << "\t\tTipo de Material: " << this->Material << endl << "\t\tFecha de Fabricacion: " << "Día: " << 
+			this->Fabricacion.tm_mday << " del mes " << this->Fabricacion.tm_mon << " del anio " << this->Fabricacion.tm_year << endl << "\t\tNombre del Fabricante: " <<
+			this->NombreFabricante->get_Nombre() << endl << "\t\tCantidad de Piezas Totales: " << CantidadTotalPiezas << endl << "\t\tTipo de Protesis: " << this->get_Protesis() << endl << 
+			"\t\tNumero de Serie: " << this->get_numeroserie();
 	
 	return salida.str();
 }
