@@ -369,10 +369,6 @@ int main()
 					protesis3 = InferiorDerecha; //Inferior Derecha
 					solic = Favaloro->Solicitar_Protesis(Ortopedia_BsAs, Fabrica_BsAs, protesis3) ? "Se solicito la protesis de manera correcta." : "El fabricante no acepto la solicitud de la protesis.";
 					cout << solic << endl;
-					/*if (Favaloro->Solicitar_Protesis(Ortopedia_BsAs, Fabrica_BsAs, protesis3) == true)
-					{
-						Ortopedia_BsAs->Imprimir_Protesis();
-					}*/
 					break;
 
 				case(0):
@@ -410,5 +406,84 @@ int main()
 		}
 
 	} while (salir);
-	
+
+	//BORRAMOS LAS LISTAS DINÁMICAS DE LOS PACIENTES
+		//list<cPacientes*>::iterator it;
+	for (list<cPacientes*>::iterator it = PacientesAleman.begin(); it != PacientesAleman.end(); it++)
+	{
+		delete* it;
+	}
+	PacientesAleman.clear();
+
+	for (list<cPacientes*>::iterator it = PacientesFavaloro.begin(); it != PacientesFavaloro.end(); it++)
+	{
+		delete* it;
+	}
+	PacientesFavaloro.clear();
+
+	for (list<cPacientes*>::iterator it = PacientesItaliano.begin(); it != PacientesItaliano.end(); it++)
+	{
+		delete* it;
+	}
+	PacientesItaliano.clear();
+
+	//BORRAMOS LAS LISTAS DINÁMICAS DE LOS MÉDICOS
+	for (list<cMedicos*>::iterator it = MedicosAleman.begin(); it != MedicosAleman.end(); it++)
+	{
+		delete* it;
+	}
+	MedicosAleman.clear();
+
+	for (list<cMedicos*>::iterator it = MedicosFavaloro.begin(); it != MedicosFavaloro.end(); it++)
+	{
+		delete* it;
+	}
+	MedicosFavaloro.clear();
+
+	for (list<cMedicos*>::iterator it = MedicosItaliano.begin(); it != MedicosItaliano.end(); it++)
+	{
+		delete* it;
+	}
+	MedicosItaliano.clear();
+
+	//BORRAMOS LAS LISTAS DE HOSPITALES
+	for (list<cHospitales*>::iterator it = Hospitales.begin(); it != Hospitales.end(); it++)
+	{
+		delete* it;
+	}
+	Hospitales.clear();
+
+	//BORRAMOS LAS LISTAS DE PIEZAS ORTOPEDICAS
+	for (list<cPiezasOrtopedicas*>::iterator it = Piezitas_BuenosAires.begin(); it != Piezitas_BuenosAires.end(); it++)
+	{
+		delete* it;
+	}
+	Piezitas_BuenosAires.clear();
+
+	for (list<cPiezasOrtopedicas*>::iterator it = Piezitas_Catamarca.begin(); it != Piezitas_Catamarca.end(); it++)
+	{
+		delete* it;
+	}
+	Piezitas_Catamarca.clear();
+
+	for (list<cPiezasOrtopedicas*>::iterator it = Piezitas_Merlo.begin(); it != Piezitas_Merlo.end(); it++)
+	{
+		delete* it;
+	}
+	Piezitas_Merlo.clear();
+
+	//BORRAMOS LAS LISTAS DE REGISTROS
+	for (list<cRegistros*>::iterator it = Register.begin(); it != Register.end(); it++)
+	{
+		delete* it;
+	}
+	Register.clear();
+
+	//BORRAMOS LAS LISTAS DE ORTOPEDIAS
+	for (list<cOrtopedias*>::iterator it = Ortopedias.begin(); it != Ortopedias.end(); it++)
+	{
+		delete* it;
+	}
+	Ortopedias.clear();
+
 }

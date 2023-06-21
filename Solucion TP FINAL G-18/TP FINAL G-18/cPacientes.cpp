@@ -96,13 +96,13 @@ cPacientes* cPacientes::Imprimir_Preguntas_Agregar_Paciente()
 	cout << endl << "\tIngrese el DNI de su paciente: ";
 	cin >> DNI;
 
-	cout << endl << "\tIngrese el dia de Nacimiento de su paciente: ";
+	cout << endl << "\tIngrese el dia de Nacimiento de su paciente (DD): ";
 	cin >> Nacimiento.tm_mday;
 
-	cout << endl << "\tIngrese el mes de Nacimiento de su paciente: ";
+	cout << endl << "\tIngrese el mes de Nacimiento de su paciente (MM): ";
 	cin >> anio_mes;
 
-	cout << endl << "\tIngrese el anio de Nacimiento de su paciente: ";
+	cout << endl << "\tIngrese el anio de Nacimiento de su paciente (AA): ";
 	cin >> anio_nac;
 
 	cout << endl << "\n\n\t\t\tTIPOS DE ALERGIAS" << endl;
@@ -121,32 +121,54 @@ cPacientes* cPacientes::Imprimir_Preguntas_Agregar_Paciente()
 	switch (opcion)
 	{
 	case(1):
-		Alergias == 0; //Xenobiotico
+		Alergias = Xenobiotico; //Xenobiotico
 		break;
 
 	case(2):
-		Alergias == 1; //Sensibilidad Metalica
+		Alergias = SensibilidadMetalica; //Sensibilidad Metalica
 		break;
 
 	case(3):
-		Alergias == 2; // Sin Alergias
+		Alergias = SinAlergia; // Sin Alergias
 		break;
 
 	case(4):
-		Alergias == 3; //Liquenoide
+		Alergias = Liquenoide; //Liquenoide
 		break;
 
 	case(5):
-		Alergias == 4; //Carcinogenicos
+		Alergias = Carcinogenicos; //Carcinogenicos
 		break;
 
 	}
 
-	cout << endl << "\tIngrese el Nombre del hospital donde se atiende el paciente: ";
-	getline(cin, nombrehop);
-	getline(cin, NombreHospital);
+	cout << endl << "\tHOSPITAL INGRESADO: " << endl;
+	cout << "\t\t\t--------------" << endl;
+	cout << "\t1. Mi paciente se atiende en el Hospital Favaloro." << endl;
+	cout << "\t2. Mi paciente se atiende en el Hospital Aleman." << endl;
+	cout << "\t3. Mi paciente se atiende en el Hospital Italiano." << endl;
 
-	cout << endl << "\tIngrese el radio del miembro de su paciente: ";
+	int opcion0 = 0;
+
+	cout << "\tIngrese una Opcion: ";
+	cin >> opcion0;
+
+	switch (opcion0)
+	{
+	case(1):
+		NombreHospital = "Hospital Favaloro"; //Hospital Favaloro
+		break;
+
+	case(2):
+		NombreHospital = "Hospital Aleman"; //Hospital Aleman
+		break;
+
+	case(3):
+		NombreHospital = "Hospital Italiano"; //Hospital Italiano
+		break;
+	}
+
+	cout << endl << "\tIngrese el radio del miembro de su paciente en milimetros: ";
 	cin >> RadioMiembro;
 
 	cout << endl << "\n\n\t\t\tCOMPATIBLE QUIRURGICAMENTE" << endl;
@@ -210,8 +232,8 @@ string cPacientes::to_string_Pacientes()
 	string compat = CompatibleQuirurgica ? "si" : "no";
 	string tprote = TieneProtesis ? "si" : "no";
 
-	salida << "Nombre: " << this->Nombre << endl << "Apellido: " << this->Apellido << endl << "Telefono: " << this->Telefono << endl << "DNI: " << this->DNI << endl <<
-		"Fecha de Nacimiento: " << "Día: " << this->Nacimiento.tm_mday << " del mes " << this->Nacimiento.tm_mon << " del anio " << this->Nacimiento.tm_year << endl << "Tipo de Alergia: " <<
+	salida << "Nombre y Apellido: " << this->Nombre << " " << this->Apellido << endl << "Telefono: " << this->Telefono << endl << "DNI: " << this->DNI << endl <<
+		"Fecha de Nacimiento: " << "Dia: " << this->Nacimiento.tm_mday << " del mes " << this->Nacimiento.tm_mon << " del anio " << this->Nacimiento.tm_year << endl << "Tipo de Alergia: " <<
 		this->Alergias << endl << "Nombre del Hospital asistido: " << this->NombreHospital << endl << "Radio del miembro: " << this->RadioMiembro << endl <<
 		"Es compatible quirurgicamente: " << compat << endl << "Tiene Protesis: " << tprote;
 

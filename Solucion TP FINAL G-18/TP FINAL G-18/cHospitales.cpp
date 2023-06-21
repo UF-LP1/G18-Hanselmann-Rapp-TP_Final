@@ -38,7 +38,7 @@ void cHospitales::Imprimir_ListaPacientes()
 
 	for (itpaci = Pacie.begin(); itpaci != Pacie.end(); itpaci++)
 	{
-		cout << "\tCaracteristicas de los Pacientes: " << (*itpaci)->to_string_Pacientes() << endl;
+		cout << "\tCaracteristicas de los Pacientes: " << endl << (*itpaci)->to_string_Pacientes() << endl;
 	}
 	return;
 }
