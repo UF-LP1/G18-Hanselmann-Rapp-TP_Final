@@ -281,16 +281,16 @@ ostream& operator<<(ostream& out, cANPA& anpa)
 
 	for (itReg = regist.begin(); itReg != regist.end(); itReg++)
 	{
-		out << "Nombre del Hospital: " << (*itReg)->get_NombreHospital()->get_Nombre() << endl;
-		out << "Nombre del Medico: " << (*itReg)->get_NombreMedico()->get_Nombre() << endl;
-		out << "Fecha de la Solicitud de la protesis: " << (*itReg)->get_FechaSolicitud().tm_min << ":"  << (*itReg)->get_FechaSolicitud().tm_hour <<
+		out << endl << "\t\tNombre del Hospital: " << (*itReg)->get_NombreHospital()->get_Nombre() << endl;
+		out << "\t\tNombre del Medico: " << (*itReg)->get_NombreMedico()->get_Nombre() << endl;
+		out << "\t\tFecha de la Solicitud de la protesis: " << (*itReg)->get_FechaSolicitud().tm_min << ":"  << (*itReg)->get_FechaSolicitud().tm_hour <<
 					" del dia " << (*itReg)->get_FechaSolicitud().tm_mday << " del mes " << (*itReg)->get_FechaSolicitud().tm_mon << " del anio " << (*itReg)->get_FechaSolicitud().tm_year << endl;
-		out << "Fecha Estimativa de Entrega de la protesis: " << (*itReg)->get_FechaEstimativaEntrega().tm_min << ":" << (*itReg)->get_FechaEstimativaEntrega().tm_hour <<
+		out << "\t\tFecha Estimativa de Entrega de la protesis: " << (*itReg)->get_FechaEstimativaEntrega().tm_min << ":" << (*itReg)->get_FechaEstimativaEntrega().tm_hour <<
 			" del dia " << (*itReg)->get_FechaEstimativaEntrega().tm_mday << " del mes " << (*itReg)->get_FechaEstimativaEntrega().tm_mon << " del anio " << (*itReg)->get_FechaEstimativaEntrega().tm_year << endl;
-		out << "Fecha Entregada de la protesis: " << (*itReg)->get_FechaEntregada().tm_min << ":" << (*itReg)->get_FechaEntregada().tm_hour <<
+		out << "\t\tFecha Entregada de la protesis: " << (*itReg)->get_FechaEntregada().tm_min << ":" << (*itReg)->get_FechaEntregada().tm_hour <<
 			" del dia " << (*itReg)->get_FechaEntregada().tm_mday << " del mes " << ((*itReg)->get_FechaEntregada().tm_mon + 1) << " del anio " << ((*itReg)->get_FechaEntregada().tm_year + 1900) << endl;
-		out << "Tipo de Protesis: " << (*itReg)->get_Protesis() << endl;
-		out << "Nombre del Paciente: " << (*itReg)->get_NombrePaciente()->get_Nombre() << endl;
+		out << "\t\tTipo de Protesis: " << (*itReg)->get_Protesis() << endl;
+		out << "\t\tNombre del Paciente: " << (*itReg)->get_NombrePaciente()->get_Nombre() << endl;
 	}
 
 	return out;

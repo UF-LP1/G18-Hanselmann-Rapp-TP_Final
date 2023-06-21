@@ -477,11 +477,15 @@ int main()
 			break;
 
 		case(6):
+			system("cls");
 			entreg = Registro2->Diferencia_Entrega() ? "La protesis se entrego a tiempo." : "La protesis se entregó tarde."; //Uso el operador ternario para que me diga si se entrega a tiempo.
 			cout << entreg << endl;
+
+			Menu_Principal();
 			break;
 
 		case(7):
+			system("cls");
 			try
 			{
 				PAMPA + Registro3;
@@ -494,6 +498,8 @@ int main()
 			}
 			PAMPA - Registro1;
 			cout << PAMPA << endl;
+
+			Menu_Principal();
 			break;
 
 		case(0):
