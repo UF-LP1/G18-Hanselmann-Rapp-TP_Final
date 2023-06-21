@@ -102,7 +102,7 @@ cPacientes* cPacientes::Imprimir_Preguntas_Agregar_Paciente()
 	cout << endl << "\tIngrese el mes de Nacimiento de su paciente (MM): ";
 	cin >> anio_mes;
 
-	cout << endl << "\tIngrese el anio de Nacimiento de su paciente (AA): ";
+	cout << endl << "\tIngrese el anio de Nacimiento de su paciente: ";
 	cin >> anio_nac;
 
 	cout << endl << "\n\n\t\t\tTIPOS DE ALERGIAS" << endl;

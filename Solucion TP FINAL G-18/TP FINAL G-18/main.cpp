@@ -190,17 +190,12 @@ int main()
 
 	string entreg = "", solic = "", buschosp = "", nombrehosp = "";
 
-	int opcion = 0;
-	bool regresar = true;
-	bool regresar2 = true;
-	bool regresar3 = true;
+	int opcion = 0, opcion0 = 0, opcion2 = 0, opcion4 = 0, opcion5 = 0;
+	bool regresar = true, regresar2 = true, regresar3 = true;
 	bool salir = true;
 	TipoProtesis protes = SuperiorDerecho;
 	TipoProtesis protesis2 = InferiorDerecha;
 	TipoProtesis protesis3 = InferiorIzquierda;
-	int opcion2 = 0;
-	int opcion4 = 0;
-	int opcion5 = 0;
 
 	Menu_Principal();
 	do
@@ -274,9 +269,30 @@ int main()
 		case(3):
 			system("cls");
 
-			cout << "\tIngrese el nombre de su hospital: ";
-			getline (cin, buschosp);
-			getline (cin, nombrehosp); //tiene todos los datos ingresados solamente esta parte
+			cout << endl << "\n\n\t\t\tHOSPITAL INGRESADO: " << endl;
+			cout << "\t\t\t--------------" << endl;
+			cout << "\t1. Mi paciente se atiende en el Hospital Favaloro." << endl;
+			cout << "\t2. Mi paciente se atiende en el Hospital Aleman." << endl;
+			cout << "\t3. Mi paciente se atiende en el Hospital Italiano." << endl;
+
+			cout << "\tIngrese una Opcion: ";
+			cin >> opcion0;
+
+			switch (opcion0)
+			{
+			case(1):
+				nombrehosp = "Hospital Favaloro"; //Hospital Favaloro
+				break;
+
+			case(2):
+				nombrehosp = "Hospital Aleman"; //Hospital Aleman
+				break;
+
+			case(3):
+				nombrehosp = "Hospital Italiano"; //Hospital Italiano
+				break;
+			}
+			
 			PAMPA.Buscar_Paciente_porhospi(nombrehosp);
 			Menu_Principal();
 			break;
