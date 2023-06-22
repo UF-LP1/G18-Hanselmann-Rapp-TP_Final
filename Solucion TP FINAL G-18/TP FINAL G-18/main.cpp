@@ -588,9 +588,9 @@ int main()
 	}
 	Ortopedias.clear();
 
-	/*delete[] Fabrica_BsAs;
-	delete [] Fabrica_Catamarca;
-	delete [] Fabrica_Merlo;*/
+	delete Fabrica_BsAs;
+	delete Fabrica_Catamarca;
+	delete Fabrica_Merlo;
 	
 	return 0;
 }
