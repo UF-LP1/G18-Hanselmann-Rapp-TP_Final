@@ -295,8 +295,8 @@ cPacientes* cPacientes::Imprimir_Preguntas_Agregar_Paciente()
 
 	do
 	{
-			cout << endl << "\tIngrese el anio de Nacimiento de su paciente: ";
-			cin >> anio_nac;
+		cout << endl << "\tIngrese el anio de Nacimiento de su paciente: ";
+		cin >> anio_nac;
 
 	} while (1900 > anio_nac);
 
@@ -420,7 +420,7 @@ cPacientes* cPacientes::Imprimir_Preguntas_Agregar_Paciente()
 			break;
 
 		}
-	} while (opcion > 2);
+	} while (opcion3 > 2);
 
 	Nacimiento.tm_year = anio_nac - 1900;
 
