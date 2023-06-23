@@ -231,7 +231,7 @@ cPacientes* cPacientes::Imprimir_Preguntas_Agregar_Paciente()
 			break;
 		}
 
-	}while (opciondia > 32);
+	}while (0 < opciondia > 32);
 
 	int opcionmes = 0;
 
@@ -291,14 +291,14 @@ cPacientes* cPacientes::Imprimir_Preguntas_Agregar_Paciente()
 			break;
 		}
 
-	} while (opcionmes > 13);
+	} while (0 < opcionmes > 13);
 
 	do
 	{
-		cout << endl << "\tIngrese el anio de Nacimiento de su paciente: ";
-		cin >> anio_nac;
+			cout << endl << "\tIngrese el anio de Nacimiento de su paciente: ";
+			cin >> anio_nac;
 
-	} while (1900 > anio_nac);
+	} while (1900 > anio_nac < 2023);
 
 	cout << endl << "\n\n\t\t\tTIPOS DE ALERGIAS" << endl;
 	cout << "\t\t\t--------------" << endl;
@@ -313,29 +313,32 @@ cPacientes* cPacientes::Imprimir_Preguntas_Agregar_Paciente()
 	cout << "\tIngrese una Opcion de los tipos de Alergia: ";
 	cin >> opcion;
 
-	switch (opcion)
+	do
 	{
-	case(1):
-		Alergias = Xenobiotico; //Xenobiotico
-		break;
+		switch (opcion)
+		{
+		case(1):
+			Alergias = Xenobiotico; //Xenobiotico
+			break;
 
-	case(2):
-		Alergias = SensibilidadMetalica; //Sensibilidad Metalica
-		break;
+		case(2):
+			Alergias = SensibilidadMetalica; //Sensibilidad Metalica
+			break;
 
-	case(3):
-		Alergias = SinAlergia; // Sin Alergias
-		break;
+		case(3):
+			Alergias = SinAlergia; // Sin Alergias
+			break;
 
-	case(4):
-		Alergias = Liquenoide; //Liquenoide
-		break;
+		case(4):
+			Alergias = Liquenoide; //Liquenoide
+			break;
 
-	case(5):
-		Alergias = Carcinogenicos; //Carcinogenicos
-		break;
+		case(5):
+			Alergias = Carcinogenicos; //Carcinogenicos
+			break;
 
-	}
+		}
+	} while (0 < opcion > 5 );
 
 	cout << endl << "\n\n\t\t\tHOSPITAL INGRESADO: " << endl;
 	cout << "\t\t\t--------------" << endl;
