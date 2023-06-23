@@ -293,8 +293,12 @@ cPacientes* cPacientes::Imprimir_Preguntas_Agregar_Paciente()
 
 	} while (opcionmes > 13);
 
-	cout << endl << "\tIngrese el anio de Nacimiento de su paciente: ";
-	cin >> anio_nac;
+	do
+	{
+		cout << endl << "\tIngrese el anio de Nacimiento de su paciente: ";
+		cin >> anio_nac;
+
+	} while (1900 > anio_nac);
 
 	cout << endl << "\n\n\t\t\tTIPOS DE ALERGIAS" << endl;
 	cout << "\t\t\t--------------" << endl;
