@@ -290,7 +290,8 @@ ostream& operator<<(ostream& out, cANPA& anpa)
 		out << "\t\tFecha Entregada de la protesis: " << (*itReg)->get_FechaEntregada().tm_min << ":" << (*itReg)->get_FechaEntregada().tm_hour <<
 			" del dia " << (*itReg)->get_FechaEntregada().tm_mday << " del mes " << ((*itReg)->get_FechaEntregada().tm_mon + 1) << " del anio " << ((*itReg)->get_FechaEntregada().tm_year + 1900) << endl;
 		out << "\t\tTipo de Protesis: " << (*itReg)->get_Protesis() << endl;
-		out << "\t\tNombre del Paciente: " << (*itReg)->get_NombrePaciente()->get_Nombre() << endl;
+		out << "\t\tPaciente: " << (*itReg)->get_NombrePaciente()->get_Nombre() <<  " " << (*itReg)->get_NombrePaciente()->get_Apellido() << endl;
+		out << "\t\tDNI Paciente: " << (*itReg)->get_NombrePaciente()->get_DNI() << endl;
 	}
 
 	return out;
