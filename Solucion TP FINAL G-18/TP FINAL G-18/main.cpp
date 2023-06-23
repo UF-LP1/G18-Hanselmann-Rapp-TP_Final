@@ -510,7 +510,6 @@ int main()
 	} while (salir);
 
 	//BORRAMOS LAS LISTAS DINÁMICAS DE LOS PACIENTES
-		//list<cPacientes*>::iterator it;
 	for (list<cPacientes*>::iterator it = PacientesAleman.begin(); it != PacientesAleman.end(); it++)
 	{
 		delete* it;

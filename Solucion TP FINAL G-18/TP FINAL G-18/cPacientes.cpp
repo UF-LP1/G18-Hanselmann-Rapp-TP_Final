@@ -96,11 +96,205 @@ cPacientes* cPacientes::Imprimir_Preguntas_Agregar_Paciente()
 	cout << endl << "\tIngrese el DNI de su paciente: ";
 	cin >> DNI;
 
+	int opciondia = 0;
+
 	cout << endl << "\tIngrese el dia de Nacimiento de su paciente (DD): ";
-	cin >> Nacimiento.tm_mday;
+
+	do 
+	{
+		cout << endl << "\tINGRESE NUEVAMENTE el dia de Nacimiento de su paciente entre 1 y 31 (DD): ";
+		cin >> opciondia;
+
+		switch (opciondia)
+		{
+		case(1):
+			Nacimiento.tm_mday = 1; //dia 1
+			break;
+
+		case(2):
+			Nacimiento.tm_mday = 2; //Dia 2
+			break;
+
+		case(3):
+			Nacimiento.tm_mday = 3; //Dia 3
+			break;
+
+		case(4):
+			Nacimiento.tm_mday = 4; //Dia 4
+			break;
+
+		case(5):
+			Nacimiento.tm_mday = 5; //Dia 5
+			break;
+
+		case(6):
+			Nacimiento.tm_mday = 6; //dia 6
+			break;
+
+		case(7):
+			Nacimiento.tm_mday = 7; //Dia 7
+			break;
+
+		case(8):
+			Nacimiento.tm_mday = 8; //Dia 8
+			break;
+
+		case(9):
+			Nacimiento.tm_mday = 9; //Dia 9
+			break;
+
+		case(10):
+			Nacimiento.tm_mday = 10; //Dia 10
+			break;
+
+		case(11):
+			Nacimiento.tm_mday = 11; //dia 11
+			break;
+
+		case(12):
+			Nacimiento.tm_mday = 12; //Dia 12
+			break;
+
+		case(13):
+			Nacimiento.tm_mday = 13; //Dia 13
+			break;
+
+		case(14):
+			Nacimiento.tm_mday = 14; //Dia 14
+			break;
+
+		case(15):
+			Nacimiento.tm_mday = 15; //Dia 15
+			break;
+
+		case(16):
+			Nacimiento.tm_mday = 16; //dia 16
+			break;
+
+		case(17):
+			Nacimiento.tm_mday = 17; //Dia 17
+			break;
+
+		case(18):
+			Nacimiento.tm_mday = 18; //Dia 18
+			break;
+
+		case(19):
+			Nacimiento.tm_mday = 19; //Dia 19
+			break;
+
+		case(20):
+			Nacimiento.tm_mday = 20; //Dia 20
+			break;
+
+		case(21):
+			Nacimiento.tm_mday = 21; //dia 21
+			break;
+
+		case(22):
+			Nacimiento.tm_mday = 22; //Dia 22
+			break;
+
+		case(23):
+			Nacimiento.tm_mday = 23; //Dia 23
+			break;
+
+		case(24):
+			Nacimiento.tm_mday = 24; //Dia 24
+			break;
+
+		case(25):
+			Nacimiento.tm_mday = 25; //Dia 25
+			break;
+
+		case(26):
+			Nacimiento.tm_mday = 26; //dia 26
+			break;
+
+		case(27):
+			Nacimiento.tm_mday = 27; //Dia 27
+			break;
+
+		case(28):
+			Nacimiento.tm_mday = 28; //Dia 28
+			break;
+
+		case(29):
+			Nacimiento.tm_mday = 29; //Dia 29
+			break;
+
+		case(30):
+			Nacimiento.tm_mday = 30; //Dia 30
+			break;
+
+		case(31):
+			Nacimiento.tm_mday = 31; //Dia 31
+			break;
+		}
+
+	}while (opciondia > 32);
+
+	int opcionmes = 0;
 
 	cout << endl << "\tIngrese el mes de Nacimiento de su paciente (MM): ";
-	cin >> anio_mes;
+
+	do 
+	{
+		cout << endl << "\tINGRESE NUEVAMENTE el mes de Nacimiento de su paciente entre 1 y 12 (MM): ";
+		cin >> opcionmes;
+
+		switch (opcionmes)
+		{
+		case(1):
+			Nacimiento.tm_mon = 0; //Mes Enero
+			break;
+
+		case(2):
+			Nacimiento.tm_mon = 1; //Mes Febrero
+			break;
+
+		case(3):
+			Nacimiento.tm_mon = 2; //Mes Marzo
+			break;
+
+		case(4):
+			Nacimiento.tm_mon = 3; //Mes Abril
+			break;
+
+		case(5):
+			Nacimiento.tm_mon = 4; //Mes Mayo
+			break;
+
+		case(6):
+			Nacimiento.tm_mon = 5; //Mes JUnio
+			break;
+
+		case(7):
+			Nacimiento.tm_mon = 6; //Mes JUlio
+			break;
+
+		case(8):
+			Nacimiento.tm_mon = 7; //Mes Agosto
+			break;
+
+		case(9):
+			Nacimiento.tm_mon = 8; //Mes Septiembre
+			break;
+
+		case(10):
+			Nacimiento.tm_mon = 9; //Mes Octubre
+			break;
+
+		case(11):
+			Nacimiento.tm_mon = 10; //Mes Noviembre
+			break;
+
+		case(12):
+			Nacimiento.tm_mon = 11; //Dia Diciembre
+			break;
+		}
+
+	} while (opcionmes > 13);
 
 	cout << endl << "\tIngrese el anio de Nacimiento de su paciente: ";
 	cin >> anio_nac;
@@ -216,7 +410,7 @@ cPacientes* cPacientes::Imprimir_Preguntas_Agregar_Paciente()
 	}
 
 	Nacimiento.tm_year = anio_nac - 1900;
-	Nacimiento.tm_mon = anio_mes - 1;
+	//Nacimiento.tm_mon = anio_mes - 1;
 
 	Nacimiento = {0, 0, 0, Nacimiento.tm_mday, Nacimiento.tm_mon, Nacimiento.tm_year};
 
