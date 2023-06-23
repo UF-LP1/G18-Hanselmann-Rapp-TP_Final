@@ -231,7 +231,7 @@ cPacientes* cPacientes::Imprimir_Preguntas_Agregar_Paciente()
 			break;
 		}
 
-	}while (0 < opciondia > 32);
+	}while ( opciondia > 32);
 
 	int opcionmes = 0;
 
@@ -291,14 +291,14 @@ cPacientes* cPacientes::Imprimir_Preguntas_Agregar_Paciente()
 			break;
 		}
 
-	} while (0 < opcionmes > 13);
+	} while (opcionmes > 13);
 
 	do
 	{
 			cout << endl << "\tIngrese el anio de Nacimiento de su paciente: ";
 			cin >> anio_nac;
 
-	} while (1900 > anio_nac < 2023);
+	} while (1900 > anio_nac);
 
 	cout << endl << "\n\n\t\t\tTIPOS DE ALERGIAS" << endl;
 	cout << "\t\t\t--------------" << endl;
@@ -310,11 +310,11 @@ cPacientes* cPacientes::Imprimir_Preguntas_Agregar_Paciente()
 
 	int opcion = 0;
 
-	cout << "\tIngrese una Opcion de los tipos de Alergia: ";
-	cin >> opcion;
-
 	do
 	{
+		cout << "\tIngrese una Opcion de los tipos de Alergia: ";
+		cin >> opcion;
+
 		switch (opcion)
 		{
 		case(1):
@@ -338,7 +338,7 @@ cPacientes* cPacientes::Imprimir_Preguntas_Agregar_Paciente()
 			break;
 
 		}
-	} while (0 < opcion > 5 );
+	} while (opcion > 5);
 
 	cout << endl << "\n\n\t\t\tHOSPITAL INGRESADO: " << endl;
 	cout << "\t\t\t--------------" << endl;
@@ -347,24 +347,27 @@ cPacientes* cPacientes::Imprimir_Preguntas_Agregar_Paciente()
 	cout << "\t3. Mi paciente se atiende en el Hospital Italiano." << endl;
 
 	int opcion0 = 0;
-
-	cout << "\tIngrese una Opcion: ";
-	cin >> opcion0;
-
-	switch (opcion0)
+	do
 	{
-	case(1):
-		NombreHospital = "Hospital Favaloro"; //Hospital Favaloro
-		break;
+		cout << "\tIngrese una Opcion de Hospital: ";
+		cin >> opcion0;
 
-	case(2):
-		NombreHospital = "Hospital Aleman"; //Hospital Aleman
-		break;
+		switch (opcion0)
+		{
+		case(1):
+			NombreHospital = "Hospital Favaloro"; //Hospital Favaloro
+			break;
 
-	case(3):
-		NombreHospital = "Hospital Italiano"; //Hospital Italiano
-		break;
-	}
+		case(2):
+			NombreHospital = "Hospital Aleman"; //Hospital Aleman
+			break;
+
+		case(3):
+			NombreHospital = "Hospital Italiano"; //Hospital Italiano
+			break;
+		}
+
+	} while (opcion0 > 3);
 
 	cout << endl << "\tIngrese el radio del miembro de su paciente en milimetros: ";
 	cin >> RadioMiembro;
@@ -376,20 +379,23 @@ cPacientes* cPacientes::Imprimir_Preguntas_Agregar_Paciente()
 
 	int opcion2 = 0;
 
-	cout << "\tIngrese una Opcion: ";
-	cin >> opcion2;
-
-	switch (opcion2)
+	do
 	{
-	case(1):
-		CompatibleQuirurgica = true; //Xenobiotico
-		break;
+		cout << "\tIngrese una Opcion de Compatible: ";
+		cin >> opcion2;
 
-	case(2):
-		CompatibleQuirurgica = false; //Sensibilidad Metalica
-		break;
+		switch (opcion2)
+		{
+		case(1):
+			CompatibleQuirurgica = true; //Xenobiotico
+			break;
 
-	}
+		case(2):
+			CompatibleQuirurgica = false; //Sensibilidad Metalica
+			break;
+
+		}
+	} while (opcion2 > 2);
 
 	cout << endl << "\n\n\t\t\tTIENE PROTESIS" << endl;
 	cout << "\t\t\t--------------" << endl;
@@ -398,23 +404,25 @@ cPacientes* cPacientes::Imprimir_Preguntas_Agregar_Paciente()
 
 	int opcion3 = 0;
 
-	cout << "\tIngrese una Opcion: ";
-	cin >> opcion3;
-
-	switch (opcion3)
+	do
 	{
-	case(1):
-		TieneProtesis = true; //ya tiene una protesis
-		break;
+		cout << "\tIngrese una Opcion de Protesis: ";
+		cin >> opcion3;
 
-	case(2):
-		TieneProtesis = false; //no tiene ninguna protesis
-		break;
+		switch (opcion3)
+		{
+		case(1):
+			TieneProtesis = true; //ya tiene una protesis
+			break;
 
-	}
+		case(2):
+			TieneProtesis = false; //no tiene ninguna protesis
+			break;
+
+		}
+	} while (opcion > 2);
 
 	Nacimiento.tm_year = anio_nac - 1900;
-	//Nacimiento.tm_mon = anio_mes - 1;
 
 	Nacimiento = {0, 0, 0, Nacimiento.tm_mday, Nacimiento.tm_mon, Nacimiento.tm_year};
 
