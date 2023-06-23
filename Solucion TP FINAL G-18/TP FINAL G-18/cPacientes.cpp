@@ -98,13 +98,11 @@ cPacientes* cPacientes::Imprimir_Preguntas_Agregar_Paciente()
 
 	int opciondia = 0;
 
-	cout << endl << "\tIngrese el dia de Nacimiento de su paciente (DD): ";
-
 	do 
 	{
-		cout << endl << "\tINGRESE NUEVAMENTE el dia de Nacimiento de su paciente entre 1 y 31 (DD): ";
+		cout << endl << "\tIngrese el dia de Nacimiento de su paciente (DD): ";
 		cin >> opciondia;
-
+			
 		switch (opciondia)
 		{
 		case(1):
@@ -114,6 +112,7 @@ cPacientes* cPacientes::Imprimir_Preguntas_Agregar_Paciente()
 		case(2):
 			Nacimiento.tm_mday = 2; //Dia 2
 			break;
+
 
 		case(3):
 			Nacimiento.tm_mday = 3; //Dia 3
@@ -236,11 +235,9 @@ cPacientes* cPacientes::Imprimir_Preguntas_Agregar_Paciente()
 
 	int opcionmes = 0;
 
-	cout << endl << "\tIngrese el mes de Nacimiento de su paciente (MM): ";
-
 	do 
 	{
-		cout << endl << "\tINGRESE NUEVAMENTE el mes de Nacimiento de su paciente entre 1 y 12 (MM): ";
+		cout << endl << "\tIngrese el mes de Nacimiento de su paciente (MM): ";
 		cin >> opcionmes;
 
 		switch (opcionmes)
